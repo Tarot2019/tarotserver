@@ -27,25 +27,7 @@ module.exports = {
 
     'GET /api/tarot1/detail/:id': async (ctx, next) => {
         let divinationDetail = await tarot1.divinationDetail(ctx.params.id);
-        let homeData = {};
-        homeData.banner = [];
-        homeData.list = [];
-        homeDivinations.forEach((divination) => {
-            if(divination.isBanner) {
-                homeData.banner.push({
-                    id: divination.id,
-                    img: divination.picTop
-                });
-            } else {
-                homeData.list.push({
-                    id: divination.id,
-                    img: divination.picSquare,
-                    title: divination.title,
-                    subTitle: divination.subTitle
-                });
-            }
-        });
-        ctx.rest(homeData);
+        ctx.rest(divinationDetail);
 
     },
 
