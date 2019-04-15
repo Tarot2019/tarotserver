@@ -1,6 +1,6 @@
 const Sequelize = require('sequelize');
 
-var sequelize = new Sequelize('tarotTest', 'root', '123456', {
+let sequelize = new Sequelize('tarotTest', 'root', '123456', {
     host: 'localhost',
     dialect: 'mysql',
     pool: {
@@ -22,14 +22,16 @@ var sequelize = new Sequelize('tarotTest', 'root', '123456', {
 const ID_NAME = 'id';
 const ID_TYPE = Sequelize.DataTypes.INTEGER;
 
-var defineModel = function(name, attributes) {
+var defineModel = function(name, attributes, options) {
     var attrs = {};
-    attrs[ID_NAME] = {
-        type: ID_TYPE,
-        allowNull: false,
-        primaryKey: true,
-        autoIncrement: true
-    };
+    if(options && options.addId) {
+        attrs[ID_NAME] = {
+            type: ID_TYPE,
+            allowNull: false,
+            primaryKey: true,
+            autoIncrement: true
+        };
+    }
     for (let key in attributes) {
         let value = attributes[key];
         if (typeof value === 'object' && value['type']) {
@@ -42,18 +44,20 @@ var defineModel = function(name, attributes) {
             };
         }
     }
-    attrs.createdAt = {
-        type: Sequelize.DataTypes.BIGINT,
-        allowNull: false
-    };
-    attrs.updatedAt = {
-        type: Sequelize.BIGINT,
-        allowNull: false
-    };
-    attrs.version = {
-        type: Sequelize.BIGINT,
-        allowNull: false
-    };
+    if(options && options.addVersion) {
+        attrs.createdAt = {
+            type: Sequelize.DataTypes.BIGINT,
+            allowNull: false
+        };
+        attrs.updatedAt = {
+            type: Sequelize.BIGINT,
+            allowNull: false
+        };
+        attrs.version = {
+            type: Sequelize.BIGINT,
+            allowNull: false
+        };
+    }
     return sequelize.define(name, attrs, {
         tableName: name,
         timestamps: false,
@@ -77,3 +81,4 @@ var defineModel = function(name, attributes) {
 module.exports.defineModel = defineModel;
 module.exports.ID_NAME = ID_NAME;
 module.exports.ID_TYPE = ID_TYPE;
+module.exports.sequelize = sequelize;

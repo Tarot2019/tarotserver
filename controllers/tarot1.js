@@ -3,7 +3,7 @@ const tarot1 = require('../business/tarot1');
 module.exports = {
     'GET /api/tarot1/home': async (ctx, next) => {
         let homeDivinations = await tarot1.homeDivinations();
-        let homeData = {};
+        let homeData = {kefu: {wechatid: "wechatid", qrCode: "http://www.baidu.com"}};
         homeData.banner = [];
         homeData.list = [];
         homeDivinations.forEach((divination) => {
@@ -17,7 +17,10 @@ module.exports = {
                     id: divination.id,
                     img: divination.picSquare,
                     title: divination.title,
-                    subTitle: divination.subTitle
+                    subTitle: divination.subTitle,
+                    priceNew: divination.priceNew,
+                    priceOld: divination.priceOld,
+                    sales: divination.sales
                 });
             }
         });
@@ -26,11 +29,16 @@ module.exports = {
     },
 
     'GET /api/tarot1/detail/:id': async (ctx, next) => {
-        let divinationDetail = await tarot1.divinationDetail(ctx.params.id);
+        let divinationDetail = await tarot1.divinationDetail(ctx.params.id, ctx.headers.openid);
         ctx.rest(divinationDetail);
 
     },
 
+    'GET /api/tarot1/preorder': async (ctx, next) => {
+        let preorders = await tarot1.preorders(ctx.headers.openid);
+        ctx.rest(preorders);
+
+    },
     // 'GET /api/public/articles': async (ctx, next) => {
     //     let allArticles = await articles.getArticles(ctx.request.headers.openid);
     //     ctx.rest({
