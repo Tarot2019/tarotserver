@@ -1,19 +1,37 @@
+const APIError = require('../rest').ApiError;
+
+const weixinPay = require('./weixin_pay');
+
 let models = require('../database/models.js');
 let divination = models.divination;
-const utils = require('./utils/utils');
-let preorder = models.preorder;
+let user = models.user;
 let order = models.order;
+
+user.belongsToMany(divination, {as: "Preorders", through: "userPreorder"});
+divination.belongsToMany(user, {as: "Collectors", through: "userPreorder"});
+
+user.belongsToMany(divination, {as: "Orders", through: order});
+divination.belongsToMany(user, {as: "Consumers", through: order});
+
+const utils = require('./utils/utils');
 
 const recommendationLimits = 3;
 let count = 0;
 module.exports = {
     homeDivinations: async () => {
+        console.log("homeDivinations");
         let result = await divination.findAndCountAll({
             where: {isHome: true, invalid: false},
             attributes: ['id', 'picTop', 'picSquare', 'isBanner', 'title', 'subTitle', 'priceOld', 'priceNew', 'sales']
         });
         count = result.count;
-        return result.rows.map(divination => divination.sales += utils.getSales());
+        console.log("count = " + count);
+        console.log("rows", JSON.stringify(result.rows));
+        return result.rows.map(divination => {
+            let newDivination = divination.toJSON();
+            newDivination.sales += utils.getSales();
+            return newDivination;
+        });
     },
 
     divinationDetail: async (divinationID, openid) => {
@@ -27,15 +45,19 @@ module.exports = {
             where: {invalid: false},
             attributes: ['id', 'picSquare', 'title', 'subTitle', 'priceOld', 'priceNew', 'sales']
         }));
-        if(openid) {
-            tasks.push(order.findOne({where: {openid: openid, divinationId: divinationID}}));
-        }
         let results = await Promise.all(tasks);
+        let paid = false;
+        if(openid) {
+            let divinationInstance = results[0];
+            paid = await divinationInstance.getConsumers().then(consumers => consumers.some(consumer => consumer.openid === openid));
+            //tasks.push(order.findOne({where: {openid: openid, divinationId: divinationID}}));
+        }
+
         let detail = results[0].toJSON();
         let recommendations = results[1];
         console.log("recommendations.length=" + recommendations.length);
-        if(openid && results[2]) {
-            detail.paid = true;
+        detail.paid = paid;
+        if(paid) {
         } else {
             //用户未购买过，则删除结果
             detail.paid = false;
@@ -54,16 +76,62 @@ module.exports = {
         return detail;
     },
     preorders: async (openid) => {
-        let result = await preorder.findAll({
+        let result = await user.findOne({
             where: {openid: openid},
-            include: {model: divination}}
-            );
+            include: [{model: divination, as: "Preorders"}]
+        });
+        console.log("user信息：", JSON.stringify(result));
+        return result.Preorders;
+    },
+    addPreorder: async (openid, divinationId) => {
+        let userInstance = await user.findOne({where: {openid: openid}});
+        let divinationInstance = await divination.findById(divinationId);
+        let result = await userInstance.addPreorder(divinationInstance);
         return result;
     },
     orders: async (openid) => {
+        let result = await user.findOne({
+            where: {openid: openid},
+            include: [{model: divination, as: "Orders"}]
+        });
+        console.log("[orders]user信息：", JSON.stringify(result));
+        return result.Orders;
+    },
+    // addOrder: async (openid, divinationId, orderid, price) => {
+    //     let userInstance = await user.findOne({where: {openid: openid}});
+    //     let divinationInstance = await divination.findById(divinationId);
+    //     await userInstance.removePreorder(divinationInstance); //删除preorder中的记录
+    //     let status = 'unpaid';
+    //     let result = await userInstance.addOrder(divinationInstance, {through: {time: Date.now(), price: price, orderid: orderid, status: status}});
+    //     return result;
+    // },
+    getPayInfo: async (openid, divinationId, ip) => {
+        let divinationInstance = await divination.findById(divinationId);
+        if(!divinationInstance) {
+            throw new APIError('id_err', 'divination id error');
+        }
+        let orderid = Date.now().toString(36) + openid.slice(-2);
+        let payInfo = await weixinPay.prePay(openid, orderid, divinationInstance.title, divinationInstance.priceNew, ip)
+        if(payInfo) {
+            let userInstance = await user.findOne({where: {openid: openid}});
+            await userInstance.removePreorder(divinationInstance); //删除preorder中的记录
+            let status = 'unpaid';
+            await userInstance.addOrder(divinationInstance, {through: {time: Date.now(), price: price, orderid: orderid, status: status}});
+            return payInfo;
+        } else {
+            throw new APIError('prepay_err', 'get wechat prepay info failed');
+        }
 
     },
-    preTestDivination: async (divinationId, openid) => {
-
+    wechatCallback: async (cbContent) => {
+        if(cbContent && cbContent.return_code && cbContent.return_code == 'SUCCESS'
+            && cbContent.result_code && cbContent.result_code == 'SUCCESS') {
+            let orderInstance = await order.findOne({where: {orderid: cbContent.out_trade_no}});
+            if(orderInstance && orderInstance.price === cbContent.total_fee) {
+                await orderInstance.update({status: 'paid'});
+                return true;
+            }
+        }
+        return false;
     }
 }

@@ -3,6 +3,11 @@ const Sequelize = require('sequelize');
 let sequelize = new Sequelize('tarotTest', 'root', '123456', {
     host: 'localhost',
     dialect: 'mysql',
+    dialectOptions: {
+        //支持emoji
+        charset: 'utf8mb4',
+        collate: "utf8mb4_unicode_ci"
+    },
     pool: {
         max: 5,
         min: 0,
