@@ -2,7 +2,7 @@ let {defineModel} = require('../db');
 const Sequelize = require('sequelize');
 module.exports = defineModel('users', {
     openid: {
-        type: Sequelize.DataTypes.STRING,
+        type: Sequelize.DataTypes.STRING(100),
         primaryKey: true
     },
     unionid: {
