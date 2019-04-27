@@ -126,14 +126,15 @@ module.exports = {
 
     },
     wechatCallback: async (cbContent) => {
-        if(cbContent && cbContent.return_code && cbContent.return_code == 'SUCCESS'
-            && cbContent.result_code && cbContent.result_code == 'SUCCESS') {
-            let orderInstance = await order.findOne({where: {orderid: cbContent.out_trade_no}});
-            if(orderInstance && orderInstance.price === cbContent.total_fee) {
+        if(cbContent && cbContent.return_code && cbContent.return_code[0] == 'SUCCESS'
+            && cbContent.result_code && cbContent.result_code[0] == 'SUCCESS') {
+            let orderInstance = await order.findOne({where: {orderid: cbContent.out_trade_no[0]}});
+            if(orderInstance && orderInstance.price === cbContent.total_fee[0]) {
                 await orderInstance.update({status: 'paid'});
                 return true;
             }
         }
+        console.log("处理微信回调失败了：", JSON.stringify(cbContent));
         return false;
     }
 }
