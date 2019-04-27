@@ -129,7 +129,7 @@ module.exports = {
         if(cbContent && cbContent.return_code && cbContent.return_code[0] == 'SUCCESS'
             && cbContent.result_code && cbContent.result_code[0] == 'SUCCESS') {
             let orderInstance = await order.findOne({where: {orderid: cbContent.out_trade_no[0]}});
-            if(orderInstance && orderInstance.price === cbContent.total_fee[0]) {
+            if(orderInstance && orderInstance.price === parseInt(cbContent.total_fee[0])) {
                 await orderInstance.update({status: 'paid'});
                 return true;
             }
