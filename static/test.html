@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <body>
 <h1>Hello</h1>
 Field1: <input type="text" id="field1" value="Hello World!">
@@ -13,9 +14,21 @@ Field2: <input type="text" id="field2">
 点击下面的按钮，把 Field1 的内容拷贝到 Field2 中：
 <br />
 <button onclick="document.getElementById('field2').value=
-document.getElementById('field1').value; onBridgeReady('a')">Copy Text</button>
+document.getElementById('field1').value; weixinpay()">Copy Text</button>
 </body>
 <script>
+    function weixinpay() {
+      axios({
+          method: 'get',
+          url: 'https://qian10.net/api/api/tarot1/getPayInfo/1',
+          heders: {'openid': 'ofPbp1XuYIMpD1CUUTWsqmMcB63c'}
+      }).then(response =>{
+          console.log("response#### ", response);
+          console.log("response2#### ", response.data);
+          onBridgeReady(response.data);
+      })
+          .catch(err => console.log(err));
+    };
     function onBridgeReady(data){
         if (typeof WeixinJSBridge === 'undefined') {
             alert('请使用微信内置浏览器进行支付');

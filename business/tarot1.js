@@ -95,7 +95,7 @@ module.exports = {
             include: [{model: divination, as: "Orders"}]
         });
         console.log("[orders]user信息：", JSON.stringify(result));
-        return result.Orders;
+        return result.Orders.filter(order => order.status == 'paid');
     },
     // addOrder: async (openid, divinationId, orderid, price) => {
     //     let userInstance = await user.findOne({where: {openid: openid}});
@@ -111,7 +111,9 @@ module.exports = {
             throw new APIError('id_err', 'divination id error');
         }
         let orderid = Date.now().toString(36) + openid.slice(-2);
-        let payInfo = await weixinPay.prePay(openid, orderid, divinationInstance.title, divinationInstance.priceNew, ip)
+        let price = divinationInstance.priceNew;
+        let payInfo = await weixinPay.prePay(openid, orderid, divinationInstance.title, price, ip)
+        console.log("微信支付信息：", JSON.stringify(payInfo));
         if(payInfo) {
             let userInstance = await user.findOne({where: {openid: openid}});
             await userInstance.removePreorder(divinationInstance); //删除preorder中的记录

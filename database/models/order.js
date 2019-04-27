@@ -5,7 +5,7 @@ module.exports = defineModel('orders', {
     time: Sequelize.DataTypes.BIGINT,
     orderid: {
         unique: true,
-        type: Sequelize.DataTypes.STRING
+        type: Sequelize.DataTypes.STRING(100)
     },
     status: {
         type: Sequelize.DataTypes.ENUM,

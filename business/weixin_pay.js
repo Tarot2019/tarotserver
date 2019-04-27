@@ -2,10 +2,10 @@ const crypto = require('crypto');
 const xml2js = require('xml2js');
 const request = require('request');
 
-const key = '';//商户key
-const mch_id = '';
-const appid = '';
-const notify_url = '';
+const key = 'aa1eba8610b6dfea40016639237ceab8';//商户key
+const mch_id = '1530468561';
+const appid = 'wxc6c885dfe8d053c1';
+const notify_url = 'https://qian10.net/api/api/tarot1/payResult';
 const weixin_prepay_url = 'https://api.mch.weixin.qq.com/pay/unifiedorder';
 
 const prePay = async (openid, orderId, desc, totalPrice, spbill_create_ip) => {
@@ -32,17 +32,14 @@ const prePay = async (openid, orderId, desc, totalPrice, spbill_create_ip) => {
 
     obj.sign = getSign(str);
     let res;
-    try{
-        // 调用微信统一下单接口拿到 prepay_id
-        res = await wechatPay(obj);
-        console.log(JSON.stringify(res));
-        let {prepay_id} = res;
-        if(prepay_id){
-            res = getClientPayConfig(prepay_id)
-        }
-    } catch(e) {
-        res = e;
-        console.log(e);
+    // 调用微信统一下单接口拿到 prepay_id
+    res = await wechatPay(obj);
+    console.log("微信统一下单结果：", JSON.stringify(res));
+    let {prepay_id} = res;
+    if (prepay_id) {
+        res = getClientPayConfig(prepay_id)
+    } else {
+        throw {code: 'no_prepay_id', message: JSON.stringify(res)};
     }
     return res;
 }
