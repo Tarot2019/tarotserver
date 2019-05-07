@@ -132,6 +132,8 @@ module.exports = {
             if(orderInstance && orderInstance.price === parseInt(cbContent.total_fee[0])) {
                 await orderInstance.update({status: 'paid'});
                 return true;
+            } else {
+                console.log(`价格校验失败: ${JSON.stringify(orderInstance)}`);
             }
         }
         console.log("处理微信回调失败了：", JSON.stringify(cbContent));

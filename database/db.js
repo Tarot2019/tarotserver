@@ -25,7 +25,7 @@ let sequelize = new Sequelize('tarotTest', 'root', '123456', {
 // });
 
 const ID_NAME = 'id';
-const ID_TYPE = Sequelize.DataTypes.INTEGER;
+const ID_TYPE = Sequelize.DataTypes.BIGINT;
 
 var defineModel = function(name, attributes, options) {
     var attrs = {};
