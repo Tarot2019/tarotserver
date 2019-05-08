@@ -136,6 +136,7 @@ module.exports = {
         if(cbContent && cbContent.return_code && cbContent.return_code[0] == 'SUCCESS'
             && cbContent.result_code && cbContent.result_code[0] == 'SUCCESS') {
             let orderInstance = await order.findOne({where: {orderid: cbContent.out_trade_no[0]}});
+            console.log("wechatCallback， cbContent.total_fee[0] = " + cbContent.total_fee[0] +  ",  orderInstance = " + JSON.stringify(orderInstance));
             if(orderInstance && orderInstance.price === parseInt(cbContent.total_fee[0])) {
                 await orderInstance.update({status: 'paid', paidTime: Date.now()});
                 return true;
