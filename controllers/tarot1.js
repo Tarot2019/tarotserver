@@ -1,4 +1,13 @@
 const tarot1 = require('../business/tarot1');
+getFormattedDate = timestamp => {
+    let date = new Date(timestamp);
+    return date.getFullYear() + '-' +
+        ("0" + (date.getMonth() + 1)).slice(-2) + '-' +
+        ("0" + (date.getDate())).slice(-2) + ' ' +
+        ("0" + date.getHours()).slice(-2) + ':' +
+        ("0" + date.getMinutes()).slice(-2) + ':' +
+        ("0" + date.getSeconds()).slice(-2)
+};
 module.exports = {
     'GET /api/tarot1/home': async (ctx, next) => {
         let homeDivinations = await tarot1.homeDivinations();
@@ -60,7 +69,8 @@ module.exports = {
             subTitle: order.subTitle,
             priceNew: order.priceNew,
             priceOld: order.priceOld,
-            sales: order.sales
+            sales: order.sales,
+            time: getFormattedDate(order.paidTime)
         })));
 
     },

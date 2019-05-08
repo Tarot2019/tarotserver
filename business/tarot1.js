@@ -49,7 +49,14 @@ module.exports = {
         let paid = false;
         if(openid) {
             let divinationInstance = results[0];
-            paid = await divinationInstance.getConsumers().then(consumers => consumers.some(consumer => consumer.openid === openid));
+            paid = await divinationInstance.getConsumers().then(consumers => {
+                console.log(`divinationDetail-购买过的用户列表：${JSON.stringify(consumers)}`);
+                if(consumers) {
+                    return consumers.some(consumer => consumer.openid === openid);
+                } else {
+                    return false;
+                }
+            });
             //tasks.push(order.findOne({where: {openid: openid, divinationId: divinationID}}));
         }
 
@@ -118,7 +125,7 @@ module.exports = {
             let userInstance = await user.findOne({where: {openid: openid}});
             await userInstance.removePreorder(divinationInstance); //删除preorder中的记录
             let status = 'unpaid';
-            await userInstance.addOrder(divinationInstance, {through: {time: Date.now(), price: price, orderid: orderid, status: status}});
+            await userInstance.addOrder(divinationInstance, {through: {createTime: Date.now(), price: price, orderid: orderid, status: status}});
             return payInfo;
         } else {
             throw new APIError('prepay_err', 'get wechat prepay info failed');
@@ -130,7 +137,7 @@ module.exports = {
             && cbContent.result_code && cbContent.result_code[0] == 'SUCCESS') {
             let orderInstance = await order.findOne({where: {orderid: cbContent.out_trade_no[0]}});
             if(orderInstance && orderInstance.price === parseInt(cbContent.total_fee[0])) {
-                await orderInstance.update({status: 'paid'});
+                await orderInstance.update({status: 'paid', paidTime: Date.now()});
                 return true;
             } else {
                 console.log(`价格校验失败: ${JSON.stringify(orderInstance)}`);
