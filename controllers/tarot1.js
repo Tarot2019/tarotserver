@@ -1,4 +1,8 @@
 const tarot1 = require('../business/tarot1');
+const kefu = {
+    normal: {wechatid: "xmqianming01", qrCode: "/tarot1/kefu_normal.png"},
+    yuyin: {wechatid: "ch13769762694", qrCode: "/tarot1/kefu_yuyin.png"}
+};
 getFormattedDate = timestamp => {
     let date = new Date(timestamp);
     return date.getFullYear() + '-' +
@@ -11,7 +15,7 @@ getFormattedDate = timestamp => {
 module.exports = {
     'GET /api/tarot1/home': async (ctx, next) => {
         let homeDivinations = await tarot1.homeDivinations();
-        let homeData = {kefu: {wechatid: "wechatid", qrCode: "http://www.baidu.com"}};
+        let homeData = { kefu: kefu};
         homeData.banner = [];
         homeData.list = [];
         console.log("homeDivinations", JSON.stringify(homeDivinations));
@@ -39,6 +43,7 @@ module.exports = {
 
     'GET /api/tarot1/detail/:id': async (ctx, next) => {
         let divinationDetail = await tarot1.divinationDetail(ctx.params.id, ctx.headers.openid);
+        divinationDetail.kefu = kefu;
         ctx.rest(divinationDetail);
 
     },
@@ -70,7 +75,7 @@ module.exports = {
             priceNew: order.priceNew,
             priceOld: order.priceOld,
             sales: order.sales,
-            time: getFormattedDate(order.paidTime)
+            time: getFormattedDate(order.orders.paidTime)
         })));
 
     },

@@ -101,8 +101,8 @@ module.exports = {
             where: {openid: openid},
             include: [{model: divination, as: "Orders"}]
         });
-        console.log("[orders]user信息：", JSON.stringify(result));
-        return result.Orders.filter(order => order.status == 'paid');
+        console.log("[orders]user信息：", JSON.stringify(result.Orders));
+        return result.Orders.filter(order => order.orders.status == 'paid');
     },
     // addOrder: async (openid, divinationId, orderid, price) => {
     //     let userInstance = await user.findOne({where: {openid: openid}});
