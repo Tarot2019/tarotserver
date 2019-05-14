@@ -85,10 +85,10 @@ module.exports = {
     preorders: async (openid) => {
         let result = await user.findOne({
             where: {openid: openid},
-            include: [{model: divination, as: "Preorders"}]
+            include: [{model: divination, as: "Orders"}]
         });
-        console.log("user信息：", JSON.stringify(result));
-        return result.Preorders;
+        console.log("[get preorders]user信息：", JSON.stringify(result));
+        return result.Orders.filter(order => order.orders.status !== 'paid');
     },
     addPreorder: async (openid, divinationId) => {
         let userInstance = await user.findOne({where: {openid: openid}});
@@ -101,7 +101,7 @@ module.exports = {
             where: {openid: openid},
             include: [{model: divination, as: "Orders"}]
         });
-        console.log("[orders]user信息：", JSON.stringify(result.Orders));
+        console.log("[get orders]user信息：", JSON.stringify(result));
         return result.Orders.filter(order => order.orders.status == 'paid');
     },
     // addOrder: async (openid, divinationId, orderid, price) => {
@@ -123,7 +123,6 @@ module.exports = {
         console.log("微信支付信息：", JSON.stringify(payInfo));
         if(payInfo) {
             let userInstance = await user.findOne({where: {openid: openid}});
-            await userInstance.removePreorder(divinationInstance); //删除preorder中的记录
             let status = 'unpaid';
             await userInstance.addOrder(divinationInstance, {through: {createTime: Date.now(), price: price, orderid: orderid, status: status}});
             return payInfo;

@@ -13,6 +13,6 @@ module.exports = defineModel('orders', {
     },
     status: {
         type: Sequelize.DataTypes.ENUM,
-        values: ['unpaid', 'paid']
+        values: ['pre', 'unpaid', 'paid'] //pre：点了立即测试，unpaid生成了支付信息，paid完成支付
     }
 });
