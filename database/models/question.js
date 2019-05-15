@@ -7,5 +7,13 @@ module.exports = defineModel('questions', {
     tips: {
         type: Sequelize.DataTypes.STRING,
         allowNull: true
+    },
+    priceOld: {
+        type: Sequelize.DataTypes.INTEGER,
+        defaultValue: 9800
+    },
+    priceNew: {
+        type: Sequelize.DataTypes.INTEGER,
+        defaultValue: 990
     }
 });

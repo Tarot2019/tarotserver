@@ -1,4 +1,5 @@
 const APIError = require('../rest').ApiError;
+const wechatPayNotifyUrl = "https://qian10.net/api/api/tarot1/payResult";
 
 const weixinPay = require('./weixin_pay');
 
@@ -119,7 +120,7 @@ module.exports = {
         }
         let orderid = Date.now().toString(36) + openid.slice(-2);
         let price = divinationInstance.priceNew;
-        let payInfo = await weixinPay.prePay(openid, orderid, divinationInstance.title, price, ip)
+        let payInfo = await weixinPay.prePay(openid, orderid, divinationInstance.title, price, ip, wechatPayNotifyUrl)
         console.log("微信支付信息：", JSON.stringify(payInfo));
         if(payInfo) {
             let userInstance = await user.findOne({where: {openid: openid}});

@@ -3,8 +3,7 @@ const Sequelize = require('sequelize');
 const DataTypes = Sequelize.DataTypes;
 module.exports = defineModel('cards', {
     name: {
-        type: DataTypes.STRING(50),
-        unique: true
+        type: DataTypes.STRING(50)
     },
     element: {
         type: DataTypes.STRING
@@ -13,7 +12,7 @@ module.exports = defineModel('cards', {
         type: DataTypes.STRING
     },
     description: {
-        type: DataTypes.STRING
+        type: DataTypes.STRING(1000)
     },
     img: {
         type: DataTypes.STRING

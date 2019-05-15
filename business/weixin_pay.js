@@ -5,10 +5,9 @@ const request = require('request');
 const key = 'aa1eba8610b6dfea40016639237ceab8';//商户key
 const mch_id = '1530468561';
 const appid = 'wxc6c885dfe8d053c1';
-const notify_url = 'https://qian10.net/api/api/tarot1/payResult';
 const weixin_prepay_url = 'https://api.mch.weixin.qq.com/pay/unifiedorder';
 
-const prePay = async (openid, orderId, desc, totalPrice, spbill_create_ip) => {
+const prePay = async (openid, orderId, desc, totalPrice, spbill_create_ip, notify_url) => {
     // 通过查阅文档,调用统一下单有10个参数是必须的
     let obj = {
         appid,
