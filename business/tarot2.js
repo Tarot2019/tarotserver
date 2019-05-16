@@ -40,7 +40,7 @@ module.exports = {
     home: async () => {
         let questionGroups = await questionGroup.findAll({
             attributes: ['name', 'image'],
-            include: [{model: question, attributes: ['id', 'name', 'tips']}]
+            include: [{model: question, attributes: ['id', 'name', 'tips', 'count']}]
         });
         console.log("All questions: ", JSON.stringify(questionGroups));
         return questionGroups;
@@ -69,7 +69,32 @@ module.exports = {
             return [];
         }
     },
+    ordersWithMobile: async (mobile) => {
+        let records = await tarot2record.findAll({
+            where: {phoneNumber: mobile}
+        });
+        console.log("[tarot2 get ordersWithMobile]：", JSON.stringify(records));
+        if(records) {
+            return await Promise.all(records.filter(order => order.status !== 'paid').map(async order => {
+                let questionInstance = await question.findById(order.questionId);
+                let cardDetail = await card.findById(order.cardId);
+                console.log(JSON.stringify(cardDetail), JSON.stringify(questionInstance));
+                return {
+                    orderId: order.orderId,
+                    questionName: questionInstance.name,
+                    time: utils.getFormattedDate(order.createTime),
+                    cardElement: cardDetail.element,
+                    cardName: cardDetail.name + ('positive' == card.orientation ? "（正位）" : "（逆位）")
+                };
+            }));
+        } else {
+            return [];
+        }
+    },
     orderDetail: async (orderId) => {
+        if(!orderId) {
+            throw new APIError('orderId_err', '空的orderId');
+        }
         let record = await tarot2record.findOne({
             where: {orderId: orderId, status: "unpaid"}
         });
@@ -77,6 +102,22 @@ module.exports = {
             throw new APIError('orderId_err', '未找到对应的支付记录');
         }
         return await questionAnswer(record.questionId, record.cardId);
+    },
+    bindMobile: async (orderId, mobile) => {
+        if(!orderId || !mobile) {
+            throw new APIError('orderId_err', '参数不能为空');
+        }
+        let record = await tarot2record.findOne({
+            where: {orderId: orderId, status: "unpaid"}
+        });
+        if(!record) {
+            throw new APIError('orderId_err', '未找到对应的支付记录');
+        }
+        if(record.phoneNumber) {
+            throw new APIError('bindMobile_err', '存在已绑定的手机号');
+        }
+        await record.update({phoneNumber: mobile});
+        return true;
     },
     getPayInfo: async (openid, questionId, cardId, ip) => {
         if(!openid) {

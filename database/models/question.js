@@ -15,5 +15,9 @@ module.exports = defineModel('questions', {
     priceNew: {
         type: Sequelize.DataTypes.INTEGER,
         defaultValue: 990
+    },
+    count: {
+        type: Sequelize.DataTypes.BIGINT,
+        defaultValue: 121
     }
 });

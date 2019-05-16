@@ -15,9 +15,63 @@ getFormattedDate = timestamp => {
 module.exports = {
     'GET /api/tarot2/home': async (ctx, next) => {
         let questionGroups = await tarot2.home();
+        let count = questionGroups.reduce((pre, cur) => pre + cur.questions.reduce((pre, cur) => pre + cur.count, 0), 0);
+        const comments = [{mobile: '186******97', comment: '对于迷茫的我来说，占卜感觉像一盏明灯，给了自己很好的指引！豁然开朗'},
+            {mobile: '186******97', comment: '对于迷茫的我来说，占卜感觉像一盏明灯，给了自己很好的指引！豁然开朗'},
+            {mobile: '186******97', comment: '对于迷茫的我来说，占卜感觉像一盏明灯，给了自己很好的指引！豁然开朗'},
+            {mobile: '186******97', comment: '对于迷茫的我来说，占卜感觉像一盏明灯，给了自己很好的指引！豁然开朗'},
+            {mobile: '186******97', comment: '对于迷茫的我来说，占卜感觉像一盏明灯，给了自己很好的指引！豁然开朗'},
+            {mobile: '186******97', comment: '对于迷茫的我来说，占卜感觉像一盏明灯，给了自己很好的指引！豁然开朗'},
+            {mobile: '186******97', comment: '对于迷茫的我来说，占卜感觉像一盏明灯，给了自己很好的指引！豁然开朗'},
+            {mobile: '186******97', comment: '对于迷茫的我来说，占卜感觉像一盏明灯，给了自己很好的指引！豁然开朗'},
+            {mobile: '186******97', comment: '对于迷茫的我来说，占卜感觉像一盏明灯，给了自己很好的指引！豁然开朗'},
+            {mobile: '186******97', comment: '对于迷茫的我来说，占卜感觉像一盏明灯，给了自己很好的指引！豁然开朗'},
+            {mobile: '186******97', comment: '对于迷茫的我来说，占卜感觉像一盏明灯，给了自己很好的指引！豁然开朗'},
+            {mobile: '186******97', comment: '对于迷茫的我来说，占卜感觉像一盏明灯，给了自己很好的指引！豁然开朗'},
+            {mobile: '186******97', comment: '对于迷茫的我来说，占卜感觉像一盏明灯，给了自己很好的指引！豁然开朗'},
+            {mobile: '186******97', comment: '对于迷茫的我来说，占卜感觉像一盏明灯，给了自己很好的指引！豁然开朗'},
+            {mobile: '186******97', comment: '对于迷茫的我来说，占卜感觉像一盏明灯，给了自己很好的指引！豁然开朗'},
+            {mobile: '186******97', comment: '对于迷茫的我来说，占卜感觉像一盏明灯，给了自己很好的指引！豁然开朗'},
+            {mobile: '186******97', comment: '对于迷茫的我来说，占卜感觉像一盏明灯，给了自己很好的指引！豁然开朗'},
+            {mobile: '186******97', comment: '对于迷茫的我来说，占卜感觉像一盏明灯，给了自己很好的指引！豁然开朗'},
+            {mobile: '186******97', comment: '对于迷茫的我来说，占卜感觉像一盏明灯，给了自己很好的指引！豁然开朗'},
+            {mobile: '186******97', comment: '对于迷茫的我来说，占卜感觉像一盏明灯，给了自己很好的指引！豁然开朗'},
+            {mobile: '186******97', comment: '对于迷茫的我来说，占卜感觉像一盏明灯，给了自己很好的指引！豁然开朗'},
+            {mobile: '186******97', comment: '对于迷茫的我来说，占卜感觉像一盏明灯，给了自己很好的指引！豁然开朗'},
+            {mobile: '186******97', comment: '对于迷茫的我来说，占卜感觉像一盏明灯，给了自己很好的指引！豁然开朗'},
+            {mobile: '186******97', comment: '对于迷茫的我来说，占卜感觉像一盏明灯，给了自己很好的指引！豁然开朗'},
+            {mobile: '186******97', comment: '对于迷茫的我来说，占卜感觉像一盏明灯，给了自己很好的指引！豁然开朗'},
+            {mobile: '186******97', comment: '对于迷茫的我来说，占卜感觉像一盏明灯，给了自己很好的指引！豁然开朗'},
+            {mobile: '186******97', comment: '对于迷茫的我来说，占卜感觉像一盏明灯，给了自己很好的指引！豁然开朗'},
+            {mobile: '186******97', comment: '对于迷茫的我来说，占卜感觉像一盏明灯，给了自己很好的指引！豁然开朗'},
+            {mobile: '186******97', comment: '对于迷茫的我来说，占卜感觉像一盏明灯，给了自己很好的指引！豁然开朗'},
+            {mobile: '186******97', comment: '对于迷茫的我来说，占卜感觉像一盏明灯，给了自己很好的指引！豁然开朗'},
+            {mobile: '186******97', comment: '对于迷茫的我来说，占卜感觉像一盏明灯，给了自己很好的指引！豁然开朗'},
+            {mobile: '186******97', comment: '对于迷茫的我来说，占卜感觉像一盏明灯，给了自己很好的指引！豁然开朗'},
+            {mobile: '186******97', comment: '对于迷茫的我来说，占卜感觉像一盏明灯，给了自己很好的指引！豁然开朗'},
+            {mobile: '186******97', comment: '对于迷茫的我来说，占卜感觉像一盏明灯，给了自己很好的指引！豁然开朗'},
+            {mobile: '186******97', comment: '对于迷茫的我来说，占卜感觉像一盏明灯，给了自己很好的指引！豁然开朗'},
+            {mobile: '186******97', comment: '对于迷茫的我来说，占卜感觉像一盏明灯，给了自己很好的指引！豁然开朗'},
+            {mobile: '186******97', comment: '对于迷茫的我来说，占卜感觉像一盏明灯，给了自己很好的指引！豁然开朗'},
+            {mobile: '186******97', comment: '对于迷茫的我来说，占卜感觉像一盏明灯，给了自己很好的指引！豁然开朗'},
+            {mobile: '186******97', comment: '对于迷茫的我来说，占卜感觉像一盏明灯，给了自己很好的指引！豁然开朗'},
+            {mobile: '186******97', comment: '对于迷茫的我来说，占卜感觉像一盏明灯，给了自己很好的指引！豁然开朗'},
+            {mobile: '186******97', comment: '对于迷茫的我来说，占卜感觉像一盏明灯，给了自己很好的指引！豁然开朗'},
+            {mobile: '186******97', comment: '对于迷茫的我来说，占卜感觉像一盏明灯，给了自己很好的指引！豁然开朗'},
+            {mobile: '186******97', comment: '对于迷茫的我来说，占卜感觉像一盏明灯，给了自己很好的指引！豁然开朗'},
+            {mobile: '186******97', comment: '对于迷茫的我来说，占卜感觉像一盏明灯，给了自己很好的指引！豁然开朗'},
+            {mobile: '186******97', comment: '对于迷茫的我来说，占卜感觉像一盏明灯，给了自己很好的指引！豁然开朗'},
+            {mobile: '186******97', comment: '对于迷茫的我来说，占卜感觉像一盏明灯，给了自己很好的指引！豁然开朗'},
+            {mobile: '186******97', comment: '对于迷茫的我来说，占卜感觉像一盏明灯，给了自己很好的指引！豁然开朗'},
+            {mobile: '186******97', comment: '对于迷茫的我来说，占卜感觉像一盏明灯，给了自己很好的指引！豁然开朗'},
+            {mobile: '186******97', comment: '对于迷茫的我来说，占卜感觉像一盏明灯，给了自己很好的指引！豁然开朗'},
+            {mobile: '186******97', comment: '对于迷茫的我来说，占卜感觉像一盏明灯，给了自己很好的指引！豁然开朗'},
+            {mobile: '186******97', comment: '对于迷茫的我来说，占卜感觉像一盏明灯，给了自己很好的指引！豁然开朗'},];
         let homeData = {
+            count,
             kefu: kefu,
-            questionGroups
+            questionGroups,
+            comments
         };
         ctx.rest(homeData);
 
@@ -37,14 +91,24 @@ module.exports = {
         ctx.rest(orders);
 
     },
+    'GET /api/tarot2/orderWithMobile/:mobile': async (ctx, next) => {
+        let orders = await tarot2.ordersWithMobile(ctx.params.mobile);
+        ctx.rest(orders);
+
+    },
     'GET /api/tarot2/orderDetail/:orderId': async (ctx, next) => {
         let detail = await tarot2.orderDetail(ctx.params.orderId);
+        detail.kefu = kefu;
         ctx.rest(detail);
 
     },
     'POST /api/tarot2/getPayInfo': async (ctx, next) => {
         let payInfo = await tarot2.getPayInfo(ctx.headers.openid, ctx.request.body.questionId, ctx.request.body.cardId, ctx.request.ip);
         ctx.rest(payInfo);
+    },
+    'POST /api/tarot2/bindMobile': async (ctx, next) => {
+        let result = await tarot2.bindMobile(ctx.request.body.orderId, ctx.request.body.mobile);
+        ctx.rest(result);
     },
     'POST /api/tarot2/payResult': async (ctx, next) => {
         console.log("############# wechat callback #############");

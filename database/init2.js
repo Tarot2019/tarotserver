@@ -472,7 +472,7 @@ const tarot2record = Models.tarot2record;
                     image: "/tarot1/question_group.jpg"
                 };
                 let groupResult = await questionGroup.create(groupInstance);
-                let questionResult = await groupResult.createQuestion({name: "2019年桃花运如何？"});
+                let questionResult = await groupResult.createQuestion({name: "2019年桃花运如何？", count: 132, priceOld: 9800, priceNew: 990});
                 await questionResult.addCard(card0yr, {through: {interpretation: JSON.stringify([
                     {
                         title: "有没有新桃花",
@@ -1222,15 +1222,15 @@ const tarot2record = Models.tarot2record;
 
 
 
-                await groupResult.createQuestion({name: "你们之间会不会复合？"});
-                await groupResult.createQuestion({name: "两人未来发展趋势？"});
+                await groupResult.createQuestion({name: "你们之间会不会复合？", count: 143, priceOld: 9800, priceNew: 990});
+                await groupResult.createQuestion({name: "两人未来发展趋势？", count: 232, priceOld: 9800, priceNew: 990});
 
                 groupInstance = {
                     name: "事业",
                     image: "/tarot1/question_group.jpg"
                 };
                 groupResult = await questionGroup.create(groupInstance);
-                await groupResult.createQuestion({name: "2019年事业运如何？", tips: "会不会升职加薪？该不该跳槽......"});
+                await groupResult.createQuestion({name: "2019年事业运如何？", tips: "会不会升职加薪？该不该跳槽......", count: 132, priceOld: 9800, priceNew: 990});
 
 
                 groupInstance = {
@@ -1238,7 +1238,7 @@ const tarot2record = Models.tarot2record;
                     image: "/tarot1/question_group.jpg"
                 };
                 groupResult = await questionGroup.create(groupInstance);
-                await groupResult.createQuestion({name: "2019年财运如何？", tips: "能不能一夜暴富......"});
+                await groupResult.createQuestion({name: "2019年财运如何？", tips: "能不能一夜暴富......", count: 132, priceOld: 9800, priceNew: 990});
                 // userData.openid = "2";
                 // userData.unionid = "unionid2";
                 // userData.wechatName = "name2";
