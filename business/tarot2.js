@@ -133,6 +133,7 @@ module.exports = {
         payInfo.orderId = orderId;
         console.log("微信支付信息：", JSON.stringify(payInfo));
         if(payInfo) {
+            await questionInstance.update({count: questionInstance.count + 1});
             await tarot2record.upsert({
                 orderId,
                 price,

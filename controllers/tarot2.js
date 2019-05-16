@@ -1,21 +1,15 @@
 const tarot2 = require('../business/tarot2');
+const utils = require('../business/utils/utils');
+
 const kefu = {
     normal: {wechatid: "xmqianming01", qrCode: "/tarot1/kefu_normal.png"},
     yuyin: {wechatid: "ch13769762694", qrCode: "/tarot1/kefu_yuyin.png"}
 };
-getFormattedDate = timestamp => {
-    let date = new Date(timestamp);
-    return date.getFullYear() + '-' +
-        ("0" + (date.getMonth() + 1)).slice(-2) + '-' +
-        ("0" + (date.getDate())).slice(-2) + ' ' +
-        ("0" + date.getHours()).slice(-2) + ':' +
-        ("0" + date.getMinutes()).slice(-2) + ':' +
-        ("0" + date.getSeconds()).slice(-2)
-};
+
 module.exports = {
     'GET /api/tarot2/home': async (ctx, next) => {
         let questionGroups = await tarot2.home();
-        let count = questionGroups.reduce((pre, cur) => pre + cur.questions.reduce((pre, cur) => pre + cur.count, 0), 0);
+        let count = questionGroups.reduce((pre, cur) => pre + cur.questions.reduce((pre, cur) => pre + cur.count + utils.getSales(), 0), 0);
         const comments = [{mobile: '186******97', comment: '对于迷茫的我来说，占卜感觉像一盏明灯，给了自己很好的指引！豁然开朗'},
             {mobile: '186******97', comment: '对于迷茫的我来说，占卜感觉像一盏明灯，给了自己很好的指引！豁然开朗'},
             {mobile: '186******97', comment: '对于迷茫的我来说，占卜感觉像一盏明灯，给了自己很好的指引！豁然开朗'},

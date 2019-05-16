@@ -78,8 +78,15 @@ module.exports = {
                 delete detail['rate' + i];
             });
         }
+        detail.sales += utils.getSales();
         if(recommendations) {
-            detail.recommendations = recommendations.filter(divination => divination.id != divinationID);
+            detail.recommendations = recommendations
+                .filter(divination => divination.id != divinationID)
+                .map(recommendation => {
+                    let newRecommendation = recommendation.toJSON();
+                    newRecommendation.sales += utils.getSales();
+                    return newRecommendation;
+                });
         }
         return detail;
     },
@@ -123,6 +130,7 @@ module.exports = {
         let payInfo = await weixinPay.prePay(openid, orderid, divinationInstance.title, price, ip, wechatPayNotifyUrl)
         console.log("微信支付信息：", JSON.stringify(payInfo));
         if(payInfo) {
+            await divinationInstance.update({sales: divinationInstance.sales + 1});
             let userInstance = await user.findOne({where: {openid: openid}});
             let status = 'unpaid';
             await userInstance.addOrder(divinationInstance, {through: {createTime: Date.now(), price: price, orderid: orderid, status: status}});
