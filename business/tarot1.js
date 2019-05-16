@@ -53,7 +53,7 @@ module.exports = {
             paid = await divinationInstance.getConsumers().then(consumers => {
                 console.log(`divinationDetail-购买过的用户列表：${JSON.stringify(consumers)}`);
                 if(consumers) {
-                    return consumers.some(consumer => consumer.openid === openid);
+                    return consumers.some(consumer => consumer.openid === openid && consumer.orders.status === 'paid');
                 } else {
                     return false;
                 }
