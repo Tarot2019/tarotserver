@@ -29,11 +29,27 @@ const questionAnswer = async (questionId, cardId) => {
     let questionInstance = await question.findById(questionId);
     let cardDetail = await questionInstance.getCards({where: {id: cardId}});
     cardDetail = cardDetail[0].toJSON();
+
+    cardDetail.cardId = cardDetail.id;
+    delete cardDetail.id;
+    cardDetail.cardName = cardDetail.name + ('positive' == card.orientation ? "（正位）" : "（逆位）");
+    delete cardDetail.name;
+    delete cardDetail.orientation;
+    cardDetail.cardElement = cardDetail.element;
+    delete cardDetail.element;
+    cardDetail.cardTag = cardDetail.tag;
+    delete cardDetail.tag;
+    cardDetail.cardDescription = cardDetail.description;
+    delete cardDetail.description;
+    cardDetail.cardImg = cardDetail.img;
+    delete cardDetail.img;
+
     let interpretation = cardDetail.interpretations.interpretation;
     cardDetail.interpretations = JSON.parse(interpretation);
     cardDetail.quesionName = questionInstance.name;
     cardDetail.priceOld = questionInstance.priceOld;
     cardDetail.priceNew = questionInstance.priceNew;
+
     return cardDetail;
 };
 module.exports = {
