@@ -53,7 +53,7 @@ module.exports = {
         });
         console.log("[tarot2 get orders]：", JSON.stringify(records));
         if(records) {
-            return await Promise.all(records.filter(order => order.status !== 'paid').map(async order => {
+            return await Promise.all(records.filter(order => order.status == 'paid').map(async order => {
                 let questionInstance = await question.findById(order.questionId);
                 let cardDetail = await card.findById(order.cardId);
                 console.log(JSON.stringify(cardDetail), JSON.stringify(questionInstance));
@@ -75,7 +75,7 @@ module.exports = {
         });
         console.log("[tarot2 get ordersWithMobile]：", JSON.stringify(records));
         if(records) {
-            return await Promise.all(records.filter(order => order.status !== 'paid').map(async order => {
+            return await Promise.all(records.filter(order => order.status == 'paid').map(async order => {
                 let questionInstance = await question.findById(order.questionId);
                 let cardDetail = await card.findById(order.cardId);
                 console.log(JSON.stringify(cardDetail), JSON.stringify(questionInstance));
@@ -96,7 +96,7 @@ module.exports = {
             throw new APIError('orderId_err', '空的orderId');
         }
         let record = await tarot2record.findOne({
-            where: {orderId: orderId, status: "unpaid"}
+            where: {orderId: orderId, status: "paid"}
         });
         if(!record) {
             throw new APIError('orderId_err', '未找到对应的支付记录');
@@ -108,7 +108,7 @@ module.exports = {
             throw new APIError('orderId_err', '参数不能为空');
         }
         let record = await tarot2record.findOne({
-            where: {orderId: orderId, status: "unpaid"}
+            where: {orderId: orderId, status: "paid"}
         });
         if(!record) {
             throw new APIError('orderId_err', '未找到对应的支付记录');
@@ -178,7 +178,7 @@ module.exports = {
         if(cbContent && cbContent.return_code && cbContent.return_code[0] == 'SUCCESS'
             && cbContent.result_code && cbContent.result_code[0] == 'SUCCESS') {
             let orderInstance = await tarot2record.findOne({where: {orderId: cbContent.out_trade_no[0]}});
-            console.log("wechatCallback， cbContent.total_fee[0] = " + cbContent.total_fee[0] +  ",  orderInstance = " + JSON.stringify(orderInstance));
+            console.log("wechatCallback tarot2， cbContent.total_fee[0] = " + cbContent.total_fee[0] +  ",  orderInstance = " + JSON.stringify(orderInstance));
             if(orderInstance && orderInstance.price === parseInt(cbContent.total_fee[0])) {
                 await orderInstance.update({status: 'paid', paidTime: Date.now()});
                 return true;
