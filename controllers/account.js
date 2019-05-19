@@ -1,4 +1,5 @@
 const APIError = require('../rest').ApiError;
+const crypto = require('crypto');
 const axios = require('axios');
 let user = require('../database/models.js').user;
 const constants = require('../constants');
@@ -88,7 +89,7 @@ module.exports = {
                 });
                 let str = arr.join('&');
                 let signature = getSign(str);
-                console.log("[getConfigInfo] sign=" + sign);
+                console.log("[getConfigInfo] sign=" + signature);
                 let config = {
                     appid: constants.WECHAT_MP_APP_ID,
                     timestamp,
