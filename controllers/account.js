@@ -59,9 +59,8 @@ module.exports = {
     },
 
     // 微信公众平台通过config接口注入权限验证配置所需要的参数
-    'GET /api/public/getConfigInfo': async (ctx, next) => {
-        console.log("[getConfigInfo] ctx.request.href = " + ctx.request.href);
-        let url = ctx.request.originalUrl;
+    'POST /api/public/getConfigInfo': async (ctx, next) => {
+        let url = ctx.request.body.pageUrl;
         //获取access_token
         let configInfo = await axios.get('https://api.weixin.qq.com/cgi-bin/token', {
             params: {
