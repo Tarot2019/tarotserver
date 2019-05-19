@@ -1,6 +1,7 @@
 const APIError = require('../rest').ApiError;
 const axios = require('axios');
 let user = require('../database/models.js').user;
+const constants = require('../constants');
 
 module.exports = {
     'POST /api/public/login': async (ctx, next) => {
@@ -8,7 +9,7 @@ module.exports = {
         if (weixinCode) {
             let userinfo = await axios.get('https://api.weixin.qq.com/sns/oauth2/access_token', {
                 params: {
-                    appid: 'wxc6c885dfe8d053c1',
+                    appid: constants.WECHAT_MP_APP_ID,
                     secret: 'fbab64604a180252165d7125c3732396',
                     code: weixinCode,
                     grant_type: 'authorization_code'
@@ -55,4 +56,63 @@ module.exports = {
             throw new APIError("user_name_err", "微信code不能为空");
         }
     },
-}
+
+    // 微信公众平台通过config接口注入权限验证配置所需要的参数
+    'GET /api/public/getConfigInfo': async (ctx, next) => {
+        console.log("[getConfigInfo] ctx.request.href = " + ctx.request.href);
+        let url = ctx.request.originalUrl;
+        //获取access_token
+        let configInfo = await axios.get('https://api.weixin.qq.com/cgi-bin/token', {
+            params: {
+                appid: constants.WECHAT_MP_APP_ID,
+                secret: 'fbab64604a180252165d7125c3732396',
+                grant_type: 'client_credential'
+            }
+        }).then((data) => {
+            if (!data.data.access_token) {
+                throw new APIError(data.data.errcode, data.data.errmsg);
+            } else {
+                console.log("[getConfigInfo] 微信accessToken: " + data.data.access_token);
+                return axios.get('https://api.weixin.qq.com/cgi-bin/ticket/getticket?access_token=' + data.data.access_token + '&type=jsapi');
+            }
+        }).then((data) => {
+            if (!data.data.ticket) {
+                throw new APIError(data.data.errcode, data.data.errmsg);
+            } else {
+                let jsapi_ticket = data.data.ticket;
+                let nonceStr = getNonceStr(16);
+                let timestamp = String(Math.floor(Date.now() / 1000));
+                let obj = {jsapi_ticket, nonceStr, timestamp, url};
+                let arr = Object.keys(obj).sort().map(item => {
+                    return `${item}=${obj[item]}`;
+                });
+                let str = arr.join('&');
+                let signature = getSign(str);
+                console.log("[getConfigInfo] sign=" + sign);
+                let config = {
+                    appid: constants.WECHAT_MP_APP_ID,
+                    timestamp,
+                    nonceStr,
+                    signature
+                };
+                return config;
+            }
+        }).catch((err) => {
+            throw new APIError("weixin_server_err", "微信服务出错：" + err.code + "/" + err.message);
+        });
+        ctx.rest(configInfo);
+    }
+};
+
+const getNonceStr = (len)=>{
+    let str = '';
+    while(str.length < len){
+        str +=  Math.random().toString(36).slice(2);
+    }
+    return str.slice(-len);
+};
+const getSign = (str) => {
+    console.log("[getConfigInfo] 签名前：" + str);
+    let hash = crypto.createHash('sha1').update(str,'utf8');
+    return hash.digest('hex').toLowerCase();
+};

@@ -2,9 +2,10 @@ const crypto = require('crypto');
 const xml2js = require('xml2js');
 const request = require('request');
 
-const key = 'aa1eba8610b6dfea40016639237ceab8';//商户key
-const mch_id = '1530468561';
-const appid = 'wxc6c885dfe8d053c1';
+const constants = require('../constants');
+const key = constants.WECHAT_PAY_KEY;//商户key
+const mch_id = constants.WECHAT_PAY_MCH_ID;
+const appid = constants.WECHAT_MP_APP_ID; //微信公众平台id
 const weixin_prepay_url = 'https://api.mch.weixin.qq.com/pay/unifiedorder';
 
 const prePay = async (openid, orderId, desc, totalPrice, spbill_create_ip, notify_url) => {

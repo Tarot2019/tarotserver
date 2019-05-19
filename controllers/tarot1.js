@@ -84,6 +84,7 @@ module.exports = {
     //     ctx.rest(result);
     // },
     'GET /api/tarot1/getPayInfo/:id': async (ctx, next) => {
+        console.log("[getPayInfo] ctx.request.ip = " + ctx.request.ip);
         let payInfo = await tarot1.getPayInfo(ctx.headers.openid, ctx.params.id, ctx.request.ip);
         ctx.rest(payInfo);
     },
