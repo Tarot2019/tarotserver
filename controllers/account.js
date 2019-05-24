@@ -6,6 +6,7 @@ const constants = require('../constants');
 
 module.exports = {
     'POST /api/public/login': async (ctx, next) => {
+        let channelId = ctx.headers.channel || 'official';
         let weixinCode = ctx.request.body.weixinCode || '';
         if (weixinCode) {
             let userinfo = await axios.get('https://api.weixin.qq.com/sns/oauth2/access_token', {
@@ -30,7 +31,8 @@ module.exports = {
                         openid: data.data.openid,
                         avatar: data.data.headimgurl,
                         wechatName: data.data.nickname,
-                        unionid: data.data.unionid
+                        unionid: data.data.unionid,
+                        channelId
                     };
                     return new Promise(function (resolve, reject) {
                         user.upsert(userInfo).then(

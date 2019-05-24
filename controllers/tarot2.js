@@ -97,7 +97,7 @@ module.exports = {
 
     },
     'POST /api/tarot2/getPayInfo': async (ctx, next) => {
-        let payInfo = await tarot2.getPayInfo(ctx.headers.openid, ctx.request.body.questionId, ctx.request.body.cardId, ctx.request.ip);
+        let payInfo = await tarot2.getPayInfo(ctx.headers.openid, ctx.request.body.questionId, ctx.request.body.cardId, ctx.request.ip, ctx.headers.channel || 'official');
         ctx.rest(payInfo);
     },
     'POST /api/tarot2/bindMobile': async (ctx, next) => {

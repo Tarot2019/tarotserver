@@ -135,7 +135,7 @@ module.exports = {
         await record.update({phoneNumber: mobile});
         return true;
     },
-    getPayInfo: async (openid, questionId, cardId, ip) => {
+    getPayInfo: async (openid, questionId, cardId, ip, channelId) => {
         if(!openid) {
             throw new APIError('openid_err', 'openid null!');
         }
@@ -157,7 +157,8 @@ module.exports = {
                 status: 'unpaid',
                 openid,
                 questionId,
-                cardId
+                cardId,
+                channelId
             });
             return payInfo;
         } else {

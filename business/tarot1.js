@@ -120,7 +120,7 @@ module.exports = {
     //     let result = await userInstance.addOrder(divinationInstance, {through: {time: Date.now(), price: price, orderid: orderid, status: status}});
     //     return result;
     // },
-    getPayInfo: async (openid, divinationId, ip) => {
+    getPayInfo: async (openid, divinationId, ip, channelId) => {
         let divinationInstance = await divination.findById(divinationId);
         if(!divinationInstance) {
             throw new APIError('id_err', 'divination id error');
@@ -133,7 +133,13 @@ module.exports = {
             await divinationInstance.update({sales: divinationInstance.sales + 1});
             let userInstance = await user.findOne({where: {openid: openid}});
             let status = 'unpaid';
-            await userInstance.addOrder(divinationInstance, {through: {createTime: Date.now(), price: price, orderid: orderid, status: status}});
+            await userInstance.addOrder(divinationInstance, {through: {
+                createTime: Date.now(),
+                price: price,
+                orderid: orderid,
+                status: status,
+                channelId: channelId
+            }});
             return payInfo;
         } else {
             throw new APIError('prepay_err', 'get wechat prepay info failed');
