@@ -18,6 +18,10 @@ const insertDebugData = true;
 
             Models.user.belongsToMany(Models.divination, {as: "Orders", through: Models.order});
             Models.divination.belongsToMany(Models.user, {as: "Consumers", through: Models.order});
+
+            Models.channel.hasMany(Models.user);
+            Models.channel.hasMany(Models.order);
+            Models.channel.hasMany(Models.tarot2record);
             // Models.user.belongsToMany(Models.divination, {through: Models.order});
             // Models.divination.belongsToMany(Models.user, {through: Models.order});
 
