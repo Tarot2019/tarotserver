@@ -88,7 +88,7 @@ module.exports = {
         console.log("[getPayInfo] ctx.request.ips = " + ctx.request.ips);
         console.log("[getPayInfo] ctx.request.header = " + JSON.stringify(ctx.request.header));
         let payInfo = await tarot1.getPayInfo(ctx.headers.openid, ctx.params.id, ctx.request.ip,
-            ctx.headers.channel || 'official', ctx.headers.weixin || true);
+            ctx.headers.channel || 'official', ctx.headers.weixin);
         ctx.rest(payInfo);
     },
     'POST /api/tarot1/payResult': async (ctx, next) => {

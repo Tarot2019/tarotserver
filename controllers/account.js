@@ -9,7 +9,7 @@ const constants = require('../constants');
 module.exports = {
     'POST /api/public/login': async (ctx, next) => {
         let channelId = ctx.headers.channel || 'official';
-        let weixin = ctx.request.body.weixin || true;
+        let weixin = ctx.request.body.weixin;
         let weixinCode = ctx.request.body.weixinCode || '';
 
         if(weixin) {
