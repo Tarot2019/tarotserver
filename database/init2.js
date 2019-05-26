@@ -152,7 +152,7 @@ const tarot2record = Models.tarot2record;
                     tag: "爱情、信任、乐观",
                     img: "/tarot1/card/6_lian_ren.jpg",
                     orientation: "positive",
-                    description: "在阳光普照的伊甸园里面，裸体的亚当和夏娃分别站在两边。" + +
+                    description: "在阳光普照的伊甸园里面，裸体的亚当和夏娃分别站在两边。" +
                         "夏娃背后有一棵生长了苹果的知识之树，亚当背后是生命之树，有12团火焰，也是欲望之火。" +
                     "两个人背后是有着紫色翅膀的风之天使拉斐尔，穿着象征忠贞的紫色袍子。亚当望着夏娃，夏娃看着天使，象征着人类的意识——潜意识——超意识。"
                 });
@@ -162,7 +162,7 @@ const tarot2record = Models.tarot2record;
                     tag: "爱情、信任、乐观",
                     img: "/tarot1/card/n/6_lian_ren.jpg",
                     orientation: "negative",
-                    description: "在阳光普照的伊甸园里面，裸体的亚当和夏娃分别站在两边。" + +
+                    description: "在阳光普照的伊甸园里面，裸体的亚当和夏娃分别站在两边。" +
                         "夏娃背后有一棵生长了苹果的知识之树，亚当背后是生命之树，有12团火焰，也是欲望之火。" +
                     "两个人背后是有着紫色翅膀的风之天使拉斐尔，穿着象征忠贞的紫色袍子。亚当望着夏娃，夏娃看着天使，象征着人类的意识——潜意识——超意识。"
                 });

@@ -7,6 +7,7 @@ let rest = require('./rest');
 
 
 let app = new koa();
+app.proxy = true;
 
 app.use(async (ctx, next) => {
     console.log(`Process ${ctx.request.method} ${ctx.request.url} ...`);

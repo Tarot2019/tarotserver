@@ -120,14 +120,14 @@ module.exports = {
     //     let result = await userInstance.addOrder(divinationInstance, {through: {time: Date.now(), price: price, orderid: orderid, status: status}});
     //     return result;
     // },
-    getPayInfo: async (openid, divinationId, ip, channelId) => {
+    getPayInfo: async (openid, divinationId, ip, channelId, isWeixin) => {
         let divinationInstance = await divination.findById(divinationId);
         if(!divinationInstance) {
             throw new APIError('id_err', 'divination id error');
         }
         let orderid = Date.now().toString(36) + openid.slice(-2);
         let price = divinationInstance.priceNew;
-        let payInfo = await weixinPay.prePay(openid, orderid, divinationInstance.title, price, ip, wechatPayNotifyUrl)
+        let payInfo = await weixinPay.prePay(openid, orderid, divinationInstance.title, price, ip, wechatPayNotifyUrl, isWeixin);
         console.log("微信支付信息：", JSON.stringify(payInfo));
         if(payInfo) {
             await divinationInstance.update({sales: divinationInstance.sales + 1});

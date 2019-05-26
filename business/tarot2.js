@@ -135,7 +135,7 @@ module.exports = {
         await record.update({phoneNumber: mobile});
         return true;
     },
-    getPayInfo: async (openid, questionId, cardId, ip, channelId) => {
+    getPayInfo: async (openid, questionId, cardId, ip, channelId, isWeixin) => {
         if(!openid) {
             throw new APIError('openid_err', 'openid null!');
         }
@@ -145,7 +145,7 @@ module.exports = {
         }
         let orderId = Date.now().toString(36) + openid.slice(-2);
         let price = questionInstance.priceNew;
-        let payInfo = await weixinPay.prePay(openid, orderId, questionInstance.name, price, ip, wechatPayNotifyUrl);
+        let payInfo = await weixinPay.prePay(openid, orderId, questionInstance.name, price, ip, wechatPayNotifyUrl, isWeixin);
         payInfo.orderId = orderId;
         console.log("微信支付信息：", JSON.stringify(payInfo));
         if(payInfo) {

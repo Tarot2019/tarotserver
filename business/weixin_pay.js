@@ -8,7 +8,7 @@ const mch_id = constants.WECHAT_PAY_MCH_ID;
 const appid = constants.WECHAT_MP_APP_ID; //微信公众平台id
 const weixin_prepay_url = 'https://api.mch.weixin.qq.com/pay/unifiedorder';
 
-const prePay = async (openid, orderId, desc, totalPrice, spbill_create_ip, notify_url) => {
+const prePay = async (openid, orderId, desc, totalPrice, spbill_create_ip, notify_url, isWeixin) => {
     // 通过查阅文档,调用统一下单有10个参数是必须的
     let obj = {
         appid,
@@ -19,9 +19,11 @@ const prePay = async (openid, orderId, desc, totalPrice, spbill_create_ip, notif
         total_fee: totalPrice,
         spbill_create_ip,
         notify_url,
-        trade_type:'JSAPI',
-        openid
+        trade_type: isWeixin ? 'JSAPI' : 'MWEB',
     };
+    if(isWeixin) {
+        obj.openid = openid;
+    }
     // js的默认排序即为ASCII的从小到大进行排序(字典排序)
     let arr = Object.keys(obj).sort().map(item => {
         return `${item}=${obj[item]}`;
@@ -31,18 +33,20 @@ const prePay = async (openid, orderId, desc, totalPrice, spbill_create_ip, notif
     // appid=wxf8600b***b5dfb&body=德胜村&mch_id=1490909372&nonce_str=plfbp2bhr0id1z6aktmndfot94hkewcv&notify_url=https://server.***.cn/wechat/pay_notify&openid=oFm4h0WvnQWB4ocFmdPzsWywlE8c&out_trade_no=20150806125346&spbill_create_ip=127.0.0.1&total_fee=56600&trade_type=JSAPI&key=Lzy1234567890111***5161718192
 
     obj.sign = getSign(str);
-    let res;
-    // 调用微信统一下单接口拿到 prepay_id
-    res = await wechatPay(obj);
-    console.log("微信统一下单结果：", JSON.stringify(res));
-    let {prepay_id} = res;
-    if (prepay_id) {
-        res = getClientPayConfig(prepay_id)
+    // 调用微信统一下单接口
+    let weixinPreorderResult = await wechatPay(obj);
+    console.log("微信统一下单结果：", JSON.stringify(weixinPreorderResult));
+    if(isWeixin) {
+        let {prepay_id} = weixinPreorderResult;
+        if (prepay_id) {
+            return getClientPayConfig(prepay_id);
+        } else {
+            throw {code: 'no_prepay_id', message: JSON.stringify(res)};
+        }
     } else {
-        throw {code: 'no_prepay_id', message: JSON.stringify(res)};
+        return weixinPreorderResult;
     }
-    return res;
-}
+};
 
 
 /**

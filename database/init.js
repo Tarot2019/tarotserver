@@ -679,11 +679,19 @@ const insertDebugData = true;
 
                 console.log("插入数据成功：divination");
 
+                await Models.channel.create({
+                    id: "official",
+                    name: "自营渠道",
+                    description: "自营渠道"
+                });
+                console.log("插入数据成功：channel");
+
                 let userData = {
                     openid: "ofPbp1XuYIMpD1CUUTWsqmMcB63c",
                     unionid: "orLCIt7g80RkTeq3STM850vAaJ4Q",
                     wechatName: "wangpan🐆",
-                    avatar: "http://thirdwx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTJGLmN0Fooy9wTnHrhiaQJSiayueGhlUQnI36ibNsGFdicLbC9PXUrOTnH3NQbx58I46cAeJU7mAwQVkQ/132"
+                    avatar: "http://thirdwx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTJGLmN0Fooy9wTnHrhiaQJSiayueGhlUQnI36ibNsGFdicLbC9PXUrOTnH3NQbx58I46cAeJU7mAwQVkQ/132",
+                    channelId: 'official'
                 };
                 await  Models.user.create(userData);
                 // userData.openid = "2";
