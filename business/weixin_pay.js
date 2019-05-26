@@ -9,7 +9,7 @@ const appid = constants.WECHAT_MP_APP_ID; //微信公众平台id
 const weixin_prepay_url = 'https://api.mch.weixin.qq.com/pay/unifiedorder';
 
 const prePay = async (openid, orderId, desc, totalPrice, spbill_create_ip, notify_url, isWeixin) => {
-    // 通过查阅文档,调用统一下单有10个参数是必须的
+    let isInWechat = isWeixin != 'false';
     let obj = {
         appid,
         mch_id,
@@ -19,9 +19,9 @@ const prePay = async (openid, orderId, desc, totalPrice, spbill_create_ip, notif
         total_fee: totalPrice,
         spbill_create_ip,
         notify_url,
-        trade_type: isWeixin ? 'JSAPI' : 'MWEB',
+        trade_type: isInWechat ? 'JSAPI' : 'MWEB',
     };
-    if(isWeixin) {
+    if(isInWechat) {
         obj.openid = openid;
     }
     // js的默认排序即为ASCII的从小到大进行排序(字典排序)
@@ -36,7 +36,7 @@ const prePay = async (openid, orderId, desc, totalPrice, spbill_create_ip, notif
     // 调用微信统一下单接口
     let weixinPreorderResult = await wechatPay(obj);
     console.log("微信统一下单结果：", JSON.stringify(weixinPreorderResult));
-    if(isWeixin) {
+    if(isInWechat) {
         let {prepay_id} = weixinPreorderResult;
         if (prepay_id) {
             return getClientPayConfig(prepay_id);
