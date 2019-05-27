@@ -99,9 +99,9 @@ module.exports = {
                 throw new APIError(data.data.errcode, data.data.errmsg);
             } else {
                 let jsapi_ticket = data.data.ticket;
-                let nonceStr = getNonceStr(16);
+                let noncestr = getNonceStr(16);
                 let timestamp = String(Math.floor(Date.now() / 1000));
-                let obj = {jsapi_ticket, nonceStr, timestamp, url};
+                let obj = {jsapi_ticket, noncestr, timestamp, url};
                 let arr = Object.keys(obj).sort().map(item => {
                     return `${item}=${obj[item]}`;
                 });
@@ -111,7 +111,7 @@ module.exports = {
                 let config = {
                     appid: constants.WECHAT_MP_APP_ID,
                     timestamp,
-                    nonceStr,
+                    noncestr,
                     signature
                 };
                 return config;
