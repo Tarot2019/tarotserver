@@ -9,10 +9,12 @@ const constants = require('../constants');
 module.exports = {
     'POST /api/public/login': async (ctx, next) => {
         let channelId = ctx.headers.channel || 'official';
-        let weixin = ctx.request.body.weixin;
+        let weixin = ctx.request.headers.weixin;
+        let isInWechat = weixin != 'false';
+        console.log("[public/login] isInWechat = " + isInWechat);
         let weixinCode = ctx.request.body.weixinCode || '';
 
-        if(weixin) {
+        if(isInWechat) {
             if (weixinCode) {
                 let userinfo = await axios.get('https://api.weixin.qq.com/sns/oauth2/access_token', {
                     params: {
