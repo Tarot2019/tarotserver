@@ -3,6 +3,8 @@ const wechatPayNotifyUrl = "https://qian10.net/api/api/tarot1/payResult";
 
 const weixinPay = require('./weixin_pay');
 
+const utils = require('./utils/utils');
+
 const db = require('../database/db');
 const Op = (require('sequelize')).Op;
 
@@ -10,12 +12,11 @@ let models = require('../database/models.js');
 let channel = models.channel;
 let user = models.user;
 let order = models.order;
+let tarot2record = models.tarot2record;
 
+order.belongsTo(user);
 channel.hasMany(user);
 channel.hasMany(order);
-
-const utils = require('./utils/utils');
-
 
 const getAllChannels = async () => {
     console.log("getAllChannels");
@@ -26,9 +27,10 @@ const getAllChannels = async () => {
     console.log("count = " + count);
     return result.rows;
 };
-const detail = async (channelId) => {
-    console.log("get channel detial: " + channelId);
-    let ordersAll = await order.findAll({
+const detail = async (channelId, product) => {
+    console.log("get channel detial: channelId = " + channelId + ", product = " + product);
+    let orderOrRecord = product == 'tarot2' ? tarot2record : order;
+    let ordersAll = await orderOrRecord.findAll({
         where: {
             channelId: channelId,
             status: 'paid'
@@ -37,7 +39,7 @@ const detail = async (channelId) => {
             [db.sequelize.fn('SUM', db.sequelize.col('price')), 'sumPrice'],
             [db.sequelize.fn('COUNT', db.sequelize.col('*')), 'order']]
     });
-    let ordersMonth = await order.findAll({
+    let ordersMonth = await orderOrRecord.findAll({
         where: {
             channelId: channelId,
             status: 'paid',
@@ -47,7 +49,7 @@ const detail = async (channelId) => {
             [db.sequelize.fn('SUM', db.sequelize.col('price')), 'sumPrice'],
             [db.sequelize.fn('COUNT', db.sequelize.col('*')), 'order']]
     });
-    let ordersWeek = await order.findAll({
+    let ordersWeek = await orderOrRecord.findAll({
         where: {
             channelId: channelId,
             status: 'paid',
@@ -57,7 +59,7 @@ const detail = async (channelId) => {
             [db.sequelize.fn('SUM', db.sequelize.col('price')), 'sumPrice'],
             [db.sequelize.fn('COUNT', db.sequelize.col('*')), 'order']]
     });
-    let orders24Hours = await order.findAll({
+    let orders24Hours = await orderOrRecord.findAll({
         where: {
             channelId: channelId,
             status: 'paid',
@@ -67,7 +69,7 @@ const detail = async (channelId) => {
             [db.sequelize.fn('SUM', db.sequelize.col('price')), 'sumPrice'],
             [db.sequelize.fn('COUNT', db.sequelize.col('*')), 'order']]
     });
-    let ordersDay = await order.findAll({
+    let ordersDay = await orderOrRecord.findAll({
         where: {
             channelId: channelId,
             status: 'paid',
@@ -82,40 +84,122 @@ const detail = async (channelId) => {
         {
             title: "今日付款合计",
             order: ordersDay[0].toJSON().order,
-            sum: ordersDay[0].toJSON().sumPrice || 0
+            sum: parseInt(ordersDay[0].toJSON().sumPrice || 0)
         },
         {
             title: "24小时付款合计",
             order: orders24Hours[0].toJSON().order,
-            sum: orders24Hours[0].toJSON().sumPrice || 0
+            sum: parseInt(orders24Hours[0].toJSON().sumPrice || 0)
         },
         {
             title: "7日付款合计",
             order: ordersWeek[0].toJSON().order,
-            sum: ordersWeek[0].toJSON().sumPrice || 0
+            sum: parseInt(ordersWeek[0].toJSON().sumPrice || 0)
         },
         {
             title: "30日付款合计",
             order: ordersMonth[0].toJSON().order,
-            sum: ordersMonth[0].toJSON().sumPrice || 0
+            sum: parseInt(ordersMonth[0].toJSON().sumPrice || 0)
         },
         {
             title: "历史付款合计",
             order: ordersAll[0].toJSON().order,
-            sum: ordersAll[0].toJSON().sumPrice || 0
+            sum: parseInt(ordersAll[0].toJSON().sumPrice || 0)
         },
     ];
 };
+const orders = async (channelId, page, product) => {
+    if (product == 'tarot1') {
+        const pageSize = 20;
+        let ordersAll = await order.findAll({
+            where: {
+                channelId: channelId,
+                status: 'paid'
+            },
+            offset: page * pageSize,
+            limit: pageSize,
+            attributes: ['orderid', 'userOpenid', 'paidTime', 'price']
+        });
+        return {
+            pageSize,
+            page: parseInt(page),
+            data: await Promise.all(ordersAll.map(async order => {
+                let userInstance = await order.getUser();
+                console.log("[orders]user = " + JSON.stringify(userInstance));
+                let orderJson = order.toJSON();
+                orderJson.paidTime = utils.getFormattedDate(orderJson.paidTime);
+                orderJson.userName = userInstance.wechatName || "浏览器用户";
+                delete orderJson.userOpenid;
+                return orderJson;
+            }))
+        }
+    } else {
+        const pageSize = 20;
+        let ordersAll = await tarot2record.findAll({
+            where: {
+                channelId: channelId,
+                status: 'paid'
+            },
+            offset: page * pageSize,
+            limit: pageSize,
+            attributes: ['orderId', 'openid', 'phoneNumber', 'paidTime', 'price']
+        });
+        return {
+            pageSize,
+            page: parseInt(page),
+            data: await Promise.all(ordersAll.map(async order => {
+                let orderJson = order.toJSON();
+                orderJson.paidTime = utils.getFormattedDate(orderJson.paidTime);
+                orderJson.userName = orderJson.phoneNumber || "未绑定用户";
+                delete orderJson.openid;
+                delete orderJson.phoneNumber;
+                return orderJson;
+            }))
+        }
+    }
+
+};
+const toPercent = (num, total) => {
+
+    return (Math.round(num / total * 10000) / 100.00 + "%");// 小数点后两位百分比
+
+}
 module.exports = {
     channels: getAllChannels,
 
     detail: detail,
-    detailAll: async () => {
+    detailAll: async (product) => {
         let channels = await getAllChannels();
-        return await Promise.all(channels.map(async channel => {
+        let channelsDetail = await Promise.all(channels.map(async channel => {
             let channelTemp = channel.toJSON();
-            channelTemp.orderDetial = await detail(channel.id);
+            delete channelTemp.disabled;
+            delete channelTemp.description;
+            let orderDetail = await detail(channel.id, product);
+            channelTemp.pv = 1000;
+            channelTemp.uv = 500;
+            channelTemp.orderPeopleCount = 50;
+            channelTemp.orderCount = orderDetail[0].order;
+            channelTemp.orderRate = toPercent(channelTemp.orderCount, channelTemp.uv);
+            channelTemp.validOrderCount = channelTemp.orderCount;
+            channelTemp.validOrderRate = channelTemp.orderRate;
+            channelTemp.validOrderPerPeople = toPercent(channelTemp.validOrderCount, channelTemp.orderPeopleCount);
+            channelTemp.income = orderDetail[0].sum;
+            channelTemp.incomePerUv = toPercent(channelTemp.income, channelTemp.uv);
+            channelTemp.orderDetail = orderDetail;
             return channelTemp;
         }));
-    }
-}
+        return {
+            dayOrder: channelsDetail.reduce((pre, cur) => pre + cur.orderDetail[0].order, 0),
+            dayIncome: channelsDetail.reduce((pre, cur) => pre + cur.orderDetail[0].sum, 0),
+            monthOrder: channelsDetail.reduce((pre, cur) => pre + cur.orderDetail[3].order, 0),
+            monthIncome: channelsDetail.reduce((pre, cur) => pre + cur.orderDetail[3].sum, 0),
+            allOrder: channelsDetail.reduce((pre, cur) => pre + cur.orderDetail[4].order, 0),
+            allIncome: channelsDetail.reduce((pre, cur) => pre + cur.orderDetail[4].sum, 0),
+            channelsDetail: channelsDetail.map(channelsDetailInstance => {
+                delete channelsDetailInstance.orderDetail;
+                return channelsDetailInstance;
+            })
+        }
+    },
+    orders
+};

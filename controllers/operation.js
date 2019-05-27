@@ -18,13 +18,18 @@ module.exports = {
 
     },
 
-    'GET /api/operation/detail/:channelId': async (ctx, next) => {
-        let detail = await operation.detail(ctx.params.channelId);
+    'GET /api/operation/detail/:product/:channelId': async (ctx, next) => {
+        let detail = await operation.detail(ctx.params.channelId, ctx.params.product);
         ctx.rest(detail);
 
     },
-    'GET /api/operation/allChannelDetail': async (ctx, next) => {
-        let detail = await operation.detailAll();
+    'GET /api/operation/allChannelDetail/:product': async (ctx, next) => {
+        let detail = await operation.detailAll(ctx.params.product);
         ctx.rest(detail);
+    },
+    'GET /api/operation/orders/:product/:channelId/:page': async (ctx, next) => {
+        console.log("orders: " + ctx.params.product + ctx.params.channelId + ctx.params.page);
+        let orders = await operation.orders(ctx.params.channelId, ctx.params.page, ctx.params.product);
+        ctx.rest(orders);
     },
 };
