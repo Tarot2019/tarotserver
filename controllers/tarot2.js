@@ -53,7 +53,7 @@ module.exports = {
 
     'GET /api/tarot2/answer/:questionId': async (ctx, next) => {
         let answer = await tarot2.questionAnswer(ctx.params.questionId);
-        delete answer.description;
+        delete answer.cardDescription;
         answer.interpretations.map(interpretation => delete interpretation.content);
         answer.kefu = kefu;
         ctx.rest(answer);

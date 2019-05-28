@@ -21,18 +21,33 @@ card.belongsToMany(question, {through: interpretation});
 const utils = require('./utils/utils');
 
 const questionAnswer = async (questionId, cardId) => {
-    if(!cardId) {
-        cardId = Math.ceil(Math.random() * Cards_Count);
-        cardId = cardId < 0 ? 0 : (cardId > Cards_Count ? Cards_Count : cardId);
-        console.log(`Random card id = ${cardId}`);
-    }
+    // if(!cardId) {
+    //     cardId = Math.ceil(Math.random() * Cards_Count);
+    //     cardId = cardId < 0 ? 0 : (cardId > Cards_Count ? Cards_Count : cardId);
+    //     console.log(`Random card id = ${cardId}`);
+    // }
     let questionInstance = await question.findById(questionId);
-    let cardDetail = await questionInstance.getCards({where: {id: cardId}});
-    cardDetail = cardDetail[0].toJSON();
+    if(!questionInstance) {
+        throw new APIError('questionId_err', "错误的questionId");
+    }
+    let cardDetail;
+    if(!cardId) {
+        let cards = await questionInstance.getCards();
+        let count = cards.length;
+        let index = Math.ceil(Math.random() * count) - 1;
+        index = index < 0 ? 0 : (index > count ? count : index);
+        console.log("[" + questionInstance.name + "] 有[" + count + "]张牌可选，选择的是" + index);
+        cardDetail = cards[index].toJSON();
+    } else {
+        let cards = await questionInstance.getCards({where: {id: cardId}});
+        cardDetail = cards[0].toJSON();
+    }
+
+
 
     cardDetail.cardId = cardDetail.id;
     delete cardDetail.id;
-    cardDetail.cardName = cardDetail.name + ('positive' == card.orientation ? "（正位）" : "（逆位）");
+    cardDetail.cardName = cardDetail.name + ('positive' == cardDetail.orientation ? "（正位）" : "（逆位）");
     delete cardDetail.name;
     delete cardDetail.orientation;
     cardDetail.cardElement = cardDetail.element;
