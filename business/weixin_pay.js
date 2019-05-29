@@ -41,10 +41,15 @@ const prePay = async (openid, orderId, desc, totalPrice, spbill_create_ip, notif
         if (prepay_id) {
             return getClientPayConfig(prepay_id);
         } else {
-            throw {code: 'no_prepay_id', message: JSON.stringify(res)};
+            throw {code: 'no_prepay_id', message: JSON.stringify(weixinPreorderResult)};
         }
     } else {
-        return weixinPreorderResult;
+        let {mweb_url} = weixinPreorderResult;
+        if (mweb_url) {
+            return {mwebUrl: mweb_url};
+        } else {
+            throw {code: 'no_mweb_url', message: JSON.stringify(weixinPreorderResult)};
+        }
     }
 };
 

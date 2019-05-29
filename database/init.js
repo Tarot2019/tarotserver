@@ -665,8 +665,8 @@ const insertDebugData = true;
                     cardDescription2: "选择这张牌的朋友，恭喜你长久的付出换来了回报，你爱的人也不是铁石心肠，但感动终究不是爱。不过对方也可能自己的生活还没有捋顺，并没有心思去经营你们的感情，尤其是那种先立业后成家的男生，也或许他根本就没有那么爱你，暂时跟你在一起是将就，骑驴找马，如果你想结婚那就该醒醒了。",
                     rateName2: "",
                     rate2: 0,
-                    cardName3: "恋人",
-                    cardImg3: "/tarot1/card/6_lian_ren.jpg",
+                    cardName3: "恋人（逆位）",
+                    cardImg3: "/tarot1/card/n/6_lian_ren.jpg",
                     cardDescription3: "抽到恋人牌，意味着你们一定是经营在阳光下的健康恋情，命中真爱的几率非常大，想恋爱的可以放心投入，享受过程，想结婚的遇到这样的恋爱对象就嫁了吧。",
                     rateName3: "",
                     rate3: 0,
@@ -676,6 +676,7 @@ const insertDebugData = true;
                     rateName4: "",
                     rate4: 0
                 });
+
 
                 console.log("插入数据成功：divination");
 
