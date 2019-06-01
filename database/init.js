@@ -53,8 +53,8 @@ const insertDebugData = true;
                     isHome: true, //是否展示在首页
                     title: "塔罗测试",
                     subTitle: "测测你和ta分手后还会复合吗？",
-                    priceOld: 4000,
-                    priceNew: 2000,
+                    priceOld: 1990,
+                    priceNew: 690,
                     sales: 432,
                     introduction: "塔罗测试介绍",
                     notice: "notice",
@@ -87,8 +87,8 @@ const insertDebugData = true;
                     isHome: true, //是否展示在首页
                     title: "塔罗测试",
                     subTitle: "测测2019年你的爱情磁场有多强？",
-                    priceOld: 4000,
-                    priceNew: 2000,
+                    priceOld: 1990,
+                    priceNew: 690,
                     sales: 334,
                     introduction: "塔罗测试介绍",
                     notice: "notice",
@@ -133,8 +133,8 @@ const insertDebugData = true;
                     isHome: true, //是否展示在首页
                     title: "塔罗测试",
                     subTitle: "你现在的工作还值不值得坚持？",
-                    priceOld: 4000,
-                    priceNew: 2000,
+                    priceOld: 1990,
+                    priceNew: 690,
                     sales: 278,
                     introduction: "塔罗测试介绍",
                     notice: "notice",
@@ -170,8 +170,8 @@ const insertDebugData = true;
                     isHome: true, //是否展示在首页
                     title: "塔罗测试",
                     subTitle: "你会遇见什么样的爱情？",
-                    priceOld: 4000,
-                    priceNew: 2000,
+                    priceOld: 1990,
+                    priceNew: 690,
                     sales: 56,
                     introduction: "塔罗测试介绍",
                     notice: "notice",
@@ -204,8 +204,8 @@ const insertDebugData = true;
                     isHome: true, //是否展示在首页
                     title: "塔罗测试",
                     subTitle: "近期你需要什么正能量？",
-                    priceOld: 4000,
-                    priceNew: 2000,
+                    priceOld: 1990,
+                    priceNew: 690,
                     sales: 82,
                     introduction: "塔罗测试介绍",
                     notice: "notice",
@@ -268,8 +268,8 @@ const insertDebugData = true;
                     isHome: true, //是否展示在首页
                     title: "塔罗测试",
                     subTitle: "你性格的隐藏属性是什么？",
-                    priceOld: 4000,
-                    priceNew: 2000,
+                    priceOld: 1990,
+                    priceNew: 690,
                     sales: 22,
                     introduction: "塔罗测试介绍",
                     notice: "notice",
@@ -310,8 +310,8 @@ const insertDebugData = true;
                     isHome: true, //是否展示在首页
                     title: "塔罗测试",
                     subTitle: "测测你的人物属性是什么？",
-                    priceOld: 4000,
-                    priceNew: 2000,
+                    priceOld: 1990,
+                    priceNew: 690,
                     sales: 2,
                     introduction: "塔罗测试介绍",
                     notice: "notice",
@@ -352,8 +352,8 @@ const insertDebugData = true;
                     isHome: true, //是否展示在首页
                     title: "塔罗测试",
                     subTitle: "你在爱情中最容易犯哪些错误？",
-                    priceOld: 4000,
-                    priceNew: 2000,
+                    priceOld: 1990,
+                    priceNew: 690,
                     sales: 121,
                     introduction: "塔罗测试介绍",
                     notice: "notice",
@@ -386,8 +386,8 @@ const insertDebugData = true;
                     isHome: true, //是否展示在首页
                     title: "塔罗测试",
                     subTitle: "你最让异性着迷的特质是什么？",
-                    priceOld: 4000,
-                    priceNew: 2000,
+                    priceOld: 1990,
+                    priceNew: 690,
                     sales: 1189,
                     introduction: "塔罗测试介绍",
                     notice: "notice",
@@ -420,8 +420,8 @@ const insertDebugData = true;
                     isHome: true, //是否展示在首页
                     title: "塔罗测试",
                     subTitle: "测测你在哪方面的天赋最高？",
-                    priceOld: 4000,
-                    priceNew: 2000,
+                    priceOld: 1990,
+                    priceNew: 690,
                     sales: 897,
                     introduction: "塔罗测试介绍",
                     notice: "notice",
@@ -460,8 +460,8 @@ const insertDebugData = true;
                     isHome: true, //是否展示在首页
                     title: "塔罗测试",
                     subTitle: "测测你近期会栽在哪个坑里？",
-                    priceOld: 4000,
-                    priceNew: 2000,
+                    priceOld: 1990,
+                    priceNew: 690,
                     sales: 98,
                     introduction: "塔罗测试介绍",
                     notice: "notice",
@@ -500,8 +500,8 @@ const insertDebugData = true;
                     isHome: true, //是否展示在首页
                     title: "塔罗测试",
                     subTitle: "塔罗测试：单恋、暧昧、挽回者——你和Ta的爱情前景如何？",
-                    priceOld: 4000,
-                    priceNew: 2000,
+                    priceOld: 1990,
+                    priceNew: 690,
                     sales: 119,
                     introduction: "塔罗测试介绍",
                     notice: "notice",
@@ -550,8 +550,8 @@ const insertDebugData = true;
                     isHome: true, //是否展示在首页
                     title: "塔罗测试",
                     subTitle: "交往中、已婚者——你和Ta的爱情前景如何？",
-                    priceOld: 4000,
-                    priceNew: 2000,
+                    priceOld: 1990,
+                    priceNew: 690,
                     sales: 82,
                     introduction: "塔罗测试介绍",
                     notice: "notice",
@@ -602,8 +602,8 @@ const insertDebugData = true;
                     isHome: true, //是否展示在首页
                     title: "塔罗测试",
                     subTitle: "未来三个月你的情感状态会发生什么转变？",
-                    priceOld: 4000,
-                    priceNew: 2000,
+                    priceOld: 1990,
+                    priceNew: 690,
                     sales: 42,
                     introduction: "塔罗测试介绍",
                     notice: "notice",
@@ -648,8 +648,8 @@ const insertDebugData = true;
                     isHome: true, //是否展示在首页
                     title: "塔罗测试",
                     subTitle: "2019你的真命天子会出现吗？",
-                    priceOld: 4000,
-                    priceNew: 2000,
+                    priceOld: 1990,
+                    priceNew: 690,
                     sales: 1132,
                     introduction: "塔罗测试介绍",
                     notice: "notice",
@@ -676,7 +676,911 @@ const insertDebugData = true;
                     rateName4: "",
                     rate4: 0
                 });
+                await Models.divination.create({
+                    picTop: "/tarot1/img/16aiqingxiaosan.jpg",
+                    picSquare: "/tarot1/img/16aiqingxiaosans.jpg", //在列表中展示的方形图
+                    isBanner: false, //是否在首页Banner
+                    isHome: true, //是否展示在首页
+                    title: "塔罗测试",
+                    subTitle: "你的爱情里会出现小三吗？",
+                    priceOld: 1990,
+                    priceNew: 690,
+                    sales: 22,
+                    introduction: "塔罗测试介绍",
+                    notice: "notice",
+                    cardName1: "圣杯二正位",
+                    cardImg1: "/tarot1/card/sheng_bei_2.jpg",
+                    cardDescription1: "选择这张牌的朋友，代表你们之间关系平等，亲密和谐，互相喜欢，可以说是情人眼里出西施，你在对方眼里就是最好的，两个人秀恩爱还来不及，哪还有小三的位置呀。",
+                    rateName1: "",
+                    rate1: 0,
+                    cardName2: "圣杯三正位",
+                    cardImg2: "/tarot1/card/sheng_bei_3.jpg",
+                    cardDescription2: "选择这张牌的朋友你的爱情就要多留个心眼儿了，感情是两个人的事，出现第三个人来凑热闹就不正常了，你的男朋友很可能除了你还在跟其他女生搞暧昧，没准儿对你早已有异心了，抽到这张牌的朋友尤其要注意防范男友身边的女闺蜜了。",
+                    rateName2: "",
+                    rate2: 0,
+                    cardName3: "宝剑七正位",
+                    cardImg3: "/tarot1/card/bao_jian_7.jpg",
+                    cardDescription3: "选择这张牌的朋友，代表你男朋友对你不够坦诚，有事瞒着你，很有可能己经跟其他女生在一起了，你还被蒙在鼓里，小三出现机率很大，要当面跟对方说清楚，快刀斩乱麻，分手一定要体面。",
+                    rateName3: "",
+                    rate3: 0,
+                    cardName4: "权杖四正位",
+                    cardImg4: "/tarot1/card/quan_zhang_4.jpg",
+                    cardDescription4: "选择这张牌的朋友，你的感情非常稳定，时不时还会有些小惊喜，己经结婚的话你的婚姻也非常稳定，其乐融融，相互为对方着想，为家庭付出，你的另一半对你很诚实，没有什么需要担心的，人生若只如初见，你就抓着这个人的手一直幸福下去吧！",
+                    rateName4: "",
+                    rate4: 0
+                });
 
+
+                await Models.divination.create({
+                    picTop: "/tarot1/img/17yidilian.jpg",
+                    picSquare: "/tarot1/img/17yidilians.jpg", //在列表中展示的方形图
+                    isBanner: false, //是否在首页Banner
+                    isHome: true, //是否展示在首页
+                    title: "塔罗测试",
+                    subTitle: "你们的异地恋会修成正果吗？",
+                    priceOld: 1990,
+                    priceNew: 690,
+                    sales: 35,
+                    introduction: "塔罗测试介绍",
+                    notice: "notice",
+                    cardName1: "月亮正位",
+                    cardImg1: "/tarot1/card/18_yue_liang.jpg",
+                    cardDescription1: "你是一个比较没有安全感的人，在爱情里容易患得患失，在异地恋的过程中，你可能会误信他人的谣言，又或是把简单的事情想得太复杂，从而对恋人产生怀疑。建议你要多给对方一些信心，有疑惑时应积极与对方沟通，只有互信互爱，你们的感情才能更加坚固，彼此走得更远。",
+                    rateName1: "",
+                    rate1: 0,
+                    cardName2: "权杖六正位",
+                    cardImg2: "/tarot1/card/quan_zhang_6.jpg",
+                    cardDescription2: "你和恋人在相处中或许也会有摩擦和争吵，但好在你们彼此相爱，并且认定彼此就是命中注定的那个人，因此就算吵架再激烈，到最后你们也还是会和好。你们都很有勇气，对这段感情从不轻言放弃。",
+                    rateName2: "",
+                    rate2: 0,
+                    cardName3: "圣杯四正位",
+                    cardImg3: "/tarot1/card/sheng_bei_4.jpg",
+                    cardDescription3: "一段爱情关系维持久了，激情终归于平淡，加上异地恋聚少离多，你和恋人双方或其中一方会感受到情感上的疲惫，态度变得消极冷淡。/n在不好的情况下，你或TA还有可能会为了寻找新鲜刺激而产生出轨的念头。其实有时候未必是你不再喜欢这个恋人，而是你们之间缺乏了情趣而已。",
+                    rateName3: "",
+                    rate3: 0,
+                    cardName4: "圣杯十正位",
+                    cardImg4: "/tarot1/card/sheng_bei_10.jpg",
+                    cardDescription4: "你和恋人的感情日趋稳定，并且互相爱护尊重，没有谁比谁更强势，而是互相懂得为此着想，让这段关系相处起来能十分舒服。/n你们虽然是在异地恋，但是对对方的爱丝毫没有因此而减弱，你们愿意乐于分享爱，并愿意为恋人付出关怀，在未来的规划中也有对方的存在。",
+                    rateName4: "",
+                    rate4: 0
+                });
+
+
+                await Models.divination.create({
+                    picTop: "/tarot1/img/18biaobaichenggong.jpg",
+                    picSquare: "/tarot1/img/18biaobaichenggongs.jpg", //在列表中展示的方形图
+                    isBanner: false, //是否在首页Banner
+                    isHome: true, //是否展示在首页
+                    title: "塔罗测试",
+                    subTitle: "你表白成功的几率有多大？",
+                    priceOld: 1990,
+                    priceNew: 690,
+                    sales: 35,
+                    introduction: "塔罗测试介绍",
+                    notice: "notice",
+                    cardName1: "圣杯九正位",
+                    cardImg1: "/tarot1/card/sheng_bei_9.jpg",
+                    cardDescription1: "选择这张牌的朋友，你想表白的这个人一定也喜欢你没错啦，平时两个人相处就很愉快，你也符合他心仪对象的标准，说不定他还在想怎么跟你表白呢，总之抽到这张牌，你的表白就己经成功一大半了。",
+                    rateName1: "",
+                    rate1: 0,
+                    cardName2: "恶魔正位",
+                    cardImg2: "/tarot1/card/15_e_mo.jpg",
+                    cardDescription2: "选择这张牌的朋友你首先想清楚自己到底要的是什么了，他对你很可能并不认真，或许只是想跟你一夜情，如果你也是随便玩玩，那你们会玩儿的很剌激，如果你是认真的，那就离他远点吧，表白不适合你。",
+                    rateName2: "",
+                    rate2: 0,
+                    cardName3: "宝剑骑士正位",
+                    cardImg3: "/tarot1/card/31_bao_jian_qi_shi.jpg",
+                    cardDescription3: "选择这张牌的朋友，对方跟你一样，很可能感觉来的快去的也快，表白成功是很容易啦，但感情也很难长久，过了热恋期，没了新鲜感，你就要考虑考虑怎么维护这段感情了。",
+                    rateName3: "",
+                    rate3: 0,
+                    cardName4: "权杖首牌正位",
+                    cardImg4: "/tarot1/card/quan_zhang_1.jpg",
+                    cardDescription4: "选择这张牌的朋友，你应该不是一个主动的人吧，对你而言，感情的世界里需要一些不顾后果的冲动，不试试看怎么知道结果怎样呢，只要你真诚热情，你喜欢的他也会回馈你真诚热情的，爱就大声说出来吧。",
+                    rateName4: "",
+                    rate4: 0
+                });
+
+                await Models.divination.create({
+                    picTop: "/tarot1/img/19gaibugaifangqi.jpg",
+                    picSquare: "/tarot1/img/19gaibugaifangqis.jpg", //在列表中展示的方形图
+                    isBanner: false, //是否在首页Banner
+                    isHome: true, //是否展示在首页
+                    title: "塔罗测试",
+                    subTitle: "该不该放弃这段感情？",
+                    priceOld: 1990,
+                    priceNew: 690,
+                    sales: 35,
+                    introduction: "塔罗测试介绍",
+                    notice: "notice",
+                    cardName1: "愚人正位",
+                    cardImg1: "/tarot1/card/0_yu_ren.jpg",
+                    cardDescription1: "选择这张牌的朋友，你们的爱情对你而言本身就是一次冒险，对方还没有开始对未来做打算，也没有考虑过你们的未来，对你的喜欢更多也是一时兴起，哪天烦了就会毫不犹豫的离开你，如果你己经感觉到了自己不被重视，没有安全感，就直接放弃吧，长痛不如短痛。",
+                    rateName1: "",
+                    rate1: 0,
+                    cardName2: "星币三逆位",
+                    cardImg2: "/tarot1/card/n/xing_bi_3.jpg",
+                    cardDescription2: "选择这张牌的朋友，你们其实都想跟彼此好好在一起的，但想法和行为方式的不同会让你们不太会跟对方相处，你也经常会让他很尴尬，你们并没有到分手的阶段，你不需要放弃，但学习如何相处是你的首要任务。",
+                    rateName2: "",
+                    rate2: 0,
+                    cardName3: "星币骑士正位",
+                    cardImg3: "/tarot1/card/30_xing_bi_qi_shi.jpg",
+                    cardDescription3: "选择这张牌的朋友，他可是典型的先立业后成家，此时他正在为你们的未来努力工作赚钱，他不浪漫，也不会说情话，还有点大直男，如果惹你不开心了，就宽容些原谅他吧，他很专一也很实在，跟着他一辈子都是有安全感的，不要轻易放弃哟。",
+                    rateName3: "",
+                    rate3: 0,
+                    cardName4: "高塔正位",
+                    cardImg4: "/tarot1/card/16_gao_ta.jpg",
+                    cardDescription4: "选择这张牌的朋友，你们的感情己经破裂，再继续纠缠也之会剩下两败具伤，别再折磨自己了，曾经爱过，快乐过就好，给彼此留点念想，也给自己留点好的回忆，就放弃吧，好聚好散。",
+                    rateName4: "",
+                    rate4: 0
+                });
+
+
+                await Models.divination.create({
+                    picTop: "/tarot1/img/20lianrenpengyou.jpg",
+                    picSquare: "/tarot1/img/20lianrenpengyous.jpg", //在列表中展示的方形图
+                    isBanner: false, //是否在首页Banner
+                    isHome: true, //是否展示在首页
+                    title: "塔罗测试",
+                    subTitle: "你们之间是该做恋人还是朋友？",
+                    priceOld: 1990,
+                    priceNew: 690,
+                    sales: 35,
+                    introduction: "塔罗测试介绍",
+                    notice: "notice",
+                    cardName1: "星币国王正位",
+                    cardImg1: "/tarot1/card/xing_bi_guo_wang.jpg",
+                    cardDescription1: "选择这张牌的朋友，他工作能力强，又重视家庭，关键是还有钱，而且又很会理财，成熟稳重，如果你刚好想结婚稳定下来，遇到这样的人当然是做恋人啦，先谈着试试看吧，婚姻就是柴米油盐，细水长流，跟他在一起你会很轻松的。",
+                    rateName1: "",
+                    rate1: 0,
+                    cardName2: "宝剑骑士正位",
+                    cardImg2: "/tarot1/card/bao_jian_qi_shi.jpg",
+                    cardDescription2: "选择这张牌的朋友，他对什么都是三分钟热度，对你当然也是了，不成熟也不接地气，但他聪明有趣，不按常理出牌，很有自己想法，做朋友比恋人有意思多了。",
+                    rateName2: "",
+                    rate2: 0,
+                    cardName3: "圣杯首牌正位",
+                    cardImg3: "/tarot1/card/sheng_bei_1.jpg",
+                    cardDescription3: "选择这张牌的朋友，不管你承不承认，你是真的很喜欢他，太久没有敞开心扉的你终于迎来了爱情，既然喜欢，为什么不做恋人，不用顾虑太多，只要努力，困难都可以克服，你又不缺朋友，心动就勇敢在一起吧。",
+                    rateName3: "",
+                    rate3: 0,
+                    cardName4: "星币六正位",
+                    cardImg4: "/tarot1/card/xing_bi_6.jpg",
+                    cardDescription4: "选择这张牌的朋友，他很可能是你的上司，工作上会给你帮助和指导，但你们之间更多是互惠互利的关系，他对你好也不是因为爱你，而你最好也打消跟他谈恋爱的念头，还是避开办公室恋情，职场路更好走呀！ ",
+                    rateName4: "",
+                    rate4: 0
+                });
+
+                await Models.divination.create({
+                    picTop: "/tarot1/img/21chuguiyuanliang.jpg",
+                    picSquare: "/tarot1/img/21chuguiyuanliangs.jpg", //在列表中展示的方形图
+                    isBanner: false, //是否在首页Banner
+                    isHome: true, //是否展示在首页
+                    title: "塔罗测试",
+                    subTitle: "对象出轨了，你该不该原谅ta？",
+                    priceOld: 1990,
+                    priceNew: 690,
+                    sales: 35,
+                    introduction: "塔罗测试介绍",
+                    notice: "notice",
+                    cardName1: "女祭司正位",
+                    cardImg1: "/tarot1/card/2_nv_ji_si.jpg",
+                    cardDescription1: "选择这张牌的朋友，你本身就是很高冷也很有原则的人，面对出轨这样的事情，你是不屑的，如果对象出轨，对你而言简直是一个污点，你这么追求完美的人，不会选择原谅他，不然对你们之后的发展就像是埋了一颗定时炸弹，感情随时分崩离析。",
+                    rateName1: "",
+                    rate1: 0,
+                    cardName2: "圣杯六正位",
+                    cardImg2: "/tarot1/card/sheng_bei_6.jpg",
+                    cardDescription2: "选择这张牌的朋友，虽然出轨不应该找理由，但你对象可能是被迫或是意外出轨，他对你们的感情还是念念不忘的，而且你们之间的美好回忆无可替代，如果你还爱他，就再给他一次机会吧，他以后一定会加倍对你好的。",
+                    rateName2: "",
+                    rate2: 0,
+                    cardName3: "权杖三逆位",
+                    cardImg3: "/tarot1/card/n/quan_zhang_3.jpg",
+                    cardDescription3: "选择这张牌的朋友，不管对象出没出轨，他的心思己经不在你这儿了，也没想跟你有未来，而且出轨一次和无数次对他而言没有区别，你还原谅他做什么呀，不如就此远离他，也放过自己。",
+                    rateName3: "",
+                    rate3: 0,
+                    cardName4: "恶魔正位",
+                    cardImg4: "/tarot1/card/15_e_mo.jpg",
+                    cardDescription4: "选择这张牌的朋友，出轨这件事会深深的影响着你，成为你们之间不能跨越的鸿沟，时间越久，问题越多，骗别人容易，骗自己却很难，既然做不到，就不要为难自己，不如就给对方自由，也让自己解脱。",
+                    rateName4: "",
+                    rate4: 0
+                });
+
+
+                await Models.divination.create({
+                    picTop: "/tarot1/img/22shibushizhanan.jpg",
+                    picSquare: "/tarot1/img/22shibushizhanans.jpg", //在列表中展示的方形图
+                    isBanner: false, //是否在首页Banner
+                    isHome: true, //是否展示在首页
+                    title: "塔罗测试",
+                    subTitle: "你现在交往的对象是不是渣男？",
+                    priceOld: 1990,
+                    priceNew: 690,
+                    sales: 35,
+                    introduction: "塔罗测试介绍",
+                    notice: "notice",
+                    cardName1: "圣杯国王逆位",
+                    cardImg1: "/tarot1/card/n/sheng_bei_guo_wang.jpg",
+                    cardDescription1: "选择这张牌的朋友，遇到这样的交往对象绝对是渣男没跑了，嘴上功夫很不错，可是说的好听却做不到，一次又一次欺骗你，而且相当烂情，私生活也比较混乱，你要珍爱自己，远离渣男。",
+                    rateName1: "",
+                    rate1: 0,
+                    cardName2: "圣杯骑士正位",
+                    cardImg2: "/tarot1/card/sheng_bei_qi_shi.jpg",
+                    cardDescription2: "选择这张牌的朋友，如果你想轰轰烈烈谈一场恋爱，那恭喜你遇见对的人了，他能给你一切浪漫和惊喜，眼里心里都是你，比你自己还在乎自己的感受， 只要你开心，他是那种有多少钱都愿意为你花的人，虽然有时候多愁善感，但他是暖男不是渣男哟！",
+                    rateName2: "",
+                    rate2: 0,
+                    cardName3: "权杖二逆位",
+                    cardImg3: "/tarot1/card/n/quan_zhang_2.jpg",
+                    cardDescription3: "选择这张牌的朋友，你的交往对象并不是渣男，但他很可能是妈宝男，如果你有跟他结婚的打算就要考虑清楚了，他没什么上进心，很多事情都听家里的安排，如果家里再有些钱，那他就是典型的啃老族了，婚后你是要受委屈的。",
+                    rateName3: "",
+                    rate3: 0,
+                    cardName4: "太阳正位",
+                    cardImg4: "/tarot1/card/19_tai_yang.jpg",
+                    cardDescription4: "选择这张牌的朋友，他当然不是渣男了，一天到晚活的比谁都光明正大，直言不讳，平时看着傻乎乎的他是有大智慧的人，跟他在一起，你也会被正能量䨱盖的，这样的人绝对是渣女小三的绝缘体。",
+                    rateName4: "",
+                    rate4: 0
+                });
+
+
+                await Models.divination.create({
+                    picTop: "/tarot1/img/23zhendeaini.jpg",
+                    picSquare: "/tarot1/img/23zhendeainis.jpg", //在列表中展示的方形图
+                    isBanner: false, //是否在首页Banner
+                    isHome: true, //是否展示在首页
+                    title: "塔罗测试",
+                    subTitle: "ta是不是真的爱你？",
+                    priceOld: 1990,
+                    priceNew: 690,
+                    sales: 35,
+                    introduction: "塔罗测试介绍",
+                    notice: "notice",
+                    cardName1: "圣杯三正位",
+                    cardImg1: "/tarot1/card/sheng_bei_3.jpg",
+                    cardDescription1: "选择这张牌的朋友，很不幸的告诉你，他除了跟你暧昧不清，同时也很可能在跟别的女生搞暧昧，对你有好感是真的，跟别人暧昧也是真的，自然谈不上是真的爱你了，对于他而言，顶多是玩玩而已罢了。",
+                    rateName1: "",
+                    rate1: 0,
+                    cardName2: "恋人正位",
+                    cardImg2: "/tarot1/card/6_lian_ren.jpg",
+                    cardDescription2: "选择这张牌的朋友，他除了爱工作就剩爱你了，家人支持，朋友羡慕，他对你是奔着长远发展谈恋爱的，而且对你好都是发自内心，打心眼儿里认定你，如果说不是真的爱你，未免对也他太苛刻了。",
+                    rateName2: "",
+                    rate2: 0,
+                    cardName3: "月亮正位",
+                    cardImg3: "/tarot1/card/18_yue_liang.jpg",
+                    cardDescription3: "选择这张牌的朋友，你有必要怀疑下他对你态度了，很可能他瞒了你很多事情，比如有家庭还装单身跟你谈恋爱，明明放不下前任还来你这里找安慰，所以一定要调查清楚再在一起，不然被小三了自己还蒙在鼓里，这样的人人品就有问题，你敢要吗？",
+                    rateName3: "",
+                    rate3: 0,
+                    cardName4: "圣杯九正位",
+                    cardImg4: "/tarot1/card/sheng_bei_9.jpg",
+                    cardDescription4: "选择这张牌的朋友，他跟你在一起真的是觉得自己赚到了，开心的像个两百斤的胖子，而且他本身性格也乐观开朗，没那么多的阴暗小九九，忠于自己内心，跟你在一起就一定是真的爱你了，享受当下就好，不要想东想西怀疑他的真心了。",
+                    rateName4: "",
+                    rate4: 0
+                });
+
+                await Models.divination.create({
+                    picTop: "/tarot1/img/24goubugouwenrou.jpg",
+                    picSquare: "/tarot1/img/24goubugouwenrous.jpg", //在列表中展示的方形图
+                    isBanner: false, //是否在首页Banner
+                    isHome: true, //是否展示在首页
+                    title: "塔罗测试",
+                    subTitle: "在他眼里你够不够温柔？",
+                    priceOld: 1990,
+                    priceNew: 690,
+                    sales: 35,
+                    introduction: "塔罗测试介绍",
+                    notice: "notice",
+                    cardName1: "命运之轮正位",
+                    cardImg1: "/tarot1/card/10_ming_yun_zhi_lun.jpg",
+                    cardDescription1: "在你的恋人心中，你就是最温柔的，你的存在是最妙不可言的幸福，因为有了你，他的世界才更增添了一抹亮色，你虽然偶尔也会耍耍小脾气，但在他的眼里，这都是对他信任的表现，他包容着你的一切，也深深爱着你。",
+                    rateName1: "",
+                    rate1: 0,
+                    cardName2: "星币二正位",
+                    cardImg2: "/tarot1/card/xing_bi_2.jpg",
+                    cardDescription2: "对于这个答案，你恐怕要失望了，在他的眼里，你不仅不够温柔，而且老惹麻烦，也许你就是有这样咋咋呼呼的性格，但是在他的眼里，这就是你的缺点，一时的欢愉是掩盖不了本质矛盾的，要么痛快放手，要么痛改前非，自己决定吧。",
+                    rateName2: "",
+                    rate2: 0,
+                    cardName3: "宝剑七逆位",
+                    cardImg3: "/tarot1/card/n/bao_jian_7.jpg",
+                    cardDescription3: "对于你的恋人来说，你是一味苦口的良药，在心底里，他认为你是足够温柔的，但是对于你爱着他的方式，他虽然心里清楚是正确的，但是总归是有些小变扭，他爱着你，也想要和你一起走下去，他会为你改变自己，也希望你能一直温柔的陪伴他。",
+                    rateName3: "",
+                    rate3: 0,
+                    cardName4: "高塔正位",
+                    cardImg4: "/tarot1/card/16_gao_ta.jpg",
+                    cardDescription4: "不知道从什么时候开始，你们的关系已经僵化到随时要破裂的地步了，你们之间的感情就像一座摇摇欲坠的尖塔，一开始，在他的心中，你也是温柔可爱的，但是相处到了后来，这份温柔在他心里就变味了，要补救很简单，但是我不希望你因此迷失自我。",
+                    rateName4: "",
+                    rate4: 0
+                });
+
+
+                await Models.divination.create({
+                    picTop: "/tarot1/img/25yixingyuan.jpg",
+                    picSquare: "/tarot1/img/25yixingyuans.jpg", //在列表中展示的方形图
+                    isBanner: false, //是否在首页Banner
+                    isHome: true, //是否展示在首页
+                    title: "塔罗测试",
+                    subTitle: "2019年你的异性缘怎么样？",
+                    priceOld: 1990,
+                    priceNew: 690,
+                    sales: 35,
+                    introduction: "塔罗测试介绍",
+                    notice: "notice",
+                    cardName1: "权杖女王逆位",
+                    cardImg1: "/tarot1/card/n/quan_zhang_wang_hou.jpg",
+                    cardDescription1: "这张牌出现你就要注意了，在2019年你可能会有相当不错的异性缘，但是各种问题也随之而来，对你抱有好感的对象的质量良莠不齐，有些人就完全是个渣！这个时候就需要你自己擦亮双眼了，仔细观察对你大献殷勤的人，分辨出其真面目！",
+                    rateName1: "",
+                    rate1: 0,
+                    cardName2: "权杖三逆位",
+                    cardImg2: "/tarot1/card/n/quan_zhang_3.jpg",
+                    cardDescription2: "在这一年里，你可能会惊奇的发现自己可能在诸多的异性中找到了自己的归宿，但是事实并非你想象的那么简单，可能到头来，你掏心掏肺对待的人其实是一只白眼狼，所有对感情的幻想将会在顷刻之间变成泡沫，让你竹篮打水一场空。",
+                    rateName2: "",
+                    rate2: 0,
+                    cardName3: "女皇正位",
+                    cardImg3: "/tarot1/card/3_nv_huang.jpg",
+                    cardDescription3: "毫无疑问的，这一年里你的异性缘简直是斩也斩不断，桃花朵朵都在你身边不断绽放，你大可以放心收获一段甜蜜的爱情，但是因为摆在你面前的选择太多，也会使你变得犹豫不决！",
+                    rateName3: "",
+                    rate3: 0,
+                    cardName4: "星币八逆位",
+                    cardImg4: "/tarot1/card/n/xing_bi_8.jpg",
+                    cardDescription4: "这一年里你已经有了相当不错的异性缘了，但是对此仍然感到不满足的你还是想要再观望一段时间，看看是否有更合适的人选，可是做人最忌讳的就是贪心，你这一贪，不仅无法得到什么，反而会把之前对你有些好感的异性全耗光了热情，百害而无一利。",
+                    rateName4: "",
+                    rate4: 0
+                });
+
+
+                await Models.divination.create({
+                    picTop: "/tarot1/img/26shengzhijiaxing.jpg",
+                    picSquare: "/tarot1/img/26shengzhijiaxings.jpg", //在列表中展示的方形图
+                    isBanner: false, //是否在首页Banner
+                    isHome: true, //是否展示在首页
+                    title: "塔罗测试",
+                    subTitle: "2019年你能否把握住加薪升职的机会？",
+                    priceOld: 1990,
+                    priceNew: 690,
+                    sales: 35,
+                    introduction: "塔罗测试介绍",
+                    notice: "notice",
+                    cardName1: "愚人正位",
+                    cardImg1: "/tarot1/card/0_yu_ren.jpg",
+                    cardDescription1: "抽到这张牌的朋友，你的职场能力令人担心。目前的你缺乏方向或尚无目标，整天毫无目的，你应该努力改变现状，在工作中提升自己的职场能力。否则，你不可能抓住升迁机会。",
+                    rateName1: "",
+                    rate1: 0,
+                    cardName2: "宝剑骑士正位",
+                    cardImg2: "/tarot1/card/bao_jian_qi_shi.jpg",
+                    cardDescription2: "抽到这张牌的朋友，你需要设定目标，你存在着没有目标的问题。你需要的不是升迁的机会，而是在工作中集中精神，设定更明确的目标。目标是你前进的方向，只有目标明确你才有可能获得成功。而且，当你完成目标后，会特有成就感，对自己所从事的工作更有兴趣和激情。",
+                    rateName2: "",
+                    rate2: 0,
+                    cardName3: "星币八正位",
+                    cardImg3: "/tarot1/card/xing_bi_8.jpg",
+                    cardDescription3: "抽到这张牌的朋友，你正在努力创造升迁的机会。建议力量有必要更集中一些。如果你能好好的确定方向，获取更大的成功对你来说并非难事。",
+                    rateName3: "",
+                    rate3: 0,
+                    cardName4: "皇帝正位",
+                    cardImg4: "/tarot1/card/4_huang_di.jpg",
+                    cardDescription4: "抽到这张牌的朋友，你可能会错过升迁的机会，你的能力很强，但是你的野心很大，所以易杂乱无章，各种目标都想达到，这会使你因忙乱而错过成功的机会。你不妨与这方面的成功人士谈谈，或许你的成就动机很强，但欠缺必要的知识和方向，不要让你的野心毁了你的前程。",
+                    rateName4: "",
+                    rate4: 0
+                });
+
+
+                await Models.divination.create({
+                    picTop: "/tarot1/img/27daomeizhishu.jpg",
+                    picSquare: "/tarot1/img/27daomeizhishus.jpg", //在列表中展示的方形图
+                    isBanner: false, //是否在首页Banner
+                    isHome: true, //是否展示在首页
+                    title: "塔罗测试",
+                    subTitle: "近期你的倒霉指数是多少？",
+                    priceOld: 1990,
+                    priceNew: 690,
+                    sales: 35,
+                    introduction: "塔罗测试介绍",
+                    notice: "notice",
+                    cardName1: "恋人逆位",
+                    cardImg1: "/tarot1/card/n/6_lian_ren.jpg",
+                    cardDescription1: "意味着分离、对立以及三角关系。选到这张牌的朋友，你的倒霉指数大概是60%，最明显是体现在爱情方面。对于有伴侣的人来说，近期你们的爱情会历经挫折。你和伴侣有可能会爆发争吵、冷战、甚至决定分开的状况。",
+                    rateName1: "",
+                    rate1: 0,
+                    cardName2: "圣杯三逆位",
+                    cardImg2: "/tarot1/card/n/sheng_bei_3.jpg",
+                    cardDescription2: "意味着团体失和、结盟失败及容易乐极生悲。选到这张牌的朋友，你的倒霉指数大概是55%，最明显是体现在人际关系方面。近期你与工作团队伙伴或身边的朋友们会出现关系生隙的状况，造成这种状况的原因可能是因为你们之间意见不合、原则上的观念发生了分歧。",
+                    rateName2: "",
+                    rate2: 0,
+                    cardName3: "权杖九正位",
+                    cardImg3: "/tarot1/card/quan_zhang_9.jpg",
+                    cardDescription3: "意思是警觉、防御以及自我保护。选到这张牌的朋友，你的倒霉指数大概是70%，最明显是体现在精神及健康方面。近期你或许会迎来生活上的一些重大挑战，这个挑战可能会带给你较大的精神压力，你须得鼓起勇气，强悍一点，以坚定的信念去应对危机。",
+                    rateName3: "",
+                    rate3: 0,
+                    cardName4: "星币五正位",
+                    cardImg4: "/tarot1/card/xing_bi_5.jpg",
+                    cardDescription4: "意味着艰困、物质或精神上的匮乏。选到这张牌的朋友，你的倒霉指数大概是65%，最明显是体现在金钱物质方面。在近段时间你的财务状况可能不太如意，或会出现破财、花销过大的情况，严重者还可能会入不敷出，收支失衡，缺乏财务支持，甚至负债。",
+                    rateName4: "",
+                    rate4: 0
+                });
+
+
+                await Models.divination.create({
+                    picTop: "/tarot1/img/28shibiehuangyan.jpg",
+                    picSquare: "/tarot1/img/28shibiehuangyans.jpg", //在列表中展示的方形图
+                    isBanner: false, //是否在首页Banner
+                    isHome: true, //是否展示在首页
+                    title: "塔罗测试",
+                    subTitle: "你识别谎言的能力有多强？",
+                    priceOld: 1990,
+                    priceNew: 690,
+                    sales: 35,
+                    introduction: "塔罗测试介绍",
+                    notice: "notice",
+                    cardName1: "正义正位",
+                    cardImg1: "/tarot1/card/11_zheng_yi.jpg",
+                    cardDescription1: "代表理性和公平。抽到这张牌的朋友，说明你本身是一个嫉恶如仇的人。在你的世界里，黑白分明，没有灰色地带。你观察事物的能力很强，许多人没有注意到的细节都逃不过你的眼睛。只要有人在你面前撒谎，你基本上都能看得出来。",
+                    rateName1: "",
+                    rate1: 0,
+                    cardName2: "圣杯侍从正位",
+                    cardImg2: "/tarot1/card/sheng_bei_shi_cong.jpg",
+                    cardDescription2: "代表善良和单纯。抽到这张牌的朋友，说明你是一个心地善良的人。在与别人交往的过程中，你总不愿意把人往坏处想。所以，与其说你识别谎言的能力不高，不如说你不愿辜负人与人之间的基本善意。",
+                    rateName2: "",
+                    rate2: 0,
+                    cardName3: "隐士正位",
+                    cardImg3: "/tarot1/card/9_yin_shi.jpg",
+                    cardDescription3: "代表智慧和清高。抽到这张牌的朋友，你看待事物的角度比较客观，很少会感情用事。由于你长时间以第三角度去观察事物，所以你识谎的能力很高，直觉也很敏锐。不过大部分时候，你都懒得去管其他人的闲事，所以你的能力并不被大多数人所知道。",
+                    rateName3: "",
+                    rate3: 0,
+                    cardName4: "月亮正位",
+                    cardImg4: "/tarot1/card/18_yue_liang.jpg",
+                    cardDescription4: "代表多疑和不安。抽到这张牌的朋友，说明你是一个没有安全感的人。你认为别人撒谎欺骗你是常事，每时每刻都想拆穿谎言寻找真相。虽然有时的确让你撞破了谎言，但你的怀疑大部分都是错的。",
+                    rateName4: "",
+                    rate4: 0
+                });
+
+
+                await Models.divination.create({
+                    picTop: "/tarot1/img/29xinggequedian.jpg",
+                    picSquare: "/tarot1/img/29xinggequedians.jpg", //在列表中展示的方形图
+                    isBanner: false, //是否在首页Banner
+                    isHome: true, //是否展示在首页
+                    title: "塔罗测试",
+                    subTitle: "你性格中最大的缺点是什么？",
+                    priceOld: 1990,
+                    priceNew: 690,
+                    sales: 35,
+                    introduction: "塔罗测试介绍",
+                    notice: "notice",
+                    cardName1: "宝剑骑士正位",
+                    cardImg1: "/tarot1/card/bao_jian_qi_shi.jpg",
+                    cardDescription1: "代表着强势、狂放、急躁及言行不一。选到这张牌的朋友，你性格里有个很大的缺点，就是想事情可能会极端，耐心不足。/n你的脾气不好，比较急躁，做事或会不计后果，容易和别人起冲突。建议要适当收敛自己的脾性，以免吃了性格的亏，败坏自己的人缘。",
+                    rateName1: "",
+                    rate1: 0,
+                    cardName2: "圣杯七正位",
+                    cardImg2: "/tarot1/card/sheng_bei_7.jpg",
+                    cardDescription2: "意思是想象、梦境、选择以及幻想。选到这张牌的朋友，你最大的性格缺点是不切实际、幻想过多。比如在做一件事或一项工作之前，你总是对其抱有无限憧憬，认为前景大好，却不会多作分析调研，但凭感觉做事，到最后得到的结果往往不如人意。",
+                    rateName2: "",
+                    rate2: 0,
+                    cardName3: "宝剑二正位",
+                    cardImg3: "/tarot1/card/bao_jian_2.jpg",
+                    cardDescription3: "意思是僵持、对立、逃避以及过度自我保护。选到这张牌的朋友，你最大的性格缺点是逃避问题。当遇上棘手的难题时，有时候并非你自身能力不足以解决，而是你害怕面对问题，宁愿采取逃避的方式，也不愿意直面解决问题前或会令你感到痛苦的过程。",
+                    rateName3: "",
+                    rate3: 0,
+                    cardName4: "力量逆位",
+                    cardImg4: "/tarot1/card/n/8_li_liang.jpg",
+                    cardDescription4: "意思是缺乏自信、退缩以及情绪化。选到这张牌的朋友，你最大的性格缺点是对自己没有信心。这个缺点可能会导致你失去一些本该可以得到的机会。",
+                    rateName4: "",
+                    rate4: 0
+                });
+
+
+                await Models.divination.create({
+                    picTop: "/tarot1/img/30aicuorenle.jpg",
+                    picSquare: "/tarot1/img/30aicuorenles.jpg", //在列表中展示的方形图
+                    isBanner: false, //是否在首页Banner
+                    isHome: true, //是否展示在首页
+                    title: "塔罗测试",
+                    subTitle: "你爱错人了吗？",
+                    priceOld: 1990,
+                    priceNew: 690,
+                    sales: 35,
+                    introduction: "塔罗测试介绍",
+                    notice: "notice",
+                    cardName1: "魔术师正位",
+                    cardImg1: "/tarot1/card/1_mo_shu_shi.jpg",
+                    cardDescription1: "这张牌表示主动，开始和沟通，意味着你们的关系处在比较良性的状态。因为你本人很有魅力，也拥有让自己幸福的能力，所以你和Ta在一起无关于对错，你总是能把生活越过越好。",
+                    rateName1: "",
+                    rate1: 0,
+                    cardName2: "战车正位",
+                    cardImg2: "/tarot1/card/7_zhan_che.jpg",
+                    cardDescription2: "这张牌有空虚和强硬的意思，代表你们之间缺少情感交流和软性对话。也表示对待感情你的处理方式太过糟糕，你总是能把一段感情搞得一团乱麻。所以先改变自己，再对Ta提要求吧。",
+                    rateName2: "",
+                    rate2: 0,
+                    cardName3: "命运之轮正位",
+                    cardImg3: "/tarot1/card/10_ming_yun_zhi_lun.jpg",
+                    cardDescription3: "这张牌表示转变和契机。在感情方面有姻缘天定的意思，所以请相信，你并没有爱错人。抽到这张牌意味着在Ta心中，你很重要。相识至今，你们经历了很多风风雨雨，Ta早已经做好了和你白头偕老的打算。/n从这张牌看，你们迎来了感情的转折点，这段关系将发生实质性的变化，不过这种变化是在向好的方向发展，你们的关系会逐渐升温，彼此之间也会重新燃起激情。",
+                    rateName3: "",
+                    rate3: 0,
+                    cardName4: "月亮正位",
+                    cardImg4: "/tarot1/card/18_yue_liang.jpg",
+                    cardDescription4: "这张牌表示不安和多变，意味着你对这段感情充满了担忧。所以你们这段感情的未来并不乐观，你值得更好的对待。",
+                    rateName4: "",
+                    rate4: 0
+                });
+
+
+                await Models.divination.create({
+                    picTop: "/tarot1/img/31xiaoquexing.jpg",
+                    picSquare: "/tarot1/img/31xiaoquexings.jpg", //在列表中展示的方形图
+                    isBanner: false, //是否在首页Banner
+                    isHome: true, //是否展示在首页
+                    title: "塔罗测试",
+                    subTitle: "近期你的生活会有哪些小确幸？",
+                    priceOld: 1990,
+                    priceNew: 690,
+                    sales: 35,
+                    introduction: "塔罗测试介绍",
+                    notice: "notice",
+                    cardName1: "星币五正位",
+                    cardImg1: "/tarot1/card/xing_bi_5.jpg",
+                    cardDescription1: "抽到这张牌的人未来一段时间会印证一句话：越努力越幸运。当下，你对自己其实有很多不满，对外表有诸多挑剔，你清晰的认识到自己的才华撑不起野心，你特想改变。好消息是，接下来这段时间是你的幸运期，只要你愿意去行动，都会收获到不错的成果。",
+                    rateName1: "",
+                    rate1: 0,
+                    cardName2: "圣杯十正位",
+                    cardImg2: "/tarot1/card/sheng_bei_10.jpg",
+                    cardDescription2: "前段时间，感情经历一片荒芜和混乱的人有福啦，未来一段时间，在情感方面你会遇到一些很好的事情。单身者有邂逅一段感情的可能哦。有伴者接下来一段时间会进入满足期，你们的感情会变得更加甜蜜。",
+                    rateName2: "",
+                    rate2: 0,
+                    cardName3: "权杖七正位",
+                    cardImg3: "/tarot1/card/quan_zhang_7.jpg",
+                    cardDescription3: "这段时间对你而言是很好的提升期，你整体的行动力，创意和思路都会得到提升，之前遭遇的瓶颈期也会有突破性进展。",
+                    rateName3: "",
+                    rate3: 0,
+                    cardName4: "教皇正位",
+                    cardImg4: "/tarot1/card/5_jiao_huang.jpg",
+                    cardDescription4: "抽到这张牌的人，未来一段时间，你的好运主要体现在两个方面：第一，单身者的桃花运开始走升，这段时间你很可能会遇到一个有意思的人，彼此擦出火花。/n第二，这段时间你在事业方面会有贵人相助。对方可能会解决你某个难题或者带给你一些很好的资源，传授你一些不错的赚钱方式等等。另外，如果你还是学生，最近学业运很好哦。",
+                    rateName4: "",
+                    rate4: 0
+                });
+
+
+                await Models.divination.create({
+                    picTop: "/tarot1/img/32xiaoqueshang.jpg",
+                    picSquare: "/tarot1/img/32xiaoqueshangs.jpg", //在列表中展示的方形图
+                    isBanner: false, //是否在首页Banner
+                    isHome: true, //是否展示在首页
+                    title: "塔罗测试",
+                    subTitle: "近期你的生活会有哪些小确丧？",
+                    priceOld: 1990,
+                    priceNew: 690,
+                    sales: 35,
+                    introduction: "塔罗测试介绍",
+                    notice: "notice",
+                    cardName1: "星币五正位",
+                    cardImg1: "/tarot1/card/xing_bi_5.jpg",
+                    cardDescription1: "破财会是未来一段时间，你遇到的最倒霉的一件事。抽到这张牌的人原本就很缺钱，可是雪上加霜的是，接下来你的生活各种意外支出会增多。例如冲动消费，电子产品损坏，各种学习费用、物品丢失或者投资借贷等方面出现问题等等。",
+                    rateName1: "",
+                    rate1: 0,
+                    cardName2: "圣杯十正位",
+                    cardImg2: "/tarot1/card/sheng_bei_10.jpg",
+                    cardDescription2: "这段时间你的人际关系不太和谐，可能会被人背后非议或者背黑锅等等，尤其是事业上和同事的关系会变得很紧张。/n建议抽到这张牌的人，未来一段时间时间做人切勿张扬，多做事少说话，不要太较真，控制好自我情绪，能够避开很多烦心事情的发生。",
+                    rateName2: "",
+                    rate2: 0,
+                    cardName3: "权杖七正位",
+                    cardImg3: "/tarot1/card/quan_zhang_7.jpg",
+                    cardDescription3: "未来一段时间，你在感情方面的发展很不顺利。单身者感情难有进展，虽然你有认识新朋友，但彼此很难来电。另外，要特别提醒，部分女性要小心骗P男，切记，切记！",
+                    rateName3: "",
+                    rate3: 0,
+                    cardName4: "教皇正位",
+                    cardImg4: "/tarot1/card/5_jiao_huang.jpg",
+                    cardDescription4: "这段时间，你在交流方面容易出现问题。在工作时，你和同事可能会因为词不达意或者沟通方式不对导致彼此关系出现一些不愉快。在感情方面，可能会因为太敏感容易想太多，或者因为一些小事就开始作，对方会感觉你太无理取闹。",
+                    rateName4: "",
+                    rate4: 0
+                });
+
+
+                await Models.divination.create({
+                    picTop: "/tarot1/img/33xingzuoyuanfen.jpg",
+                    picSquare: "/tarot1/img/33xingzuoyuanfens.jpg", //在列表中展示的方形图
+                    isBanner: false, //是否在首页Banner
+                    isHome: true, //是否展示在首页
+                    title: "塔罗测试",
+                    subTitle: "你和哪些星座最有缘分？",
+                    priceOld: 1990,
+                    priceNew: 690,
+                    sales: 35,
+                    introduction: "塔罗测试介绍",
+                    notice: "notice",
+                    cardName1: "皇帝正位",
+                    cardImg1: "/tarot1/card/4_huang_di.jpg",
+                    cardDescription1: "意思是是权力、威严、自信和克己严谨。选到这张牌的朋友，你跟白羊座、狮子座、金牛座最有缘分。/n白羊座敢于挑战，喜欢迎难而上，面对挫折从不轻言放弃；狮子座自信霸气，有着非同一般的领导能力，并且待人真诚；金牛座成熟稳重，能给人以踏实及安全感。",
+                    rateName1: "",
+                    rate1: 0,
+                    cardName2: "正义正位",
+                    cardImg2: "/tarot1/card/11_zheng_yi.jpg",
+                    cardDescription2: "意思是公正、均衡、理性的思考。选到这张牌的朋友，你跟天秤座、双子座、水瓶座最有缘分。/n天秤座追求平衡公正，凡事要求公平，看问题不会带个人主观意识；双子座可动可静，该正经的时候从不会误事；水瓶座智商很高，知性与理性并存。",
+                    rateName2: "",
+                    rate2: 0,
+                    cardName3: "恶魔正位",
+                    cardImg3: "/tarot1/card/15_e_mo.jpg",
+                    cardDescription3: "恶魔正位的含义是欲望、物质以及对目标的积极争取。选到这张牌的朋友，你跟摩羯座、天蝎座、巨蟹座最有缘分。/n摩羯、天蝎和巨蟹其实都是野心勃勃的星座，摩羯座冷静沉稳，遇到再大的事也不会方寸大乱；天蝎座气魄十足，重情重义；巨蟹座温柔细腻，有不达目的不放弃的决心。",
+                    rateName3: "",
+                    rate3: 0,
+                    cardName4: "圣杯骑士正位",
+                    cardImg4: "/tarot1/card/sheng_bei_qi_shi.jpg",
+                    cardDescription4: "意思是创意、梦幻、艺术，通常代表着一位浪漫的情人。选到这张牌的朋友，你跟射手座、处女座和双鱼座最有缘分。/n射手座热情奔放，见解独到，很受异性的欢迎；处女座追求完美，做人做事几乎都无可挑剔；双鱼座想象力丰富，极富创意，是制造浪漫的能手。",
+                    rateName4: "",
+                    rate4: 0
+                });
+
+
+                await Models.divination.create({
+                    picTop: "/tarot1/img/34jisuikaigua.jpg",
+                    picSquare: "/tarot1/img/34jisuikaiguas.jpg", //在列表中展示的方形图
+                    isBanner: false, //是否在首页Banner
+                    isHome: true, //是否展示在首页
+                    title: "塔罗测试",
+                    subTitle: "你的人生会在几岁开挂？",
+                    priceOld: 1990,
+                    priceNew: 690,
+                    sales: 35,
+                    introduction: "塔罗测试介绍",
+                    notice: "notice",
+                    cardName1: "隐士正位",
+                    cardImg1: "/tarot1/card/9_yin_shi.jpg",
+                    cardDescription1: "意思是内敛、孤独、智慧及行事谨慎，选到这张牌的朋友，你是属于大器晚成的类型。你的人生大约在38岁以后会像开了挂一样。你是一个注重细节的完美主义者，这个特点将随着你年龄的增长而变得愈发明显。",
+                    rateName1: "",
+                    rate1: 0,
+                    cardName2: "权杖国王正位",
+                    cardImg2: "/tarot1/card/quan_zhang_guo_wang.jpg",
+                    cardDescription2: "意思是热情、坚毅、创造力及权威领导者，选到这张牌的朋友，你的人生大约在35-40岁之间会像开了挂一样。你是一个行动力十足的人，拥有强烈的决心，性格也如烈火一般热情活跃。你敢于冒险，精于开辟疆土。",
+                    rateName2: "",
+                    rate2: 0,
+                    cardName3: "战车正位",
+                    cardImg3: "/tarot1/card/7_zhan_che.jpg",
+                    cardDescription3: "战车牌的含义是意志、自律及强烈的野心。选到这张牌的朋友，你的人生大约在27-33岁之间会像开了挂一样。你是一个好胜心比较强的人，怀有强烈的野心。在你喜爱的行业中，你很容易能成为那个领域里的佼佼者。因为你的意志力足够坚定，你的人生不会开挂得太晚，当机遇来临时要注意把握。",
+                    rateName3: "",
+                    rate3: 0,
+                    cardName4: "星币王后正位",
+                    cardImg4: "/tarot1/card/xing_bi_wang_hou.jpg",
+                    cardDescription4: "含义是繁荣、安定及财富的成功。选到这张牌的朋友，你的人生大约在30-36岁之间会像开了挂一样。你善用理性思维逻辑思考事情，很有经商头脑，能干可靠的品性让许多人都愿意相信你，你也凭着自己的努力获得不俗的成绩，财务富足。",
+                    rateName4: "",
+                    rate4: 0
+                });
+
+
+                await Models.divination.create({
+                    picTop: "/tarot1/img/35chuguizhishu.jpg",
+                    picSquare: "/tarot1/img/35chuguizhishus.jpg", //在列表中展示的方形图
+                    isBanner: false, //是否在首页Banner
+                    isHome: true, //是否展示在首页
+                    title: "塔罗测试",
+                    subTitle: "你在爱情中的出轨指数是多少？",
+                    priceOld: 1990,
+                    priceNew: 690,
+                    sales: 35,
+                    introduction: "塔罗测试介绍",
+                    notice: "notice",
+                    cardName1: "权杖九正位",
+                    cardImg1: "/tarot1/card/quan_zhang_9.jpg",
+                    cardDescription1: "选择这张牌的朋友，出轨指数是百分之二十八。你是一个在婚姻关系中占有欲很强的一个人，小到家里的柴米油盐，大到重大事情的决策，你都希望对方能够听你的，或者是跟你报备，你希望时刻掌握对方的一举一动。所以，这样过分在乎对方的你，怎么会选择出轨呢？",
+                    rateName1: "",
+                    rate1: 0,
+                    cardName2: "权杖首牌正位",
+                    cardImg2: "/tarot1/card/quan_zhang_1.jpg",
+                    cardDescription2: "选择这张牌的朋友，出轨指数是百分之六十五。在你的心目中，婚姻并不是生命中最重要的一部分，或者说哪怕是婚姻也只是你的一个跳板，你是一个很会审时度势的人，如果当一段关系已经对你没有好处的时候，你就会毫不犹豫选择放弃。所以这样的你，会出轨的指数毫不犹豫是第一。",
+                    rateName2: "",
+                    rate2: 0,
+                    cardName3: "圣杯侍从逆位",
+                    cardImg3: "/tarot1/card/n/sheng_bei_shi_cong.jpg",
+                    cardDescription3: "选择这张牌的朋友们，你的出轨指数是百分之三十二。你是一个比较容易喜欢胡思乱想的人，当你们之间出现问题的时候，你的第一选择不是跟对方说清楚，而是逃避，哪怕你真的对他有什么不满的地方，你也不会去说，只会一个人憋在心里胡思乱想。",
+                    rateName3: "",
+                    rate3: 0,
+                    cardName4: "宝剑十正位",
+                    cardImg4: "/tarot1/card/bao_jian_10.jpg",
+                    cardDescription4: "你的出轨指数是百分之十，你是一个有极强控制欲的人，对于你来说，只要是你的人或者是你的物，就要听你的话。当你喜欢一个人的时候，会死心塌地，那个人越不理睬你，相反你就越爱他；但是当你被别人喜欢的时候，你又想退缩，只想待在自己的世界之中。这样的你，出轨几率少之又少！",
+                    rateName4: "",
+                    rate4: 0
+                });
+
+
+                await Models.divination.create({
+                    picTop: "/tarot1/img/36meilizhi.jpg",
+                    picSquare: "/tarot1/img/36meilizhis.jpg", //在列表中展示的方形图
+                    isBanner: false, //是否在首页Banner
+                    isHome: true, //是否展示在首页
+                    title: "塔罗测试",
+                    subTitle: "你的魅力值是什么？",
+                    priceOld: 1990,
+                    priceNew: 690,
+                    sales: 35,
+                    introduction: "塔罗测试介绍",
+                    notice: "notice",
+                    cardName1: "圣杯皇后正位",
+                    cardImg1: "/tarot1/card/sheng_bei_wang_hou.jpg",
+                    cardDescription1: "选择这张牌的朋友，拥有着高贵的的情感和纯洁的心灵，想象力丰富，具有爱心和母性以及温柔的特质。深情并珍惜爱情，是个热心公正的人，属于倾听多，说的少的人。",
+                    rateName1: "",
+                    rate1: 0,
+                    cardName2: "星币国王正位",
+                    cardImg2: "/tarot1/card/xing_bi_guo_wang.jpg",
+                    cardDescription2: "选择这张牌的朋友，脚踏实地，责任心很强，尽管缺少了冒险精神。但是，是最值得他人信任的人。很务实。为人慷慨大方，富足并且事业有成，性格稳重，愿意与他人分享。对爱情的表现是愿意提供物质上的满足，虽然不够浪漫，但是稳健可靠。",
+                    rateName2: "",
+                    rate2: 0,
+                    cardName3: "权杖侍从正位",
+                    cardImg3: "/tarot1/card/quan_zhang_shi_cong.jpg",
+                    cardDescription3: "选择这张牌的朋友，长相清秀，精力充沛。热情洋溢。安静对他来说有一点困难。待人热忱而和善。只是不太能了解对方的感受。但是也是忠诚的人。在感情方面愿意付出如一的坚持。对家庭和伴侣也是懂得照顾跟体贴的人。但是会有些急躁。",
+                    rateName3: "",
+                    rate3: 0,
+                    cardName4: "宝剑骑士正位",
+                    cardImg4: "/tarot1/card/bao_jian_qi_shi.jpg",
+                    cardDescription4: "选择这张牌的朋友，勇往直前，豪气云天。不畏权贵，喜欢新鲜事物与改变。年龄介于22到30岁之间，思维敏捷，属于行动派。对于感情的稳定性有所欠缺，但是跟你在一起会有很多新奇的体验。",
+                    rateName4: "",
+                    rate4: 0
+                });
+
+
+                await Models.divination.create({
+                    picTop: "/tarot1/img/37qianrengonglue.jpg",
+                    picSquare: "/tarot1/img/37qianrengonglues.jpg", //在列表中展示的方形图
+                    isBanner: false, //是否在首页Banner
+                    isHome: true, //是否展示在首页
+                    title: "塔罗测试",
+                    subTitle: "你的前任现在对你什么感觉？",
+                    priceOld: 1990,
+                    priceNew: 690,
+                    sales: 35,
+                    introduction: "塔罗测试介绍",
+                    notice: "notice",
+                    cardName1: "死神正位",
+                    cardImg1: "/tarot1/card/13_si_shen.jpg",
+                    cardDescription1: "选择这张牌的朋友，代表你的前任对你已经完全放下了，他觉得你们之间的感情已经画上了一个句号。所以呢，希望你也可以尽快放下，挥别错的，才能相逢对的，告别过去，才能迎接新的开始。",
+                    rateName1: "",
+                    rate1: 0,
+                    cardName2: "圣杯六正位",
+                    cardImg2: "/tarot1/card/sheng_bei_6.jpg",
+                    cardDescription2: "选择这张牌的朋友，代表你的前任对你还没有完全放下，你们过去的点点滴滴和美好回忆还时常浮现在ta的脑海里。所以如果你有想重新修复这段感情的想法，可以尝试一下。",
+                    rateName2: "",
+                    rate2: 0,
+                    cardName3: "星币二正位",
+                    cardImg3: "/tarot1/card/xing_bi_2.jpg",
+                    cardDescription3: "选择这张牌的朋友，代表你的前任对你并没有完全放下，可能也会有想复合的想法，但是呢，也许他/她身边已经有一个新的人出现，他/她现在正处于犹豫和纠结中，接下来怎么做，还要取决于你内心真实的想法。",
+                    rateName3: "",
+                    rate3: 0,
+                    cardName4: "宝剑十逆位",
+                    cardImg4: "/tarot1/card/n/bao_jian_10.jpg",
+                    cardDescription4: "选择这张牌的朋友，代表你之前做了一些事儿深深伤害了你的前任，虽然这些不好的情绪和感受还是会触动到ta，但是他/她已经开始慢慢从过去的阴影中走了出来，想要重新开始，所以ta不希望和你再有任何瓜葛。",
+                    rateName4: "",
+                    rate4: 0
+                });
+
+
+                await Models.divination.create({
+                    picTop: "/tarot1/img/38shihunduixiang.jpg",
+                    picSquare: "/tarot1/img/38shihunduixiangs.jpg", //在列表中展示的方形图
+                    isBanner: false, //是否在首页Banner
+                    isHome: true, //是否展示在首页
+                    title: "塔罗测试",
+                    subTitle: "你的适婚对象啥时候出现？",
+                    priceOld: 1990,
+                    priceNew: 690,
+                    sales: 35,
+                    introduction: "塔罗测试介绍",
+                    notice: "notice",
+                    cardName1: "权杖五正位",
+                    cardImg1: "/tarot1/card/quan_zhang_5.jpg",
+                    cardDescription1: "抽到这张牌的人眼光很高，但你的性格太被动，没有100%的把握，让你主动告白很难。你可能在感情上受过伤，在内心深处并不相信永恒的爱情，这种戒备敏感的心理也让你错过了不少缘分。未来一段时间脱单有一定难度。",
+                    rateName1: "",
+                    rate1: 0,
+                    cardName2: "战车正位",
+                    cardImg2: "/tarot1/card/7_zhan_che.jpg",
+                    cardDescription2: "抽到这张牌的人很多都是母胎单身，基本处于只想暴富，对脱单不抱希望的状态了。从这张牌看，运气多出现在职场和财运方面，桃花运一般。",
+                    rateName2: "",
+                    rate2: 0,
+                    cardName3: "星星正位",
+                    cardImg3: "/tarot1/card/17_xing_xing.jpg",
+                    cardDescription3: "抽到这张牌说明你很享受目前的单身生活，虽然有时候难免会感觉孤独，但还是不愿意凑合将就。在生活和工作上，你变得越来越优秀，但身边的朋友圈层级却没有提升，目前你陷入一个高不成低不就的尴尬中。不过，从这张牌看，近期你的桃花运会很不错。要记得好好把握哦。",
+                    rateName3: "",
+                    rate3: 0,
+                    cardName4: "宝剑二正位",
+                    cardImg4: "/tarot1/card/bao_jian_2.jpg",
+                    cardDescription4: "你单身的原因很简单，圈子太小，你又太宅，让你去认识新朋友，你又太懒了。从这张牌看，这个春天能否脱单全看你自己的选择。你身上其实一直有一种特殊的魅力，让异性忍不住靠近，不过你的心态和做法却白白错过或舍弃多次脱单的机会。",
+                    rateName4: "",
+                    rate4: 0
+                });
+
+
+                await Models.divination.create({
+                    picTop: "/tarot1/img/39qinmidu.jpg",
+                    picSquare: "/tarot1/img/39qinmidus.jpg", //在列表中展示的方形图
+                    isBanner: false, //是否在首页Banner
+                    isHome: true, //是否展示在首页
+                    title: "塔罗测试",
+                    subTitle: "你和Ta的感情亲密度有多少？",
+                    priceOld: 1990,
+                    priceNew: 690,
+                    sales: 35,
+                    introduction: "塔罗测试介绍",
+                    notice: "notice",
+                    cardName1: "皇后正位",
+                    cardImg1: "/tarot1/card/3_nv_huang.jpg",
+                    cardDescription1: "亲密度：80%。对待感情，你的态度一直是理智而成熟，你注重感情中的平等，清楚自己要什么，也懂得调节双方的情绪，所以和你在一起是一件很幸福的事情。从这张牌看，你们的未来比较乐观，虽然还会遇到其他困难，但只要你们愿意去解决，难题都是纸老虎，不堪一击。",
+                    rateName1: "",
+                    rate1: 0,
+                    cardName2: "星币四正位",
+                    cardImg2: "/tarot1/card/xing_bi_4.jpg",
+                    cardDescription2: "亲密度：60%。对待感情问题时，你太敏感了，总习惯胡思乱想，而且你控制欲和占有欲也太强，总希望在一段感情中拥有绝对的支配权。从这张牌看，对方虽然喜欢你，但和你在一起很累，接下来的一段时间，你们的关系会经受一些考验。",
+                    rateName2: "",
+                    rate2: 0,
+                    cardName3: "圣杯八正位",
+                    cardImg3: "/tarot1/card/sheng_bei_8.jpg",
+                    cardDescription3: "亲密度：40%。抽到这张牌说明对这段感情你一直有很多不满足，总是情不自禁的羡慕别人，拿另一半和其他人作对比。很遗憾你们的亲密度并不高，和Ta在一起你感觉很委屈，而Ta内心也承受了很大的压力，加上你们平时又很少沟通，凡事都习惯性憋着，这段关系其实已经岌岌可危了。",
+                    rateName3: "",
+                    rate3: 0,
+                    cardName4: "太阳正位",
+                    cardImg4: "/tarot1/card/19_tai_yang.jpg",
+                    cardDescription4: "亲密度：99%。抽到这张牌说明相比于以前在感情中的猜忌追逐，现在的你更倾向于一段稳定的关系，想和另一半能够相互扶持，一起对抗未来的风雨。从这张牌看，我要恭喜你，因为Ta对你的亲密度远超你的预期，你在Ta心中非常重要。",
+                    rateName4: "",
+                    rate4: 0
+                });
+
+
+                await Models.divination.create({
+                    picTop: "/tarot1/img/40xingyunzhishu.jpg",
+                    picSquare: "/tarot1/img/40xingyunzhishus.jpg", //在列表中展示的方形图
+                    isBanner: false, //是否在首页Banner
+                    isHome: true, //是否展示在首页
+                    title: "塔罗测试",
+                    subTitle: "你近期的幸运指数有多高？",
+                    priceOld: 1990,
+                    priceNew: 690,
+                    sales: 35,
+                    introduction: "塔罗测试介绍",
+                    notice: "notice",
+                    cardName1: "太阳正位",
+                    cardImg1: "/tarot1/card/19_tai_yang.jpg",
+                    cardDescription1: "代表快乐和希望。抽到这张牌意味着近期你的状态很好。在职场上，你基本是顺风顺水的。即使偶尔遇到一些难题，你也能很快解决，与周围人的相处也很融洽。除此之外，你的心态也很好。不会为还未发生的事情过分担忧。",
+                    rateName1: "",
+                    rate1: 0,
+                    cardName2: "倒吊人正位",
+                    cardImg2: "/tarot1/card/12_dao_diao_ren.jpg",
+                    cardDescription2: "代表换位思考和等待。抽到这张牌意味着近期你有一点点倒霉。工作上，你负责的内容有些停滞。你用了很多的办法，却依旧没有任何的进展。感情方面，单身者则一直没有桃花出现。有伴者，则会与伴侣产生不少的矛盾。此刻你应该先暂停一切行动，及时调整好自己的心态，转变看问题的角度，好好想清楚目前问题的根源在哪再作打算。",
+                    rateName2: "",
+                    rate2: 0,
+                    cardName3: "权杖十正位",
+                    cardImg3: "/tarot1/card/quan_zhang_10.jpg",
+                    cardDescription3: "代表压力和责任。抽到这张牌意味着，近期你不论是身体还是精神的状态都不太好。主要原因在于你对自己的要求太高了，总是希望能把身边的每件事情都做到一百分，丝毫不考虑自身的承受能力。每个人的精力都是有限的。是时候该把一些事情放下，让该承担的人去承担起，你才能好好休息。",
+                    rateName3: "",
+                    rate3: 0,
+                    cardName4: "命运之轮正位",
+                    cardImg4: "/tarot1/card/10_ming_yun_zhi_lun.jpg",
+                    cardDescription4: "代表机会和进展。抽到这张牌意味着，近期你的运气忽好忽坏。有时运气非常好，随便抽个奖都能得到自己喜欢的物品。但有时运气又非常差，突然会发生一些不好的事情。感觉命运天天和你开玩笑，让你无可奈何。不过，多数情况下还是好事占的比例多一些。",
+                    rateName4: "",
+                    rate4: 0
+                });
+
+
+                await Models.divination.create({
+                    picTop: "/tarot1/img/41konghunzhishu.jpg",
+                    picSquare: "/tarot1/img/41konghunzhishus.jpg", //在列表中展示的方形图
+                    isBanner: false, //是否在首页Banner
+                    isHome: true, //是否展示在首页
+                    title: "塔罗测试",
+                    subTitle: "你的恐婚指数是多少？",
+                    priceOld: 1990,
+                    priceNew: 690,
+                    sales: 35,
+                    introduction: "塔罗测试介绍",
+                    notice: "notice",
+                    cardName1: "愚人正位",
+                    cardImg1: "/tarot1/card/0_yu_ren.jpg",
+                    cardDescription1: "含义是自由、天真以及流浪。选中这张牌的朋友，你有着中度的恐婚心态。要你安定下来是一件比较难的事情，你不会遵循传统思想，认为结婚生子是人生必经的阶段。相反，对你来说，若人生剔除了结婚生子这两项任务，你将能空出更多的时间去探索新奇事物，去四处旅游，看看更为广阔的世界。",
+                    rateName1: "",
+                    rate1: 0,
+                    cardName2: "宝剑王后正位",
+                    cardImg2: "/tarot1/card/bao_jian_wang_hou.jpg",
+                    cardDescription2: "含义是道德、正义以及理智。选到这张牌的朋友，你有着重度的恐婚心态。感情本是凭借感性主导的事情，可在面对爱情时你会用理性的态度去看待，甚至随时想结束一段感情。如果要你因为恋爱了很久、已经到了适婚年龄而结婚的话，那么你更情愿继续单身下去。",
+                    rateName2: "",
+                    rate2: 0,
+                    cardName3: "世界正位",
+                    cardImg3: "/tarot1/card/21_shi_jie.jpg",
+                    cardDescription3: "含义是整合、成就、满足以及实现。选到这张牌的朋友，你有着轻微的恐婚心态。你有着凡事顺其自然的理念，所以你其实并不算真正的恐婚，就算有恐婚的时候，也不过是到了适婚的年龄，又或是已经准备步入婚姻殿堂时才会有所焦虑。",
+                    rateName3: "",
+                    rate3: 0,
+                    cardName4: "隐士正位",
+                    cardImg4: "/tarot1/card/9_yin_shi.jpg",
+                    cardDescription4: "含义是探索、清高以及独立。选到这张牌的朋友，你有着极重的恐婚心态。很多人在看到身边的朋友一个个结婚时，内心都会焦急不已。可你却不一样，当你看到身边的朋友并非为了爱情而结婚时，你会感到悲哀与恐惧。你恐惧自己有一天也会向传统观念妥协，担忧自己会和一个适合却没有爱情的人结婚，于你而言这简直是噩梦般的存在。",
+                    rateName4: "",
+                    rate4: 0
+                });
 
                 console.log("插入数据成功：divination");
 

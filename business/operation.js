@@ -14,6 +14,10 @@ let user = models.user;
 let order = models.order;
 let tarot2record = models.tarot2record;
 
+
+let tarot1history = models.tarot1history;
+let tarot2history = models.tarot2history;
+
 order.belongsTo(user);
 channel.hasMany(user);
 channel.hasMany(order);
@@ -175,10 +179,28 @@ module.exports = {
             delete channelTemp.disabled;
             delete channelTemp.description;
             let orderDetail = await detail(channel.id, product);
-            channelTemp.pv = 1000;
-            channelTemp.uv = 500;
-            channelTemp.orderPeopleCount = 50;
+
+            let historyModel = product == 'tarot1' ? tarot1history : tarot2history;
+            let uv = await historyModel.count({
+                where: {
+                    page: 'home',
+                    time: {[Op.gte]: new Date(new Date().toLocaleDateString()).getTime()}
+                },
+                distinct: true,
+                col: 'userId'
+            });
+            let pv = await historyModel.count({
+                where: {
+                    page: 'home',
+                    time: {[Op.gte]: new Date(new Date().toLocaleDateString()).getTime()}
+                }
+            });
+            console.log('pv=' + pv + ', uv=' + uv);
+
+            channelTemp.pv = pv;
+            channelTemp.uv = uv;
             channelTemp.orderCount = orderDetail[0].order;
+            channelTemp.orderPeopleCount = channelTemp.orderCount;
             channelTemp.orderRate = toPercent(channelTemp.orderCount, channelTemp.uv);
             channelTemp.validOrderCount = channelTemp.orderCount;
             channelTemp.validOrderRate = channelTemp.orderRate;

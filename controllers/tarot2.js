@@ -1,6 +1,9 @@
 const tarot2 = require('../business/tarot2');
 const utils = require('../business/utils/utils');
 
+const models = require('../database/models.js');
+const tarot2history = models.tarot2history;
+
 const kefu = {
     normal: {wechatid: "xmqianming01", qrCode: "/tarot1/kefu_normal.png"},
     yuyin: {wechatid: "ch13769762694", qrCode: "/tarot1/kefu_yuyin.png"}
@@ -48,7 +51,14 @@ module.exports = {
             comments
         };
         ctx.rest(homeData);
-
+        tarot2history.create({
+            time: Date.now(),
+            userId: ctx.headers.openid,
+            page: 'home',
+            os: ctx.headers.os,
+            device: ctx.headers.device,
+            ua: ctx.headers['user-agent']
+        });
     },
 
     'GET /api/tarot2/answer/:questionId': async (ctx, next) => {

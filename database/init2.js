@@ -712,7 +712,7 @@ const tarot2record = Models.tarot2record;
                     image: "/tarot1/question_group.jpg"
                 };
                 let groupResult = await questionGroup.create(groupInstance);
-                let questionResult = await groupResult.createQuestion({name: "2019年桃花运如何？", count: 132, priceOld: 9800, priceNew: 990});
+                let questionResult = await groupResult.createQuestion({name: "2019年桃花运如何？", count: 132, priceOld: 9900, priceNew: 990});
                 await questionResult.addCard(card0yr, {through: {interpretation: JSON.stringify([
                     {
                         title: "有没有新桃花",
@@ -1462,7 +1462,7 @@ const tarot2record = Models.tarot2record;
 
 
 
-                questionResult = await groupResult.createQuestion({name: "你们之间会不会复合？", count: 143, priceOld: 9800, priceNew: 990});
+                questionResult = await groupResult.createQuestion({name: "你们之间会不会复合？", count: 143, priceOld: 9900, priceNew: 990});
                 await questionResult.addCard(card0yr, {through: {interpretation: JSON.stringify([{title: "复合的可能性",content: "从这张牌来看，你们之间，情感上的起伏比较大。他比较热衷于追逐新鲜的事物。就算复合了，也并不会是一个如胶似漆的日子。整体来看，愚人牌看到当下的复合可能性为：⭐⭐ \n如果复合了，你们即将会步入一段相对轻松简单的感情生活。彼此都是很自由自在的。"},{title: "复合的障碍点",content: "愚人是一个不受世俗规范的人，也代表着自我，所以说他当下比较享受一个人自由自在，无拘无束的时光，不太想被爱情所束缚。"},{title: "情感建议",content: "可以说这段感情对你的影响非常大，你内心依然有ta，只是你太心急想要复合，挽回的方法用错了，现阶段你追逐ta，只会让ta越来越厌烦，建议你别着急，先沉淀一段时间，先改变自我，等过段时间再谈复合吧，反而会有不错的结果哦。"}])}});
                 await questionResult.addCard(card0yr1, {through: {interpretation: JSON.stringify([{title: "复合的可能性",content: "抽到愚人逆位，意味着你比正位时更飘忽不定，更不想受到束缚。往往这种复合原因是带有情感上的空虚，会有忽冷忽热的感情。就算复合，也很难长久持续。\n你们之间的关系会变得很不稳定。总体来说是朝着一个错误的方向去发展，除了自己的不安外，也会有不支持你们的声音出现哦。\n未来你们之间的感情进展缓慢，短期之内想要复合不是很容易。对方的内心对你是有感情的，但是没有办法对你保持专一，目前的状态发展下去，很容易因为冲动做出不计后果的行为。两个人虽然不至于形同陌路，但是短期之内想要复合阻碍还是比较大的。\n整体来看，抽到愚人牌逆位时，复合概率为：⭐⭐"},{title: "复合的障碍点",content: "对待感情过于轻率，缺乏长久持续的融入感，对于婚姻会感到束缚，忽冷忽热。对待感情也会出现不专一。"},{title: "情感建议",content: "真正的缘份是相互吸引，相互喜欢，相互包容，一起计划未来。随便玩玩、不敢承诺或承担责任的爱情注定不会长久。"}])}});
                 await questionResult.addCard(card1mss, {through: {interpretation: JSON.stringify([{title: "复合的可能性",content: "很多时候你都搞不懂，你们怎么会走到了分手这一步，曾经彼此那么深爱，最终还是分手了，你心里还有不舍，想要挽回，更害怕复合了还会再分手，不管现在你们发生了什么，只要你能够冷静下来思考问题，你们的缘分是还会有的。\n毕竟，作为塔罗里的1号牌，抽到魔术师，最明显的含义就是你们之间的沟通很顺畅。很大可能性会展开一段区别于以往的全新恋情，会品尝到爱情的喜悦、轻松。\n整体来看，你们之间的复合概率：⭐⭐⭐⭐"},{title: "复合的障碍点",content: "在感情当中，双方处于年轻的热恋，有新鲜的热度，但是要注意关系当中充满了无限的变化。"},{title: "情感建议",content: "其实你不必想太多，ta心里还有你，建议你大胆的把自己的想法告诉ta，还是有可能会在一起的。"}])}});
@@ -1511,7 +1511,7 @@ const tarot2record = Models.tarot2record;
 
 
 
-                questionResult = await groupResult.createQuestion({name: "两人未来发展趋势？", count: 232, priceOld: 9800, priceNew: 990});
+                questionResult = await groupResult.createQuestion({name: "两人未来发展趋势？", count: 232, priceOld: 9900, priceNew: 990});
 
                 await questionResult.addCard(card0yr, {through: {interpretation: JSON.stringify([{title: "感情发展趋势",content: "愚人是一张代表着自由、天真的牌。\n抽到这张牌，意味着，你们之间可能会进入一段相对轻松、自在的感情生活，就像画面上的愚人那样，充满着欢快。但是与此同时，也需要注意到一些摆在眼前的危险。\n愚人代表着对方或你是一个不受世俗规范的人，比较自我，比较享受自由自在、无拘无束的时光，不太想被束缚。可是爱情是两人的事，鱼和熊掌不可兼得，你不可能又要爱，又要绝对的自由。这个是不现实的。\n愚人的下一张牌是魔术师，代表着沟通，如果你们想一直往前走下去，意味着你们之间需要加强彼此的沟通，了解彼此的诉求，掌握好爱情和自由之间的平衡点。这样感情才能一直顺顺利利。\n整体来看，你们的感情发展乐观指数：⭐⭐⭐"},{title: "情感建议",content: "你们的感情在未来会遇到各类的挫折和困难（脚下的悬崖），但那些并不是无法逾越的，只要你坚持你们最初的信念一切都有可能。\n此外，爱情的意义不在于结果，而是过程。很多时候，我们难以奢求完美的结果，过程快乐过也就够了。就像此刻的愚人一样，即使脚下有悬崖，他仍旧很开心的样子。"}])}});
                 await questionResult.addCard(card0yr1, {through: {interpretation: JSON.stringify([{title: "感情发展趋势",content: "愚人是一张代表着自由、天真的牌。当其逆位时，意味着比正位时候更加飘忽不定，不想受到任何束缚。\n此外，这张牌代表你们目前对感情没有清晰的目标与长远的打算，你对爱情随遇而安的态度会让对方缺乏安全感。 \n爱情是两个人的事，鱼和熊掌不可兼得，你不可能又要爱，又要绝对的自由。抱着这样的想法，早晚会出现问题。\n整体来看，你们的感情发展乐观指数：⭐⭐"},{title: "情感建议",content: "真正的缘份是相互吸引，相互喜欢，相互包容，一起计划未来。随便玩玩、不敢承诺或承担责任的爱情注定不会长久。"}])}});
@@ -1561,7 +1561,7 @@ const tarot2record = Models.tarot2record;
                 questionResult = await groupResult.createQuestion({
                     name: "你的前任现在对你是什么感觉？",
                     count: 132,
-                    priceOld: 9800,
+                    priceOld: 9900,
                     priceNew: 990
                 });
                 await questionResult.addCard(card13ss, {
@@ -1615,7 +1615,7 @@ const tarot2record = Models.tarot2record;
                 questionResult = await groupResult.createQuestion({
                     name: "你们的异地恋能修成正果吗？",
                     count: 132,
-                    priceOld: 9800,
+                    priceOld: 9900,
                     priceNew: 990
                 });
                 await questionResult.addCard(card18yl, {
@@ -1669,7 +1669,7 @@ const tarot2record = Models.tarot2record;
                 questionResult = await groupResult.createQuestion({
                     name: "ta是不是真的爱你？",
                     count: 132,
-                    priceOld: 9800,
+                    priceOld: 9900,
                     priceNew: 990
                 });
                 await questionResult.addCard(card28sb3, {
@@ -1724,7 +1724,7 @@ const tarot2record = Models.tarot2record;
                 questionResult = await groupResult.createQuestion({
                     name: "该不该放弃这段感情，果断分手？",
                     count: 132,
-                    priceOld: 9800,
+                    priceOld: 9900,
                     priceNew: 990
                 });
                 await questionResult.addCard(card0yr, {
@@ -1779,7 +1779,7 @@ const tarot2record = Models.tarot2record;
                 questionResult = await groupResult.createQuestion({
                     name: "你表白的成功率有多高？",
                     count: 132,
-                    priceOld: 9800,
+                    priceOld: 9900,
                     priceNew: 990
                 });
                 await questionResult.addCard(card29sb9, {
@@ -1836,7 +1836,7 @@ const tarot2record = Models.tarot2record;
                     image: "/tarot1/question_group.jpg"
                 };
                 groupResult = await questionGroup.create(groupInstance);
-                questionResult = await groupResult.createQuestion({name: "2019年事业运如何？", tips: "会不会升职加薪？该不该跳槽......", count: 132, priceOld: 9800, priceNew: 990});
+                questionResult = await groupResult.createQuestion({name: "2019年事业运如何？", tips: "会不会升职加薪？该不该跳槽......", count: 132, priceOld: 9900, priceNew: 990});
 
 
                 await questionResult.addCard(card0yr, {through: {interpretation: JSON.stringify([{title: "整体事业运",content: "抽到愚人正位时，代表着你处于一种充满创造力的工作状态中，你本身是个有很多想法的人，呆板的工作内容和方式都不适合你。\n你的大胆会给你带来一些意想不到的结果。工作方面，喜欢寻求捷径，倾向于自由的工作氛围，适合艺术类工作或从事自由职业。\n愚人这张牌蕴含了很大的两面性。你的潜力还是很大的。\n整体来看，你的事业运指数：⭐⭐⭐"},{title: "发展建议",content: "愚人因为天性使然，很多时候会不太服管，也不太爱管理他人。但是在职场上，管理又是一门每个人都需要学习掌握的技能，建议适当的吸取一下别人的良言对你会有很大帮助哦。"}])}});
@@ -1884,7 +1884,7 @@ const tarot2record = Models.tarot2record;
                 await questionResult.addCard(card21sj, {through: {interpretation: JSON.stringify([{title: "整体事业运",content: "抽到世界牌，代表着圆满、尽善尽美之意。对应到事业运上，意味着今年你的事业运非常不错，事业运指数：⭐⭐⭐⭐\n今年你的工作业绩不错，提成、分红都会很好。虽然你不会突然赚大钱，但是只要有付出，都能得到相对的报酬收入，坚持可以取得成功，也能够轻松掌控着自己和周遭的事物。"},{title: "发展建议",content: "职场上需要一步一个脚印，要记住“人生的路，每一步都算数”，你必须打好基础，对业务做到非常熟悉了解才行。这样等升职之后，才不至于脱离业务，失去掌控。此外，要处理和协调好和公司同事、下属、领导的关系，不管是横向管理还是纵向管理都要处理到位。此外，如果有适合的出差出国机会也不妨试一试哦~你的海外事业运说不定很旺哦~"}])}});
                 await questionResult.addCard(card21sj1, {through: {interpretation: JSON.stringify([{title: "整体事业运",content: "世界牌是塔罗牌里的21号牌，抽到世界牌正位，代表着圆满、尽善尽美之意。对应到事业运上，意味着今年你的事业运非常不错，\n当抽到逆位时，则事业运上和正位时相比会稍微差一些，事业运指数：⭐⭐⭐\n虽然这份工作中有一些不足不太好的地方，要么工资不是很满意，要么是工作内容让你觉得无聊，但是不可否认它是一个值得你继续选择的工作。虽然里面的一些问题并不是说解决就能解决的，但这份工作的前景还是蛮不错的，只要你坚持做，即使不能完全达到你心目中的要求至少也算是能让你满意了。"},{title: "发展建议",content: "职场上需要一步一个脚印，要记住“人生的路，每一步都算数”，你必须打好基础，对业务做到非常熟悉了解才行。这样等升职之后，才不至于脱离业务，失去掌控。此外，要处理和协调好和公司同事、下属、领导的关系，不管是横向管理还是纵向管理都要处理到位。"}])}});
 
-                questionResult = await groupResult.createQuestion({name: "2019年财运如何？", tips: "能不能一夜暴富......", count: 132, priceOld: 9800, priceNew: 990});
+                questionResult = await groupResult.createQuestion({name: "2019年财运如何？", tips: "能不能一夜暴富......", count: 132, priceOld: 9900, priceNew: 990});
                 await questionResult.addCard(card0yr, {through: {interpretation: JSON.stringify([{title: "整体财运",content: "抽到愚人正位时，象征着你的正财运一般，但可能有点偏财运，总体并不算乐观。\n当你周遭的人都对某事提防戒慎，你却打算去冒这个险时，愚人牌可能就会出现。例如，“噢，我认为现在是换工作的好时机”，但现实是外面到处都是失业的人，你并不在乎处境，不论如何都要做做看。而长期的计划却被你当做将来的事，因此没有人脉资源空有一腔热血的你失败机率较高，容易造成破财。\n整体来看，你的财运指数：⭐⭐"},{title: "注意事项",content: "宜:脚踏实地的做好手头上的事，增长自身的知识储备，对未来的发展做长远的规划，扩展人脉资源，充满热情和行动力。\n忌:大额投资，跟朋友合伙做生意，没找好下家就辞职，盲目乐观，太过于依赖他人的建议，不重视自己的判断，逃避责任。"}])}});
                 await questionResult.addCard(card0yr1,{through: {interpretation: JSON.stringify([{title: "整体财运",content: "抽到愚人时，象征着你的正财运一般，但可能有点偏财运，总体并不算乐观。\n当你周遭的人都对某事提防戒慎，你却打算去冒这个险时，愚人牌可能就会出现。例如，“噢，我认为现在是换工作的好时机”，但现实是外面到处都是失业的人，你并不在乎处境，这种情况，愚人逆位的时候，会比正位的时候更为严重。不论如何都要做做看。而长期的计划却被你当做将来的事，因此没有人脉资源空有一腔热血的你失败机率较高，容易造成破财。\n如果说正位时候，你的财运指数还能有2颗星的话，当愚人逆位时，则变得更低了。整体来看，逆位愚人时，你的财运指数：⭐"},{title: "注意事项",content: "宜:脚踏实地的做好手头上的事，增长自身的知识储备，对未来的发展做长远的规划，扩展人脉资源，充满热情和行动力。\n忌:大额投资，跟朋友合伙做生意，没找好下家就辞职，盲目乐观，太过于依赖他人的建议，不重视自己的判断，逃避责任。"}])}});
                 await questionResult.addCard(card1mss, {through: {interpretation: JSON.stringify([{title: "整体财运",content: "当抽到魔术师正位时，代表着正财运比较不错，偏财运一般，整体上财运不错。\n对的时间、对的机会、对的动机，会使你的努力值回票价。对于展开行动、实现计划而言，也正是一个良好时机。由于你已为实现计划打下良好基础，所以新的冒险很可能会实现。清楚的方向感和意志力的贯彻，大大的提升了成功的可能性。\n整体来看，你的财运指数：⭐⭐⭐⭐\n "},{title: "注意事项",content: "宜:投资理财，跳槽，创业，帮别人牵线搭桥，合理利用自己的人脉资源，发挥想象力，遵循自己的想法，做出具体成果。\n忌:人云亦云，被生活的潮流推着走，漫无目标，缺乏自律，不切实际的胡思乱想，欺骗别人，日常工作或做生意时投机，买彩票，赌博。"}])}});
@@ -1934,7 +1934,7 @@ const tarot2record = Models.tarot2record;
                 questionResult = await groupResult.createQuestion({
                     name: "你现在的工作还值不值得坚持？",
                     count: 132,
-                    priceOld: 9800,
+                    priceOld: 9900,
                     priceNew: 990
                 });
                 await questionResult.addCard(card7zc, {
@@ -1987,7 +1987,7 @@ const tarot2record = Models.tarot2record;
                 questionResult = await groupResult.createQuestion({
                     name: "你适合上班、创业、还是自由职业？",
                     count: 132,
-                    priceOld: 9800,
+                    priceOld: 9900,
                     priceNew: 990
                 });
                 await questionResult.addCard(card15em, {
@@ -2041,7 +2041,7 @@ const tarot2record = Models.tarot2record;
                 questionResult = await groupResult.createQuestion({
                     name: "是否能够顺利找到工作，入职新公司？",
                     count: 132,
-                    priceOld: 9800,
+                    priceOld: 9900,
                     priceNew: 990
                 });
                 await questionResult.addCard(card7zc, {
@@ -2096,7 +2096,7 @@ const tarot2record = Models.tarot2record;
                 questionResult = await groupResult.createQuestion({
                     name: "该继续留在大城市还是回家乡发展？",
                     count: 132,
-                    priceOld: 9800,
+                    priceOld: 9900,
                     priceNew: 990
                 });
                 await questionResult.addCard(card7zc, {
@@ -2150,7 +2150,7 @@ const tarot2record = Models.tarot2record;
                 questionResult = await groupResult.createQuestion({
                     name: "近期生意怎么样，能赚到更多钱吗？",
                     count: 132,
-                    priceOld: 9800,
+                    priceOld: 9900,
                     priceNew: 990
                 });
                 await questionResult.addCard(card40sb2, {
@@ -2204,7 +2204,7 @@ const tarot2record = Models.tarot2record;
                 questionResult = await groupResult.createQuestion({
                     name: "你今年的贵人运怎么样？",
                     count: 132,
-                    priceOld: 9800,
+                    priceOld: 9900,
                     priceNew: 990
                 });
                 await questionResult.addCard(card42qzwh, {
@@ -2266,7 +2266,7 @@ const tarot2record = Models.tarot2record;
                 questionResult = await groupResult.createQuestion({
                     name: "你在哪方面的天赋最高？",
                     count: 132,
-                    priceOld: 9800,
+                    priceOld: 9900,
                     priceNew: 990
                 });
                 await questionResult.addCard(card44bjsc, {
@@ -2318,7 +2318,7 @@ const tarot2record = Models.tarot2record;
                 questionResult = await groupResult.createQuestion({
                     name: "你性格中最大的缺点是什么？ ",
                     count: 132,
-                    priceOld: 9800,
+                    priceOld: 9900,
                     priceNew: 990
                 });
                 await questionResult.addCard(card31bjqs, {
@@ -2374,7 +2374,7 @@ const tarot2record = Models.tarot2record;
                 questionResult = await groupResult.createQuestion({
                     name: "你最让男性着迷的特质是什么？",
                     count: 132,
-                    priceOld: 9800,
+                    priceOld: 9900,
                     priceNew: 990
                 });
                 await questionResult.addCard(card19ty, {
@@ -2428,7 +2428,7 @@ const tarot2record = Models.tarot2record;
                 questionResult = await groupResult.createQuestion({
                     name: "你在爱情中最容易犯哪些错误？",
                     count: 132,
-                    priceOld: 9800,
+                    priceOld: 9900,
                     priceNew: 990
                 });
                 await questionResult.addCard(card44bjsc, {
@@ -2482,7 +2482,7 @@ const tarot2record = Models.tarot2record;
                 questionResult = await groupResult.createQuestion({
                     name: "你在爱情中的出轨指数是多少？",
                     count: 132,
-                    priceOld: 9800,
+                    priceOld: 9900,
                     priceNew: 990
                 });
                 await questionResult.addCard(card11zy, {
@@ -2536,7 +2536,7 @@ const tarot2record = Models.tarot2record;
                 questionResult = await groupResult.createQuestion({
                     name: "你的人物属性是什么？",
                     count: 132,
-                    priceOld: 9800,
+                    priceOld: 9900,
                     priceNew: 990
                 });
                 await questionResult.addCard(card0yr, {
@@ -2590,7 +2590,7 @@ const tarot2record = Models.tarot2record;
                 questionResult = await groupResult.createQuestion({
                     name: "你最适合和哪些星座谈恋爱？",
                     count: 132,
-                    priceOld: 9800,
+                    priceOld: 9900,
                     priceNew: 990
                 });
                 await questionResult.addCard(card6lr, {
@@ -2643,7 +2643,7 @@ const tarot2record = Models.tarot2record;
                 questionResult = await groupResult.createQuestion({
                     name: "你最有可能通过什么渠道脱单？",
                     count: 132,
-                    priceOld: 9800,
+                    priceOld: 9900,
                     priceNew: 990
                 });
                 await questionResult.addCard(card50xb10, {

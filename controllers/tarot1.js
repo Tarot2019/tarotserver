@@ -1,9 +1,12 @@
 const tarot1 = require('../business/tarot1');
+const models = require('../database/models.js');
+const tarot1history = models.tarot1history;
+
 const kefu = {
     normal: {wechatid: "xmqianming01", qrCode: "/tarot1/kefu_normal.png"},
     yuyin: {wechatid: "ch13769762694", qrCode: "/tarot1/kefu_yuyin.png"}
 };
-getFormattedDate = timestamp => {
+const getFormattedDate = timestamp => {
     let date = new Date(timestamp);
     return date.getFullYear() + '-' +
         ("0" + (date.getMonth() + 1)).slice(-2) + '-' +
@@ -12,15 +15,21 @@ getFormattedDate = timestamp => {
         ("0" + date.getMinutes()).slice(-2) + ':' +
         ("0" + date.getSeconds()).slice(-2)
 };
+const shuffleArray = (array) => {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+};
 module.exports = {
     'GET /api/tarot1/home': async (ctx, next) => {
         let homeDivinations = await tarot1.homeDivinations();
-        let homeData = { kefu: kefu};
+        let homeData = {kefu: kefu};
         homeData.banner = [];
         homeData.list = [];
         console.log("homeDivinations", JSON.stringify(homeDivinations));
         homeDivinations.forEach(divination => {
-            if(divination.isBanner) {
+            if (divination.isBanner) {
                 homeData.banner.push({
                     id: divination.id,
                     img: divination.picTop
@@ -37,8 +46,17 @@ module.exports = {
                 });
             }
         });
+        shuffleArray(homeData.list);
         ctx.rest(homeData);
-
+        //console.log(JSON.stringify(ctx.headers));
+        tarot1history.create({
+            time: Date.now(),
+            userId: ctx.headers.openid,
+            page: 'home',
+            os: ctx.headers.os,
+            device: ctx.headers.device,
+            ua: ctx.headers['user-agent']
+        });
     },
 
     'GET /api/tarot1/detail/:id': async (ctx, next) => {
