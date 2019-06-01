@@ -197,7 +197,7 @@ module.exports = {
             let uv = await historyModel.count({
                 where: {
                     page: 'home',
-                    channelId: channel,
+                    channelId: channel.id,
                     time: {[Op.gte]: new Date(new Date().toLocaleDateString()).getTime()}
                 },
                 distinct: true,
@@ -206,7 +206,7 @@ module.exports = {
             let pv = await historyModel.count({
                 where: {
                     page: 'home',
-                    channelId: channel,
+                    channelId: channel.id,
                     time: {[Op.gte]: new Date(new Date().toLocaleDateString()).getTime()}
                 }
             });

@@ -3,6 +3,7 @@ const utils = require('../business/utils/utils');
 
 const models = require('../database/models.js');
 const tarot2history = models.tarot2history;
+models.channel.hasMany(tarot2history);
 
 const kefu = {
     normal: {wechatid: "xmqianming01", qrCode: "/tarot1/kefu_normal.png"},
@@ -57,7 +58,8 @@ module.exports = {
             page: 'home',
             os: ctx.headers.os,
             device: ctx.headers.device,
-            ua: ctx.headers['user-agent']
+            ua: ctx.headers['user-agent'],
+            channelId: ctx.headers.channel || 'official'
         });
     },
 

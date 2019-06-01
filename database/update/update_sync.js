@@ -16,6 +16,8 @@ const tarot2record = Models.tarot2record;
             Models.channel.hasMany(Models.user);
             Models.channel.hasMany(Models.order);
             Models.channel.hasMany(Models.tarot2record);
+            Models.channel.hasMany(Models.tarot1history);
+            Models.channel.hasMany(Models.tarot2history);
 
 
             question.belongsTo(questionGroup);
