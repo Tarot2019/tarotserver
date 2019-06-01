@@ -69,7 +69,7 @@ module.exports = {
             let userInfo = {
                 openid: uuidv1(),
                 avatar: '',
-                wechatName: '',
+                wechatName: '塔罗爱好者',
                 channelId
             };
             await user.upsert(userInfo);

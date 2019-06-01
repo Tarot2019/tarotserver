@@ -22,6 +22,8 @@ const insertDebugData = true;
             Models.channel.hasMany(Models.user);
             Models.channel.hasMany(Models.order);
             Models.channel.hasMany(Models.tarot2record);
+            Models.channel.hasMany(Models.tarot1history);
+            Models.channel.hasMany(Models.tarot2history);
             // Models.user.belongsToMany(Models.divination, {through: Models.order});
             // Models.divination.belongsToMany(Models.user, {through: Models.order});
 
