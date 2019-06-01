@@ -49,7 +49,7 @@ const insertDebugData = true;
                 await Models.divination.create({
                     picTop: "/tarot1/img/1fenshoufuhe.jpg",
                     picSquare: "/tarot1/img/1fenshoufuhes.jpg", //在列表中展示的方形图
-                    isBanner: true, //是否在首页Banner
+                    isBanner: false, //是否在首页Banner
                     isHome: true, //是否展示在首页
                     title: "塔罗测试",
                     subTitle: "测测你和ta分手后还会复合吗？",
@@ -129,7 +129,7 @@ const insertDebugData = true;
                 await Models.divination.create({
                     picTop: "/tarot1/img/3gongzuojianchi.jpg",
                     picSquare: "/tarot1/img/3gongzuojianchis.jpg", //在列表中展示的方形图
-                    isBanner: true, //是否在首页Banner
+                    isBanner: false, //是否在首页Banner
                     isHome: true, //是否展示在首页
                     title: "塔罗测试",
                     subTitle: "你现在的工作还值不值得坚持？",
@@ -166,7 +166,7 @@ const insertDebugData = true;
                 await Models.divination.create({
                     picTop: "/tarot1/img/4shenmeaiqing.jpg",
                     picSquare: "/tarot1/img/4shenmeaiqings.jpg", //在列表中展示的方形图
-                    isBanner: true, //是否在首页Banner
+                    isBanner: false, //是否在首页Banner
                     isHome: true, //是否展示在首页
                     title: "塔罗测试",
                     subTitle: "你会遇见什么样的爱情？",
@@ -1026,7 +1026,7 @@ const insertDebugData = true;
                 await Models.divination.create({
                     picTop: "/tarot1/img/26shengzhijiaxing.jpg",
                     picSquare: "/tarot1/img/26shengzhijiaxings.jpg", //在列表中展示的方形图
-                    isBanner: false, //是否在首页Banner
+                    isBanner: true, //是否在首页Banner
                     isHome: true, //是否展示在首页
                     title: "塔罗测试",
                     subTitle: "2019年你能否把握住加薪升职的机会？",
@@ -1271,7 +1271,7 @@ const insertDebugData = true;
                 await Models.divination.create({
                     picTop: "/tarot1/img/33xingzuoyuanfen.jpg",
                     picSquare: "/tarot1/img/33xingzuoyuanfens.jpg", //在列表中展示的方形图
-                    isBanner: false, //是否在首页Banner
+                    isBanner: true, //是否在首页Banner
                     isHome: true, //是否展示在首页
                     title: "塔罗测试",
                     subTitle: "你和哪些星座最有缘分？",

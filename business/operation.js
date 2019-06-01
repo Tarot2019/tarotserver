@@ -2,6 +2,7 @@ const APIError = require('../rest').ApiError;
 const wechatPayNotifyUrl = "https://qian10.net/api/api/tarot1/payResult";
 
 const weixinPay = require('./weixin_pay');
+const crypto = require('crypto');
 
 const utils = require('./utils/utils');
 
@@ -170,6 +171,18 @@ const toPercent = (num, total) => {
 }
 module.exports = {
     channels: getAllChannels,
+    addChannel: async (channelName, channelDescription) => {
+        try {
+            let result = await channel.create({
+                id: crypto.createHash('md5').update(channelName + 'this_is_a_Lucky_$#%^_salt', 'utf8').digest('hex').toLowerCase().slice(-8),
+                name: channelName,
+                description: channelDescription
+            });
+            return result;
+        } catch (err) {
+            throw new APIError('db_err', JSON.stringify(err));
+        }
+    },
 
     detail: detail,
     detailAll: async (product) => {

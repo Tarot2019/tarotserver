@@ -79,7 +79,7 @@ const wechatPay = (obj) => {
 
 
 /**
- * 对指定字符串进行md5加密
+ * 对指定字符串进行[md5加密
  * @param {String} str
  */
 const getSign = (str) => {

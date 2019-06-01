@@ -18,6 +18,10 @@ module.exports = {
 
     },
 
+    'POST /api/operation/addChannel': async (ctx, next) => {
+        ctx.rest(await operation.addChannel(ctx.request.body.name, ctx.request.body.description));
+    },
+
     'GET /api/operation/detail/:product/:channelId': async (ctx, next) => {
         let detail = await operation.detail(ctx.params.channelId, ctx.params.product);
         ctx.rest(detail);
