@@ -132,7 +132,7 @@ const orders = async (channelId, page, product) => {
             attributes: ['orderid', 'userOpenid', 'paidTime', 'price']
         });
         return {
-            total: Math.ceil(orderCount / pageSize),
+            total: orderCount,
             pageSize,
             page: parseInt(page),
             data: await Promise.all(ordersAll.map(async order => {
@@ -163,7 +163,7 @@ const orders = async (channelId, page, product) => {
             attributes: ['orderId', 'openid', 'phoneNumber', 'paidTime', 'price']
         });
         return {
-            total: Math.ceil(orderCount / pageSize),
+            total: orderCount,
             pageSize,
             page: parseInt(page),
             data: await Promise.all(ordersAll.map(async order => {
