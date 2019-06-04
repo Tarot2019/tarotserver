@@ -115,17 +115,24 @@ const detail = async (channelId, product) => {
 };
 const orders = async (channelId, page, product) => {
     if (product == 'tarot1') {
+        let orderCount = await order.count({
+            where: {
+                channelId: channelId,
+                status: 'paid'
+            }
+        });
         const pageSize = 20;
         let ordersAll = await order.findAll({
             where: {
                 channelId: channelId,
                 status: 'paid'
             },
-            offset: page * pageSize,
+            offset: pageSize * page,
             limit: pageSize,
             attributes: ['orderid', 'userOpenid', 'paidTime', 'price']
         });
         return {
+            total: Math.ceil(orderCount / pageSize),
             pageSize,
             page: parseInt(page),
             data: await Promise.all(ordersAll.map(async order => {
@@ -139,6 +146,12 @@ const orders = async (channelId, page, product) => {
             }))
         }
     } else {
+        let orderCount = await tarot2record.count({
+            where: {
+                channelId: channelId,
+                status: 'paid'
+            }
+        });
         const pageSize = 20;
         let ordersAll = await tarot2record.findAll({
             where: {
@@ -150,6 +163,7 @@ const orders = async (channelId, page, product) => {
             attributes: ['orderId', 'openid', 'phoneNumber', 'paidTime', 'price']
         });
         return {
+            total: Math.ceil(orderCount / pageSize),
             pageSize,
             page: parseInt(page),
             data: await Promise.all(ordersAll.map(async order => {

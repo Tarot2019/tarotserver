@@ -37,9 +37,9 @@ const channel = Models.channel;
             // ADD COLUMN `channelId` varchar(8) NOT NULL default 'official',
             //     ADD CONSTRAINT `users_ibfk_1` FOREIGN KEY (`channelId`) REFERENCES `tarotTest`.`channels` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
             //
-            // ALTER TABLE `tarotTest`.`tarot2record`
-            // ADD COLUMN `channelId` varchar(8) NOT NULL default 'official',
-            //     ADD CONSTRAINT `tarot2record_ibfk_1` FOREIGN KEY (`channelId`) REFERENCES `tarotTest`.`channels` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+            ALTER TABLE `tarotTest`.`tarot2record`
+            ADD COLUMN `channelId` varchar(8) NOT NULL default 'official',
+                ADD CONSTRAINT `tarot2record_ibfk_1` FOREIGN KEY (`channelId`) REFERENCES `tarotTest`.`channels` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
             console.log("关闭数据库连接成功");
             console.log("bye!");
         } catch (err) {

@@ -1,16 +1,14 @@
 //create all tables
 const Models = require('./models.js');
+const interpretation = Models.interpretation;
+const card = Models.card;
+const question = Models.question;
+const questionGroup = Models.questionGroup;
+const tarot2record = Models.tarot2record;
 const { sequelize } = require('./db');
 const insertDebugData = true;
 (async () => {
         try {
-            if(insertDebugData) {
-                await Models.order.drop();
-                await Models.user.drop();
-                await Models.divination.drop();
-                console.log("-------- 全部表删除完成 --------");
-            }
-
 
             console.log("-------- begin 创建关联 --------");
             Models.user.belongsToMany(Models.divination, {as: "Preorders", through: "userPreorder"});
@@ -24,25 +22,15 @@ const insertDebugData = true;
             Models.channel.hasMany(Models.tarot2record);
             Models.channel.hasMany(Models.tarot1history);
             Models.channel.hasMany(Models.tarot2history);
-            // Models.user.belongsToMany(Models.divination, {through: Models.order});
-            // Models.divination.belongsToMany(Models.user, {through: Models.order});
 
-            // Models.divination.hasMany(Models.preorder);
-            // Models.divination.hasMany(Models.order);
-            // Models.preorder.hasOne(Models.divination);
-            // Models.order.hasOne(Models.divination);
+            question.belongsTo(questionGroup);
+            questionGroup.hasMany(question);
+            question.belongsToMany(card, {through: interpretation});
+            card.belongsToMany(question, {through: interpretation});
             console.log("-------- end 创建关联 --------");
 
 
             await sequelize.sync();
-            // await Models.divination.sync();
-            // console.log("创建表成功：divination");
-            // await Models.user.sync();
-            // console.log("创建表成功：user");
-            // await Models.preorder.sync();
-            // console.log("创建表成功：preorder");
-            // await Models.order.sync();
-            // console.log("创建表成功：order");
             console.log("++++++++ 全部表创建完成 ++++++++");
 
             //插入测试数据

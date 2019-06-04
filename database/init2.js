@@ -10,14 +10,14 @@ const questionGroup = Models.questionGroup;
 const tarot2record = Models.tarot2record;
 (async () => {
         try {
-            if(insertDebugData) {
-                await interpretation.drop();
-                await card.drop();
-                await question.drop();
-                await questionGroup.drop();
-                await tarot2record.drop();
-                console.log("-------- tarot2 全部表删除完成 --------");
-            }
+            // if(insertDebugData) {
+            //     await interpretation.drop();
+            //     await card.drop();
+            //     await question.drop();
+            //     await questionGroup.drop();
+            //     await tarot2record.drop();
+            //     console.log("-------- tarot2 全部表删除完成 --------");
+            // }
 
 
             console.log("-------- tarot2 begin 创建关联 --------");
@@ -26,10 +26,6 @@ const tarot2record = Models.tarot2record;
             question.belongsToMany(card, {through: interpretation});
             card.belongsToMany(question, {through: interpretation});
             console.log("-------- tarot2 end 创建关联 --------");
-
-
-            await sequelize.sync();
-            console.log("++++++++ tarot2 全部表创建完成 ++++++++");
 
             //插入测试数据
             if (insertDebugData) {
