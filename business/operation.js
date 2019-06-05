@@ -46,7 +46,8 @@ const detail = async (channelId, product) => {
         },
         attributes: [
             [db.sequelize.fn('SUM', db.sequelize.col('price')), 'sumPrice'],
-            [db.sequelize.fn('COUNT', db.sequelize.col('*')), 'order']]
+            [db.sequelize.fn('COUNT', db.sequelize.col('*')), 'order'],
+            [db.sequelize.fn('COUNT', db.sequelize.fn('DISTINCT', db.sequelize.col(product == 'tarot2' ? 'openid' : 'userOpenid'))), 'orderDistinct']]
     });
     let ordersMonth = await orderOrRecord.findAll({
         where: {
@@ -56,7 +57,8 @@ const detail = async (channelId, product) => {
         },
         attributes: [
             [db.sequelize.fn('SUM', db.sequelize.col('price')), 'sumPrice'],
-            [db.sequelize.fn('COUNT', db.sequelize.col('*')), 'order']]
+            [db.sequelize.fn('COUNT', db.sequelize.col('*')), 'order'],
+            [db.sequelize.fn('COUNT', db.sequelize.fn('DISTINCT', db.sequelize.col(product == 'tarot2' ? 'openid' : 'userOpenid'))), 'orderDistinct']]
     });
     let ordersWeek = await orderOrRecord.findAll({
         where: {
@@ -66,7 +68,8 @@ const detail = async (channelId, product) => {
         },
         attributes: [
             [db.sequelize.fn('SUM', db.sequelize.col('price')), 'sumPrice'],
-            [db.sequelize.fn('COUNT', db.sequelize.col('*')), 'order']]
+            [db.sequelize.fn('COUNT', db.sequelize.col('*')), 'order'],
+            [db.sequelize.fn('COUNT', db.sequelize.fn('DISTINCT', db.sequelize.col(product == 'tarot2' ? 'openid' : 'userOpenid'))), 'orderDistinct']]
     });
     let orders24Hours = await orderOrRecord.findAll({
         where: {
@@ -76,7 +79,8 @@ const detail = async (channelId, product) => {
         },
         attributes: [
             [db.sequelize.fn('SUM', db.sequelize.col('price')), 'sumPrice'],
-            [db.sequelize.fn('COUNT', db.sequelize.col('*')), 'order']]
+            [db.sequelize.fn('COUNT', db.sequelize.col('*')), 'order'],
+            [db.sequelize.fn('COUNT', db.sequelize.fn('DISTINCT', db.sequelize.col(product == 'tarot2' ? 'openid' : 'userOpenid'))), 'orderDistinct']]
     });
     let ordersDay = await orderOrRecord.findAll({
         where: {
@@ -86,33 +90,39 @@ const detail = async (channelId, product) => {
         },
         attributes: [
             [db.sequelize.fn('SUM', db.sequelize.col('price')), 'sumPrice'],
-            [db.sequelize.fn('COUNT', db.sequelize.col('*')), 'order']]
+            [db.sequelize.fn('COUNT', db.sequelize.col('*')), 'order'],
+            [db.sequelize.fn('COUNT', db.sequelize.fn('DISTINCT', db.sequelize.col(product == 'tarot2' ? 'openid' : 'userOpenid'))), 'orderDistinct']]
     });
     // return [ordersDay[0], orders24Hours[0], ordersWeek[0], ordersMonth[0], ordersAll[0]];
     return [
         {
             title: "今日付款合计",
             order: ordersDay[0].toJSON().order,
+            orderDistinct: ordersDay[0].toJSON().orderDistinct,
             sum: parseInt(ordersDay[0].toJSON().sumPrice || 0)
         },
         {
             title: "24小时付款合计",
             order: orders24Hours[0].toJSON().order,
+            orderDistinct: ordersDay[0].toJSON().orderDistinct,
             sum: parseInt(orders24Hours[0].toJSON().sumPrice || 0)
         },
         {
             title: "7日付款合计",
             order: ordersWeek[0].toJSON().order,
+            orderDistinct: ordersDay[0].toJSON().orderDistinct,
             sum: parseInt(ordersWeek[0].toJSON().sumPrice || 0)
         },
         {
             title: "30日付款合计",
             order: ordersMonth[0].toJSON().order,
+            orderDistinct: ordersDay[0].toJSON().orderDistinct,
             sum: parseInt(ordersMonth[0].toJSON().sumPrice || 0)
         },
         {
             title: "历史付款合计",
             order: ordersAll[0].toJSON().order,
+            orderDistinct: ordersDay[0].toJSON().orderDistinct,
             sum: parseInt(ordersAll[0].toJSON().sumPrice || 0)
         },
     ];
@@ -256,13 +266,13 @@ module.exports = {
             channelTemp.pv = pv;
             channelTemp.uv = uv;
             channelTemp.orderCount = orderDetail[0].order;
-            channelTemp.orderPeopleCount = channelTemp.orderCount;
+            channelTemp.orderPeopleCount = orderDetail[0].orderDistinct;
             channelTemp.orderRate = toPercent(channelTemp.orderCount, channelTemp.uv);
             channelTemp.validOrderCount = channelTemp.orderCount;
             channelTemp.validOrderRate = channelTemp.orderRate;
             channelTemp.validOrderPerPeople = toPercent(channelTemp.validOrderCount, channelTemp.orderPeopleCount);
             channelTemp.income = orderDetail[0].sum;
-            channelTemp.incomePerUv = toPercent(channelTemp.income, channelTemp.uv);
+            channelTemp.incomePerUv = (channelTemp.income / channelTemp.uv / 100).toFixed(2);
             channelTemp.orderDetail = orderDetail;
             return channelTemp;
         }));
