@@ -91,6 +91,7 @@ module.exports = {
     'POST /api/tarot2/getPayInfo': async (ctx, next) => {
         console.log("[getPayInfo2] ctx.request.ip = " + ctx.request.ip);
         console.log("[getPayInfo2] ctx.request.ips = " + ctx.request.ips);
+        console.log("[getPayInfo2] ctx.headers.channel = " + ctx.headers.channel);
         console.log("[getPayInfo2] ctx.request.header = " + JSON.stringify(ctx.request.header));
         console.log("[getPayInfo2] ctx.request.body = " + JSON.stringify(ctx.request.body));
         let payInfo = await tarot2.getPayInfo(ctx.headers.openid, ctx.request.body.questionId,
