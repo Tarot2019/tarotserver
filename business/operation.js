@@ -133,7 +133,7 @@ const orders = async (channelId, page, product) => {
             },
             offset: pageSize * page,
             limit: pageSize,
-            attributes: ['orderid', 'userOpenid', 'paidTime', 'price']
+            attributes: ['orderid', 'userOpenid', 'paidTime', 'price', 'divinationId']
         });
         return {
             total: orderCount,
@@ -149,6 +149,7 @@ const orders = async (channelId, page, product) => {
                 orderJson.userName = userInstance.wechatName || "浏览器用户";
                 orderJson.title = divinationInstance.subTitle;
                 delete orderJson.userOpenid;
+                delete orderJson.divinationId;
                 return orderJson;
             }))
         }
@@ -167,7 +168,7 @@ const orders = async (channelId, page, product) => {
             },
             offset: page * pageSize,
             limit: pageSize,
-            attributes: ['orderId', 'openid', 'phoneNumber', 'paidTime', 'price']
+            attributes: ['orderId', 'openid', 'phoneNumber', 'paidTime', 'price', 'questionId']
         });
         return {
             total: orderCount,
@@ -182,6 +183,7 @@ const orders = async (channelId, page, product) => {
                 orderJson.title = question.name;
                 delete orderJson.openid;
                 delete orderJson.phoneNumber;
+                delete orderJson.questionId;
                 return orderJson;
             }))
         }
