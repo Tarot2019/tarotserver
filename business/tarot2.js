@@ -21,6 +21,7 @@ card.belongsToMany(question, {through: interpretation});
 const utils = require('./utils/utils');
 
 const questionAnswer = async (questionId, cardId) => {
+    console.log(`[questionAnswer] questionId=${questionId}, cardId=${cardId}`);
     // if(!cardId) {
     //     cardId = Math.ceil(Math.random() * Cards_Count);
     //     cardId = cardId < 0 ? 0 : (cardId > Cards_Count ? Cards_Count : cardId);
@@ -36,7 +37,7 @@ const questionAnswer = async (questionId, cardId) => {
         let count = cards.length;
         let index = Math.ceil(Math.random() * count) - 1;
         index = index < 0 ? 0 : (index > count ? count : index);
-        console.log("[" + questionInstance.name + "] 有[" + count + "]张牌可选，选择的是" + index);
+        console.log("[" + questionInstance.name + "] 有[" + count + "]张牌可选，选择的是" + index + ", card id = " + cards[index].id);
         cardDetail = cards[index].toJSON();
     } else {
         let cards = await questionInstance.getCards({where: {id: cardId}});
@@ -165,6 +166,7 @@ module.exports = {
         console.log("微信支付信息：", JSON.stringify(payInfo));
         if(payInfo) {
             await questionInstance.update({count: questionInstance.count + 1});
+            console.log(`getPayInfo2 cardId=${cardId}`);
             await tarot2record.upsert({
                 orderId,
                 price,

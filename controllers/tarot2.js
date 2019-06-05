@@ -92,6 +92,7 @@ module.exports = {
         console.log("[getPayInfo2] ctx.request.ip = " + ctx.request.ip);
         console.log("[getPayInfo2] ctx.request.ips = " + ctx.request.ips);
         console.log("[getPayInfo2] ctx.request.header = " + JSON.stringify(ctx.request.header));
+        console.log("[getPayInfo2] ctx.request.body = " + JSON.stringify(ctx.request.body));
         let payInfo = await tarot2.getPayInfo(ctx.headers.openid, ctx.request.body.questionId,
             ctx.request.body.cardId, ctx.request.ip, ctx.headers.channel || 'official',
             ctx.headers.weixin);
