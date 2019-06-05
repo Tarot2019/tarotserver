@@ -11,12 +11,14 @@ let interpretation = models.interpretation;
 let questionGroup = models.questionGroup;
 let question = models.question;
 let tarot2record = models.tarot2record;
+let channel = models.channel;
 
 
 question.belongsTo(questionGroup);
 questionGroup.hasMany(question);
 question.belongsToMany(card, {through: interpretation});
 card.belongsToMany(question, {through: interpretation});
+channel.hasMany(tarot2record);
 
 const utils = require('./utils/utils');
 

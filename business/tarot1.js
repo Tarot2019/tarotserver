@@ -14,6 +14,8 @@ divination.belongsToMany(user, {as: "Collectors", through: "userPreorder"});
 user.belongsToMany(divination, {as: "Orders", through: order});
 divination.belongsToMany(user, {as: "Consumers", through: order});
 
+models.channel.hasMany(order);
+
 const utils = require('./utils/utils');
 
 const recommendationLimits = 3;
