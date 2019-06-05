@@ -93,7 +93,7 @@ module.exports = {
                     questionName: questionInstance.name,
                     time: utils.getFormattedDate(order.createTime),
                     cardElement: cardDetail.element,
-                    cardName: cardDetail.name + ('positive' == card.orientation ? "（正位）" : "（逆位）")
+                    cardName: cardDetail.name + ('positive' == cardDetail.orientation ? "（正位）" : "（逆位）")
                 };
             }));
         } else {
@@ -115,7 +115,7 @@ module.exports = {
                     questionName: questionInstance.name,
                     time: utils.getFormattedDate(order.createTime),
                     cardElement: cardDetail.element,
-                    cardName: cardDetail.name + ('positive' == card.orientation ? "（正位）" : "（逆位）")
+                    cardName: cardDetail.name + ('positive' == cardDetail.orientation ? "（正位）" : "（逆位）")
                 };
             }));
         } else {

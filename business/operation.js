@@ -192,7 +192,15 @@ module.exports = {
                 name: channelName,
                 description: channelDescription
             });
-            return result;
+            let channelDetail = result.toJSON();
+            channelDetail.link1 = `https://taluoyuce.com/?channel=${channelDetail.id}&show=false`;
+            channelDetail.link2 = `https://taluoyuce.cn/?channel=${channelDetail.id}&show=false`;
+            channelDetail.link3 = `https://taluoyixia.top/?channel=${channelDetail.id}&show=false`;
+            channelDetail.link1Kefu = `https://taluoyuce.com/?channel=${channelDetail.id}`;
+            channelDetail.link2Kefu = `https://taluoyuce.cn/?channel=${channelDetail.id}`;
+            channelDetail.link3Kefu = `https://taluoyixia.top/?channel=${channelDetail.id}`;
+            channelDetail.linkDetail = `https://qian10.net/api/static/tarot_manager/index.html#/channel/tarot1/${channelDetail.id}`;
+            return channelDetail;
         } catch (err) {
             throw new APIError('db_err', JSON.stringify(err));
         }
