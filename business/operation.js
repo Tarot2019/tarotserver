@@ -14,12 +14,16 @@ let channel = models.channel;
 let user = models.user;
 let order = models.order;
 let tarot2record = models.tarot2record;
+let divination = models.divination;
+let question = models.question;
 
 
 let tarot1history = models.tarot1history;
 let tarot2history = models.tarot2history;
 
 order.belongsTo(user);
+order.belongsTo(divination);
+tarot2record.belongsTo(question);
 channel.hasMany(user);
 channel.hasMany(order);
 
@@ -136,11 +140,14 @@ const orders = async (channelId, page, product) => {
             pageSize,
             page: parseInt(page),
             data: await Promise.all(ordersAll.map(async order => {
-                let userInstance = await order.getUser();
+                const userInstance = await order.getUser();
+                const divinationInstance = await order.getDivination();
                 console.log("[orders]user = " + JSON.stringify(userInstance));
+                console.log("[orders]divination = " + JSON.stringify(divinationInstance));
                 let orderJson = order.toJSON();
                 orderJson.paidTime = utils.getFormattedDate(orderJson.paidTime);
                 orderJson.userName = userInstance.wechatName || "浏览器用户";
+                orderJson.title = divinationInstance.subTitle;
                 delete orderJson.userOpenid;
                 return orderJson;
             }))
@@ -167,9 +174,12 @@ const orders = async (channelId, page, product) => {
             pageSize,
             page: parseInt(page),
             data: await Promise.all(ordersAll.map(async order => {
+                const question = await order.getQuestion();
+                console.log("[orders]question = " + JSON.stringify(question));
                 let orderJson = order.toJSON();
                 orderJson.paidTime = utils.getFormattedDate(orderJson.paidTime);
                 orderJson.userName = orderJson.phoneNumber || "未绑定用户";
+                orderJson.title = question.name;
                 delete orderJson.openid;
                 delete orderJson.phoneNumber;
                 return orderJson;
