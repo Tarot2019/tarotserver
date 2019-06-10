@@ -201,7 +201,7 @@ const detail = async (channelId, product) => {
             order: ordersDay[0].toJSON().order,
             orderDistinct: ordersDay[0].toJSON().orderDistinct,
             sum: parseInt(ordersDay[0].toJSON().sumPrice || 0),
-            orderAll: ordersDayAll[0].order
+            orderAll: ordersDayAll[0].toJSON().order
         },
         // {
         //     title: "24小时付款合计",
@@ -214,7 +214,7 @@ const detail = async (channelId, product) => {
             order: ordersYesterday[0].toJSON().order,
             orderDistinct: ordersYesterday[0].toJSON().orderDistinct,
             sum: parseInt(ordersYesterday[0].toJSON().sumPrice || 0),
-            orderAll: ordersYesterdayAll[0].order
+            orderAll: ordersYesterdayAll[0].toJSON().order
         },
         // {
         //     title: "7日付款合计",
@@ -233,21 +233,21 @@ const detail = async (channelId, product) => {
             order: ordersCurMonth[0].toJSON().order,
             orderDistinct: ordersCurMonth[0].toJSON().orderDistinct,
             sum: parseInt(ordersCurMonth[0].toJSON().sumPrice || 0),
-            orderAll: ordersCurMonthAll[0].order
+            orderAll: ordersCurMonthAll[0].toJSON().order
         },
         {
             title: "上月付款合计",
             order: ordersLastMonth[0].toJSON().order,
             orderDistinct: ordersLastMonth[0].toJSON().orderDistinct,
             sum: parseInt(ordersLastMonth[0].toJSON().sumPrice || 0),
-            orderAll: ordersLastMonthAll[0].order
+            orderAll: ordersLastMonthAll[0].toJSON().order
         },
         {
             title: "历史付款合计",
             order: ordersAllTime[0].toJSON().order,
             orderDistinct: ordersAllTime[0].toJSON().orderDistinct,
             sum: parseInt(ordersAllTime[0].toJSON().sumPrice || 0),
-            orderAll: ordersAllTimeAll[0].order
+            orderAll: ordersAllTimeAll[0].toJSON().order
         },
     ];
 };
