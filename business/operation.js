@@ -62,7 +62,7 @@ const detail = async (channelId, product) => {
         where: {
             channelId: channelId,
             status: 'paid',
-            paidTime: {
+            createTime: {
                 [Op.gte]: utils.getTimeStamp().lastMonth.start,
                 [Op.lte]: utils.getTimeStamp().lastMonth.end,
             }
@@ -75,7 +75,7 @@ const detail = async (channelId, product) => {
     let ordersLastMonthAll = await orderOrRecord.findAll({
         where: {
             channelId: channelId,
-            paidTime: {
+            createTime: {
                 [Op.gte]: utils.getTimeStamp().lastMonth.start,
                 [Op.lte]: utils.getTimeStamp().lastMonth.end,
             }
@@ -89,7 +89,7 @@ const detail = async (channelId, product) => {
         where: {
             channelId: channelId,
             status: 'paid',
-            paidTime: {
+            createTime: {
                 [Op.gte]: utils.getTimeStamp().curMonth.start,
                 [Op.lte]: utils.getTimeStamp().curMonth.end,
             }
@@ -102,7 +102,7 @@ const detail = async (channelId, product) => {
     let ordersCurMonthAll = await orderOrRecord.findAll({
         where: {
             channelId: channelId,
-            paidTime: {
+            createTime: {
                 [Op.gte]: utils.getTimeStamp().curMonth.start,
                 [Op.lte]: utils.getTimeStamp().curMonth.end,
             }
@@ -149,7 +149,7 @@ const detail = async (channelId, product) => {
         where: {
             channelId: channelId,
             status: 'paid',
-            paidTime: {[Op.gte]: new Date(new Date().toLocaleDateString()).getTime()}
+            createTime: {[Op.gte]: new Date(new Date().toLocaleDateString()).getTime()}
         },
         attributes: [
             [db.sequelize.fn('SUM', db.sequelize.col('price')), 'sumPrice'],
@@ -159,7 +159,7 @@ const detail = async (channelId, product) => {
     let ordersDayAll = await orderOrRecord.findAll({
         where: {
             channelId: channelId,
-            paidTime: {[Op.gte]: new Date(new Date().toLocaleDateString()).getTime()}
+            createTime: {[Op.gte]: new Date(new Date().toLocaleDateString()).getTime()}
         },
         attributes: [
             [db.sequelize.fn('SUM', db.sequelize.col('price')), 'sumPrice'],
@@ -170,7 +170,7 @@ const detail = async (channelId, product) => {
         where: {
             channelId: channelId,
             status: 'paid',
-            paidTime: {
+            createTime: {
                 [Op.gte]: utils.getTimeStamp().yesterday.start,
                 [Op.lte]: utils.getTimeStamp().yesterday.end,
             }
@@ -183,7 +183,7 @@ const detail = async (channelId, product) => {
     let ordersYesterdayAll = await orderOrRecord.findAll({
         where: {
             channelId: channelId,
-            paidTime: {
+            createTime: {
                 [Op.gte]: utils.getTimeStamp().yesterday.start,
                 [Op.lte]: utils.getTimeStamp().yesterday.end,
             }
