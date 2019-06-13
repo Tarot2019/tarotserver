@@ -423,8 +423,12 @@ module.exports = {
         return {
             dayOrder: channelsDetail.reduce((pre, cur) => pre + cur.orderDetail[0].order, 0),
             dayIncome: channelsDetail.reduce((pre, cur) => pre + cur.orderDetail[0].sum, 0),
+            yesterdayOrder: channelsDetail.reduce((pre, cur) => pre + cur.orderDetail[1].order, 0),
+            yesterdayIncome: channelsDetail.reduce((pre, cur) => pre + cur.orderDetail[1].sum, 0),
             monthOrder: channelsDetail.reduce((pre, cur) => pre + cur.orderDetail[2].order, 0),
             monthIncome: channelsDetail.reduce((pre, cur) => pre + cur.orderDetail[2].sum, 0),
+            lastMonthOrder: channelsDetail.reduce((pre, cur) => pre + cur.orderDetail[3].order, 0),
+            lastMonthIncome: channelsDetail.reduce((pre, cur) => pre + cur.orderDetail[3].sum, 0),
             allOrder: channelsDetail.reduce((pre, cur) => pre + cur.orderDetail[4].order, 0),
             allIncome: channelsDetail.reduce((pre, cur) => pre + cur.orderDetail[4].sum, 0),
             channelsDetail: channelsDetail.map(channelsDetailInstance => {
