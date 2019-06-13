@@ -63,8 +63,14 @@ module.exports = {
         });
     },
 
-    'GET /api/tarot2/answer/:questionId': async (ctx, next) => {
-        let answer = await tarot2.questionAnswer(ctx.params.questionId);
+    'GET /api/tarot2/drawCard/:questionId': async (ctx, next) => {
+        let cardId = await tarot2.drawCard(ctx.params.questionId);
+        ctx.rest(cardId);
+
+    },
+
+    'GET /api/tarot2/answer/:questionId/:cardId': async (ctx, next) => {
+        let answer = await tarot2.questionAnswer(ctx.params.questionId, ctx.params.cardId);
         delete answer.cardDescription;
         answer.interpretations.map(interpretation => delete interpretation.content);
         answer.kefu = kefu;

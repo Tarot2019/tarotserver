@@ -30,11 +30,11 @@ const questionAnswer = async (questionId, cardId) => {
     //     console.log(`Random card id = ${cardId}`);
     // }
     let questionInstance = await question.findById(questionId);
-    if(!questionInstance) {
+    if (!questionInstance) {
         throw new APIError('questionId_err', "错误的questionId");
     }
     let cardDetail;
-    if(!cardId) {
+    if (!cardId) {
         let cards = await questionInstance.getCards();
         let count = cards.length;
         let index = Math.ceil(Math.random() * count) - 1;
@@ -43,9 +43,11 @@ const questionAnswer = async (questionId, cardId) => {
         cardDetail = cards[index].toJSON();
     } else {
         let cards = await questionInstance.getCards({where: {id: cardId}});
+        if(!cards[0]) {
+            throw new APIError('cardid_err', '您抽的牌不存在');
+        }
         cardDetail = cards[0].toJSON();
     }
-
 
 
     cardDetail.cardId = cardDetail.id;
@@ -81,12 +83,25 @@ module.exports = {
     },
 
     questionAnswer,
+    drawCard: async (questionId) => {
+        console.log(`[drawCard] questionId=${questionId}`);
+        let questionInstance = await question.findById(questionId);
+        if (!questionInstance) {
+            throw new APIError('questionId_err', "错误的questionId");
+        }
+        let cards = await questionInstance.getCards();
+        let count = cards.length;
+        let index = Math.ceil(Math.random() * count) - 1;
+        index = index < 0 ? 0 : (index > count ? count : index);
+        console.log("[" + questionInstance.name + "] 有[" + count + "]张牌可选，选择的是" + index + ", card id = " + cards[index].id);
+        return cards[index].id;
+    },
     orders: async (openid) => {
         let records = await tarot2record.findAll({
             where: {openid: openid}
         });
         console.log("[tarot2 get orders]：", JSON.stringify(records));
-        if(records) {
+        if (records) {
             return await Promise.all(records.filter(order => order.status == 'paid').map(async order => {
                 let questionInstance = await question.findById(order.questionId);
                 let cardDetail = await card.findById(order.cardId);
@@ -108,7 +123,7 @@ module.exports = {
             where: {phoneNumber: mobile}
         });
         console.log("[tarot2 get ordersWithMobile]：", JSON.stringify(records));
-        if(records) {
+        if (records) {
             return await Promise.all(records.filter(order => order.status == 'paid').map(async order => {
                 let questionInstance = await question.findById(order.questionId);
                 let cardDetail = await card.findById(order.cardId);
@@ -126,39 +141,39 @@ module.exports = {
         }
     },
     orderDetail: async (orderId) => {
-        if(!orderId) {
+        if (!orderId) {
             throw new APIError('orderId_err', '空的orderId');
         }
         let record = await tarot2record.findOne({
             where: {orderId: orderId, status: "paid"}
         });
-        if(!record) {
+        if (!record) {
             throw new APIError('orderId_err', '未找到对应的支付记录');
         }
         return await questionAnswer(record.questionId, record.cardId);
     },
     bindMobile: async (orderId, mobile) => {
-        if(!orderId || !mobile) {
+        if (!orderId || !mobile) {
             throw new APIError('orderId_err', '参数不能为空');
         }
         let record = await tarot2record.findOne({
             where: {orderId: orderId, status: "paid"}
         });
-        if(!record) {
+        if (!record) {
             throw new APIError('orderId_err', '未找到对应的支付记录');
         }
-        if(record.phoneNumber) {
+        if (record.phoneNumber) {
             throw new APIError('bindMobile_err', '存在已绑定的手机号');
         }
         await record.update({phoneNumber: mobile});
         return true;
     },
     getPayInfo: async (openid, questionId, cardId, ip, channelId, isWeixin) => {
-        if(!openid) {
+        if (!openid) {
             throw new APIError('openid_err', 'openid null!');
         }
         let questionInstance = await question.findById(questionId);
-        if(!questionInstance) {
+        if (!questionInstance) {
             throw new APIError('id_err', 'questionId id error');
         }
         let orderId = Date.now().toString(36) + openid.slice(-2);
@@ -166,7 +181,7 @@ module.exports = {
         let payInfo = await weixinPay.prePay(openid, orderId, questionInstance.name, price, ip, wechatPayNotifyUrl, isWeixin);
         payInfo.orderId = orderId;
         console.log("微信支付信息：", JSON.stringify(payInfo));
-        if(payInfo) {
+        if (payInfo) {
             await questionInstance.update({count: questionInstance.count + 1});
             console.log(`[getPayInfo2] cardId=${cardId}, channelId=${channelId}`);
             await tarot2record.upsert({
@@ -186,11 +201,11 @@ module.exports = {
 
     },
     getPayInfoH5: async (udid, phoneNumber, questionId, cardId, ip) => {
-        if(!udid && !phoneNumber) {
+        if (!udid && !phoneNumber) {
             throw new APIError('udid_err', 'udid and phoneNumber all null!');
         }
         let questionInstance = await question.findById(questionId);
-        if(!questionInstance) {
+        if (!questionInstance) {
             throw new APIError('id_err', 'questionId id error');
         }
         let cardDetail = await questionInstance.getCards({where: {id: cardId}});
@@ -200,10 +215,17 @@ module.exports = {
         let price = questionInstance.priceNew;
         let payInfo = await weixinPay.prePay(openid, orderId, divinationInstance.title, price, ip)
         console.log("微信支付信息：", JSON.stringify(payInfo));
-        if(payInfo) {
+        if (payInfo) {
             let userInstance = await user.findOne({where: {openid: openid}});
             let status = 'unpaid';
-            await userInstance.addOrder(divinationInstance, {through: {createTime: Date.now(), price: price, orderid: orderid, status: status}});
+            await userInstance.addOrder(divinationInstance, {
+                through: {
+                    createTime: Date.now(),
+                    price: price,
+                    orderid: orderid,
+                    status: status
+                }
+            });
             return payInfo;
         } else {
             throw new APIError('prepay_err', 'get wechat prepay info failed');
@@ -211,11 +233,11 @@ module.exports = {
 
     },
     wechatCallback: async (cbContent) => {
-        if(cbContent && cbContent.return_code && cbContent.return_code[0] == 'SUCCESS'
+        if (cbContent && cbContent.return_code && cbContent.return_code[0] == 'SUCCESS'
             && cbContent.result_code && cbContent.result_code[0] == 'SUCCESS') {
             let orderInstance = await tarot2record.findOne({where: {orderId: cbContent.out_trade_no[0]}});
-            console.log("wechatCallback tarot2， cbContent.total_fee[0] = " + cbContent.total_fee[0] +  ",  orderInstance = " + JSON.stringify(orderInstance));
-            if(orderInstance && orderInstance.price === parseInt(cbContent.total_fee[0])) {
+            console.log("wechatCallback tarot2， cbContent.total_fee[0] = " + cbContent.total_fee[0] + ",  orderInstance = " + JSON.stringify(orderInstance));
+            if (orderInstance && orderInstance.price === parseInt(cbContent.total_fee[0])) {
                 await orderInstance.update({status: 'paid', paidTime: Date.now()});
                 return true;
             } else {
