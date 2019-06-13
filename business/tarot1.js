@@ -52,14 +52,13 @@ module.exports = {
         let paid = false;
         if(openid) {
             let divinationInstance = results[0];
-            paid = await divinationInstance.getConsumers().then(consumers => {
-                console.log(`divinationDetail-购买过的用户列表：${JSON.stringify(consumers)}`);
-                if(consumers) {
-                    return consumers.some(consumer => consumer.openid === openid && consumer.orders.status === 'paid');
-                } else {
-                    return false;
+            paid = (await divinationInstance.getConsumers({
+                attributes: ['openid'],
+                where: {openid: openid},
+                through: {
+                    where: {status: 'paid'}
                 }
-            });
+            })).length > 0;
             //tasks.push(order.findOne({where: {openid: openid, divinationId: divinationID}}));
         }
 
@@ -68,6 +67,9 @@ module.exports = {
         console.log("recommendations.length=" + recommendations.length);
         detail.paid = paid;
         if(paid) {
+            // [1,2,3,4].forEach(i => {
+            //     detail['cardDescription' + i] = detail['cardDescription' + i].replace('\n', '\n\n');
+            // });
         } else {
             //用户未购买过，则删除结果
             detail.paid = false;

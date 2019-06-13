@@ -90,6 +90,11 @@ module.exports = {
     },
     'GET /api/tarot2/orderDetail/:orderId': async (ctx, next) => {
         let detail = await tarot2.orderDetail(ctx.params.orderId);
+        detail.cardDescription =  detail.cardDescription.replace('\n', '\n\n');
+        detail.interpretations.map(interpretation => {
+            interpretation.content = interpretation.content.replace('\n', '\n\n');
+            return interpretation;
+        });
         detail.kefu = kefu;
         ctx.rest(detail);
 
