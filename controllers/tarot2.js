@@ -108,6 +108,7 @@ module.exports = {
         let payInfo = await tarot2.getPayInfo(ctx.headers.openid, ctx.request.body.questionId,
             ctx.request.body.cardId, ctx.request.ip, ctx.headers.channel || 'official',
             ctx.headers.weixin);
+        console.log(`[getPayInfo2] returned payinfo = ${JSON.stringify(payInfo)}`);
         ctx.rest(payInfo);
     },
     'POST /api/tarot2/bindMobile': async (ctx, next) => {
