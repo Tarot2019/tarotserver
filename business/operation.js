@@ -265,6 +265,7 @@ const orders = async (channelId, page, product) => {
                 channelId: channelId,
                 status: 'paid'
             },
+            order: [['paidTime', 'DESC']],
             offset: pageSize * page,
             limit: pageSize,
             attributes: ['orderid', 'userOpenid', 'paidTime', 'price', 'divinationId']
@@ -300,6 +301,7 @@ const orders = async (channelId, page, product) => {
                 channelId: channelId,
                 status: 'paid'
             },
+            order: [['paidTime', 'DESC']],
             offset: page * pageSize,
             limit: pageSize,
             attributes: ['orderId', 'openid', 'phoneNumber', 'paidTime', 'price', 'questionId']
