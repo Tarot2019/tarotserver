@@ -314,6 +314,8 @@ const orders = async (channelId, page, product) => {
                 const question = await order.getQuestion();
                 console.log("[orders]question = " + JSON.stringify(question));
                 let orderJson = order.toJSON();
+                orderJson.orderid = orderJson.orderId;
+                delete orderJson.orderId;
                 orderJson.paidTime = utils.getFormattedDate(orderJson.paidTime);
                 orderJson.userName = orderJson.phoneNumber || "未绑定用户";
                 orderJson.title = question.name;
