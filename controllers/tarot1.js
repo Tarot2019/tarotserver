@@ -64,6 +64,7 @@ module.exports = {
     'GET /api/tarot1/detail/:id': async (ctx, next) => {
         let divinationDetail = await tarot1.divinationDetail(ctx.params.id, ctx.headers.openid);
         divinationDetail.kefu = kefu;
+        console.log('[detail] ' + JSON.stringify(divinationDetail));
         ctx.rest(divinationDetail);
 
     },

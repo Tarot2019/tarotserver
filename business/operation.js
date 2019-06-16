@@ -343,12 +343,12 @@ module.exports = {
                 description: channelDescription
             });
             let channelDetail = result.toJSON();
-            channelDetail.link1_1 = `https://taluoyuce.com/#/home?channel=${channelDetail.id}&show=false`;
-            channelDetail.link1_2 = `https://taluoyuce.cn/#/home?channel=${channelDetail.id}&show=false`;
-            channelDetail.link1_3 = `https://taluoyixia.top/#/home?channel=${channelDetail.id}&show=false`;
-            channelDetail.link1_1Kefu = `https://taluoyuce.com/#/home?channel=${channelDetail.id}`;
-            channelDetail.link1_2Kefu = `https://taluoyuce.cn/#/home?channel=${channelDetail.id}`;
-            channelDetail.link1_3Kefu = `https://taluoyixia.top/#/home?channel=${channelDetail.id}`;
+            channelDetail.link1_1 = `https://taluoyuce.com/?channel=${channelDetail.id}&show=false#/home`;
+            channelDetail.link1_2 = `https://taluoyuce.cn/?channel=${channelDetail.id}&show=false#/home`;
+            channelDetail.link1_3 = `https://taluoyixia.top/?channel=${channelDetail.id}&show=false#/home`;
+            channelDetail.link1_1Kefu = `https://taluoyuce.com/?channel=${channelDetail.id}#/home`;
+            channelDetail.link1_2Kefu = `https://taluoyuce.cn/?channel=${channelDetail.id}#/home`;
+            channelDetail.link1_3Kefu = `https://taluoyixia.top/?channel=${channelDetail.id}#/home`;
             channelDetail.link1_Detail = `https://qian10.net/api/static/tarot_manager/index.html#/channel/tarot1/${channelDetail.id}`;
             channelDetail.link2_1 = `https://taluoyuce.com/?channel=${channelDetail.id}&show=false`;
             channelDetail.link2_2 = `https://taluoyuce.cn/?channel=${channelDetail.id}&show=false`;

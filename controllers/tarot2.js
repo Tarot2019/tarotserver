@@ -96,6 +96,7 @@ module.exports = {
             return interpretation;
         });
         detail.kefu = kefu;
+        console.log('[orderDetail2] ' + JSON.stringify(detail));
         ctx.rest(detail);
 
     },
